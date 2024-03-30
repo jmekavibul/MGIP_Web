@@ -13,8 +13,9 @@
     opacity: 0;
     transition: opacity 2s ease-in-out;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    flex-direction: column;
   }
   
   .background.visible {
@@ -23,19 +24,17 @@
   
   .hero-text {
     color: white;
-    font-size: 40px;
-    font-weight: 500;
     margin: 0.5em 0;
     text-align: center;
     opacity: 0;
     transition: opacity 2s ease-in-out;
-    max-width: 600px;
+    max-width: 400px;
     position: absolute;
     top: 30%; /* Adjust this value to move the text up or down */
-    left: 50%;
+    left: 20%;
     transform: translateX(-50%);
   }
-  
+
   .hero-text.visible {
     opacity: 1;
   }
@@ -54,8 +53,8 @@
   }
   
   .hero-dot {
-    width: 15px;
-    height: 15px;
+    width: 11px;
+    height: 11px;
     background: white;
     cursor: pointer;
     margin: 5px;
@@ -65,5 +64,5 @@
   }
   
   .hero-dot.orange {
-    background: orangered;
+    background: #333;
   }

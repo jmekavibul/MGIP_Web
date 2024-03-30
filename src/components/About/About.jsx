@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+
 import alexandria from '../../assets/alexandria.jpg';
 import uspto from '../../assets/uspto.jpg';
 import dc from '../../assets/dc.jpg'; // Ensure this is imported correctly
 import './About.css';
-
+import { PopUp } from '../PopUp/PopUp'
+import { ContentBox } from '../ContentBox/ContentBox';
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
   const [isUserInteracted, setIsUserInteracted] = useState(false); // New state to track user interaction
@@ -20,9 +22,9 @@ export const About = () => {
   }, [isUserInteracted]); // Depend on the isUserInteracted state
 
   const presentData = [
-    { text1: "Beautiful Alexandria Old Town Virginia", text2: "Close to USPTO", img: alexandria },
+    { text1: "Innovative. Integrated. ", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
     { text1: "Innovation at USPTO", text2: "Empowering American Innovation", img: uspto },
-    { text1: "Historic DC", text2: "Explore the Capital", img: dc }
+    { text1: "Historic DC", text2: "Explore the Capital", img:  alexandria}
   ];
 
   const handleDotClick = (index) => {
@@ -35,11 +37,12 @@ export const About = () => {
       {presentData.map((item, index) => (
         <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
           <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
-            <p>{item.text1}</p>
-            <p>{item.text2}</p>
+            <p style={{fontSize:" 35px", fontWeight: "450"}}>{item.text1}</p>
+            <p style={{fontSize:" 20px", fontWeight: "350"}}>{item.text2}</p>
           </div>
         </div>
       ))}
+
       <div className='hero-dot-play'>
         <ul className='hero-dots'>
           {presentData.map((_, index) => (
@@ -47,6 +50,7 @@ export const About = () => {
           ))}
         </ul>
       </div>
+      <ContentBox style={{bottom:"100px"}}content={<div><p>This is the content of the box</p></div>} url={"www.google.com"}/>
     </div>
   );
 };

@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(243, 243, 243, 0.7);
+    background-color: rgba(243, 243, 243, 0.85);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px 50px 15px;
     top: 0; /* Aligns the navbar to the top */
@@ -14,7 +14,7 @@
   /* Smaller navbar size after scrolling */
   .navbar-shrink {
     padding: 5px 50px 3px;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255, 0.95 );
   }
   .navbar-logo img {
     height: 50px; /* Adjust as per your logo's size */
@@ -33,11 +33,10 @@
   
   .navbar-links li a {
     text-decoration: none; /* Removes the underline */
-    font-weight: 550;
+    font-weight: 450;
     color: #333;
     transition: font-size 0.3s ease; /* Smooth transition for hover effects */
-    font-size: 22px;
-    font-family: sans-serif;
+    font-size: 20px;
   }
   .navbar-shrink .navbar-links li a {
     font-weight: 450;
@@ -73,6 +72,7 @@
         .navbar-links {
         display: none; /* Hide the links initially */
         position: fixed;
+        height: 30%;
         top: 0;
         left: 0;
         right: 0;
@@ -81,7 +81,6 @@
         align-items: center;
         justify-content: start;
         padding-top: 60px; /* Add padding to top to avoid overlay with the hamburger icon */
-        height: 100vh; /* Full-screen on mobile */
         width: 100%; /* Full width */
         z-index: 1005; /* Ensure it appears above other content but below the hamburger */
         transition: all 0.3s ease; /* Smooth transition */

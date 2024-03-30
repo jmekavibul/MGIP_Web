@@ -1,0 +1,23 @@
+.content-box-container {
+    padding: 20px;
+    background: #b7cddc;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px; /* Default width */
+    min-height: 200px;
+    width: auto;
+    transition: height 0.3s ease, background-color 0.2s;
+    top:70%;
+    left:20%;
+    cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+    position: fixed;
+  }
+  
+  .content-box-container:hover {
+    background-color: #f0f0f0; /* Slight background change on hover */
+  }
+  
+  .content-box {
+    max-height: 500px; /* Default max height */
+    overflow-y: auto;
+  }
