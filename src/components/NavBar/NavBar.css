@@ -1,12 +1,21 @@
 .navbar {
+    position: fixed;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: rgba(243, 243, 243, 0.7);
-    padding: 5px 50px 3px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px 50px 15px;
+    top: 0; /* Aligns the navbar to the top */
+    width: 100%; /* Ensures the navbar spans the full width of the viewport */
+    z-index: 1000; /* Ensures the navbar stays above other content */
+    transition: padding 0.3s ease, background-color 0.3s ease;
   }
-  
+  /* Smaller navbar size after scrolling */
+  .navbar-shrink {
+    padding: 5px 50px 3px;
+    background-color: rgba(255, 255, 255, 0.95);
+  }
   .navbar-logo img {
     height: 50px; /* Adjust as per your logo's size */
   }
@@ -14,7 +23,7 @@
   .navbar-links {
     list-style: none;
     display: flex;
-    margin: 0;
+    margin-right: 4%;
     padding: 0;
   }
   
@@ -24,11 +33,16 @@
   
   .navbar-links li a {
     text-decoration: none; /* Removes the underline */
-    font-weight: bold;
+    font-weight: 550;
     color: #333;
-    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+    transition: font-size 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 22px;
+    font-family: sans-serif;
   }
-  
+  .navbar-shrink .navbar-links li a {
+    font-weight: 450;
+    font-size: 18px; /* smaller font size when navbar is shrunk */
+  }
   .navbar-links li a:hover,
   .navbar-links li a:focus { /* Ensures that hover and focus have the same style */
     color: #007bff; /* Color change on hover */
@@ -37,37 +51,67 @@
   }
   
   /* Responsive styles */
-  @media (max-width: 768px) {
-    .navbar {
-      flex-direction: column;
-      align-items: flex-start;
+  .hamburger {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+    font-size: 24px; /* Adjust based on your preference */
+    position: absolute;
+    right: 20% ;
+    top: 15px;
+    background: transparent;
+    border: none;
+    color: #333; /* Change color to ensure visibility against your navbar background */
+    z-index: 1010; /* Make sure it's above other content */
+}
+
+    /* Styles to make the navbar links expandable for mobile */
+    @media (max-width: 768px) {
+        .hamburger {
+        display: block; /* Show hamburger icon on smaller screens */
+        }
+    
+        .navbar-links {
+        display: none; /* Hide the links initially */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background-color: rgba(243, 243, 243, 0.9); /* Adjust the background to match your navbar */
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        padding-top: 60px; /* Add padding to top to avoid overlay with the hamburger icon */
+        height: 100vh; /* Full-screen on mobile */
+        width: 100%; /* Full width */
+        z-index: 1005; /* Ensure it appears above other content but below the hamburger */
+        transition: all 0.3s ease; /* Smooth transition */
+        }
+    
+        .navbar-links.expanded {
+        display: flex; /* Show the links when hamburger is clicked */
+        }
+    
+        .navbar-links li {
+        width: 100%; /* Full-width list items */
+        text-align: center; /* Center-align the links */
+        }
+    
+        .navbar-links li a {
+        display: block; /* Make the links fill the li for easier click */
+        font-size: 18px; /* Adjust font size for mobile */
+        padding: 10px 0; /* More padding for touch targets */
+        }
+
+        .navbar {
+        padding: 10px 50px; /* Adjust navbar padding on smaller screens */
+        }
     }
   
-    .navbar-logo {
-      margin-bottom: 10px;
+    @media (min-width: 769px) and (max-width: 1024px) {
+        /* Adjustments for tablets or smaller desktop screens */
+        .navbar-links li {
+        padding: 0 10px; /* Less padding for more space */
+        }
     }
-  
-    .navbar-links {
-      flex-direction: column;
-      align-items: flex-start;
-      width: 100%;
-    }
-  
-    .navbar-links li {
-      padding: 10px 0; /* More padding for touch targets */
-    }
-  
-    /* Optionally hide or modify other elements */
-    .navbar-login, .navbar-search {
-      display: none;
-    }
-  }
-  
-  @media (min-width: 769px) and (max-width: 1024px) {
-    /* Adjustments for tablets or smaller desktop screens */
-    .navbar-links li {
-      padding: 0 10px; /* Less padding for more space */
-    }
-  }
   
   /* More media queries can be added for larger screens */

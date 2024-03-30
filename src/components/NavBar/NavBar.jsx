@@ -1,34 +1,42 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './NavBar.css'
+import './NavBar.css'; // Ensure this points to your NavBar.css file correctly
+
 export const NavBar = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 70);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    // <div className='nav'>
-    //     <div>
-    //         <img src="mgip-logo.png" width={200}></img>
-    //     </div>
-    //     <ul className='nav-menu'>
-    //         <li><Link path="/">About</Link></li>
-    //         <li><Link path="/team">Team</Link></li>
-    //         <li className='nav-contact'><Link path="/contact">Contact</Link></li>
-    //     </ul>
-    // </div>
-    <nav className="navbar">
-        <div className="navbar-logo">
+    <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
+
+      <div className="navbar-logo">
         <img src="mgip-logo.png" alt="Logo" />
-        </div>
-        <ul className="navbar-links">
-            <li><Link path="/">About</Link></li>
-            <li><Link path="/team">Team</Link></li>
-            <li className='nav-contact'><Link path="/contact">Contact</Link></li>
-        </ul>
-        {/* <div className="navbar-login">
-        <a href="#login">Client Login</a>
-        </div>
-        <div className="navbar-search">
-        <input type="search" placeholder="Search" />
-        <button type="submit">🔍</button>
-        </div> */}
+      </div>
+
+      <button
+            className={`hamburger ${isNavExpanded ? 'active' : ''}`}
+            onClick={() => setIsNavExpanded(!isNavExpanded)}
+            aria-label="Toggle navigation"
+        >
+            ☰
+      </button>
+
+      <ul className={`navbar-links ${isNavExpanded ? 'expanded' : ''}`}>
+        <li><Link to="/" onClick={() => setIsNavExpanded(false)}>About</Link></li>
+        <li><Link to="/team" onClick={() => setIsNavExpanded(false)}>Team</Link></li>
+        <li><Link to="/contact" onClick={() => setIsNavExpanded(false)}>Contact</Link></li>
+      </ul>
+      
     </nav>
-  )
-}
+  );
+};
