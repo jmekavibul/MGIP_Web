@@ -50,7 +50,14 @@ export const About = () => {
           ))}
         </ul>
       </div>
-      <ContentBox style={{bottom:"100px"}}content={<div><p>This is the content of the box</p></div>} url={"www.google.com"}/>
+      <ContentBox style={{bottom:"100px"}} 
+      content={
+            <div>
+                <h2>2023 US TRADEMARK REGISTRATION TOTEBOARD</h2>
+                <h1>Ranked: 1st</h1>
+            </div>
+        } 
+      url={"www.google.com"}/>
     </div>
   );
 };

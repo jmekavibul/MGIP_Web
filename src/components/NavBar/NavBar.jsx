@@ -20,7 +20,10 @@ export const NavBar = () => {
     <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
 
       <div className="navbar-logo">
-        <img src="mgip-logo.png" alt="Logo" />
+        <Link to='/'>
+
+            <img src="mgip-logo.png" alt="Logo" />
+        </Link>
       </div>
 
       <button
@@ -36,7 +39,7 @@ export const NavBar = () => {
         <li><Link to="/team" onClick={() => setIsNavExpanded(false)}>Team</Link></li>
         <li><Link to="/contact" onClick={() => setIsNavExpanded(false)}>Contact</Link></li>
       </ul>
-      
+
     </nav>
   );
 };
