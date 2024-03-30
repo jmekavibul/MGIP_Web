@@ -8,14 +8,14 @@
     right: 0;
     bottom: 0;
     z-index: -1;
-    background-size: cover;
-    background-position: center;
     opacity: 0;
     transition: opacity 2s ease-in-out;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
+    background-size: cover;
+    background-position: center;
   }
   
   .background.visible {
@@ -66,3 +66,18 @@
   .hero-dot.orange {
     background: #333;
   }
+
+  .infoSection{
+    margin-top: 35%;
+  }
+  @media (max-width: 768px) {
+    .background {
+        background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
+    }
+}
+
+@media (min-width: 769px) {
+    .background {
+        background-position: 50% 50%; /* Center the image on larger screens */
+    }
+}

@@ -8,10 +8,10 @@
     min-height: 200px;
     width: auto;
     transition: height 0.3s ease, background-color 0.2s;
-    top:70%;
-    left:20%;
+    top:83%;
+    left:60%;
     cursor: pointer; /* Change cursor on hover to indicate it's clickable */
-    position: fixed;
+    position: absolute;
   }
   
   .content-box-container:hover {

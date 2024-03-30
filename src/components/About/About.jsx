@@ -6,6 +6,7 @@ import dc from '../../assets/dc.jpg'; // Ensure this is imported correctly
 import './About.css';
 import { PopUp } from '../PopUp/PopUp'
 import { ContentBox } from '../ContentBox/ContentBox';
+import InfoSection from '../InfoSection/InfoSection';
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
   const [isUserInteracted, setIsUserInteracted] = useState(false); // New state to track user interaction
@@ -23,8 +24,8 @@ export const About = () => {
 
   const presentData = [
     { text1: "Innovative. Integrated. ", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
-    { text1: "Innovation at USPTO", text2: "Empowering American Innovation", img: uspto },
-    { text1: "Historic DC", text2: "Explore the Capital", img:  alexandria}
+    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: uspto },
+    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img:  alexandria}
   ];
 
   const handleDotClick = (index) => {
@@ -58,6 +59,10 @@ export const About = () => {
             </div>
         } 
       url={"www.google.com"}/>
+      <div className='infoSection'>
+        
+        <InfoSection/>
+      </div>
     </div>
   );
 };

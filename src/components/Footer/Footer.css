@@ -1,0 +1,69 @@
+.site-footer {
+    background-color: #333; /* Dark background */
+    color: #fff; /* White text */
+    padding: 20px 0; /* Top and bottom padding */
+    font-family: Arial, sans-serif; /* Sample font */
+  }
+  
+  .footer-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px; /* Padding on the sides */
+    flex-wrap: wrap; /* Wrap items on smaller screens */
+  }
+  
+  .footer-links a,
+  .footer-social a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px; /* Margin between links */
+    font-size: 0.9em; /* Smaller font size for links */
+  }
+  
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+  }
+  
+  .footer-subscribe p {
+    margin: 0;
+    font-size: 1.2em; /* Larger font size for the subscription text */
+  }
+  
+  .footer-subscribe button {
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .footer-social {
+    display: flex;
+    align-items: center;
+  }
+  
+  .footer-legal {
+    text-align: center;
+    width: 100%; /* Full width */
+    margin-top: 20px; /* Margin top for legal text */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+    }
+  
+    .footer-links,
+    .footer-social {
+      justify-content: center;
+      margin-bottom: 10px; /* Space between the sections */
+    }
+  }
+  
