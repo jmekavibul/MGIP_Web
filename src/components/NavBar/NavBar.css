@@ -1,24 +1,73 @@
-.nav{
+.navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 40px 120px;
-    color: grey;
-}
-
-
-
-.nav-menu{
-    display: flex;
-    align-items: center;
+    background-color: rgba(243, 243, 243, 0.7);
+    padding: 5px 50px 3px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar-logo img {
+    height: 50px; /* Adjust as per your logo's size */
+  }
+  
+  .navbar-links {
     list-style: none;
-    font-size: 18px;
-    gap: 90px;
-}
-
-.nav-contact{
-    border-radius: 50px;
-    padding: 10px 38px;
-    background: #faeded;
-    color: #262626;
-}
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navbar-links li {
+    padding: 0 15px;
+  }
+  
+  .navbar-links li a {
+    text-decoration: none; /* Removes the underline */
+    font-weight: bold;
+    color: #333;
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for hover effects */
+  }
+  
+  .navbar-links li a:hover,
+  .navbar-links li a:focus { /* Ensures that hover and focus have the same style */
+    color: #007bff; /* Color change on hover */
+    transform: scale(1.05); /* Slightly enlarges the link */
+    text-decoration: none; /* Ensures the underline does not appear on hover */
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .navbar-logo {
+      margin-bottom: 10px;
+    }
+  
+    .navbar-links {
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+    }
+  
+    .navbar-links li {
+      padding: 10px 0; /* More padding for touch targets */
+    }
+  
+    /* Optionally hide or modify other elements */
+    .navbar-login, .navbar-search {
+      display: none;
+    }
+  }
+  
+  @media (min-width: 769px) and (max-width: 1024px) {
+    /* Adjustments for tablets or smaller desktop screens */
+    .navbar-links li {
+      padding: 0 10px; /* Less padding for more space */
+    }
+  }
+  
+  /* More media queries can be added for larger screens */
