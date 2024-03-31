@@ -26,7 +26,7 @@ const Footer = () => {
           <a href="/rss">RSS</a>
         </div>
         <div className="footer-legal">
-          <p>© Arnold & Porter Kaye Scholer LLP 2024 All Rights Reserved.</p>
+          <p>© MUNCY, GEISSLER OLDS & LOWE 2024 All Rights Reserved.</p>
         </div>
       </div>
     </footer>

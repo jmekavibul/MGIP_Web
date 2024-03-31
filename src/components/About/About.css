@@ -1,83 +1,102 @@
-
-.background {
-    height: 70%;
-    width: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: -1;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .background.visible {
-    opacity: 1;
-  }
-  
-  .hero-text {
-    color: white;
-    margin: 0.5em 0;
-    text-align: center;
-    opacity: 0;
-    transition: opacity 2s ease-in-out;
-    max-width: 400px;
-    position: absolute;
-    top: 30%; /* Adjust this value to move the text up or down */
-    left: 20%;
-    transform: translateX(-50%);
-  }
-
-  .hero-text.visible {
-    opacity: 1;
-  }
-  
-  .hero-dot-play {
-    position: absolute;
-    width: 100%;
-    text-align: center;
-    bottom: 30%; /* Adjust this value to move the dots closer to the text */
-  }
-  
-  .hero-dots {
-    list-style: none;
-    padding: 0;
-    display: inline-block;
-  }
-  
-  .hero-dot {
-    width: 11px;
-    height: 11px;
-    background: white;
-    cursor: pointer;
-    margin: 5px;
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.3s ease;
-  }
-  
-  .hero-dot.orange {
-    background: #333;
-  }
-
-  .infoSection{
-    margin-top: 35%;
-  }
-  @media (max-width: 768px) {
-    .background {
-        background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
+    .about {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start; /* Aligns children to the start of the flex container */
+        width: 100%;
+        /* If you want a minimum height for the .about section, you can uncomment the following line */
+        /* min-height: 100vh; */
     }
-}
-
-@media (min-width: 769px) {
     .background {
-        background-position: 50% 50%; /* Center the image on larger screens */
+        height: 70%;
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+        background-size: cover;
+        background-position: center;
     }
-}
+    
+    .background.visible {
+        opacity: 1;
+    }
+    
+    .hero-text {
+        color: white;
+        margin: 0.5em 0;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 2s ease-in-out;
+        max-width: 400px;
+        position: absolute;
+        top: 30%; /* Adjust this value to move the text up or down */
+        left: 20%;
+        transform: translateX(-50%);
+        font-size: 35px; /* Default font size for large screens */
+        font-weight: 450;
+    }
+
+    .hero-text.visible {
+        opacity: 1;
+    }
+    
+    .hero-dot-play {
+        position: absolute;
+        width: 100%;
+        text-align: center;
+        bottom: 30%; /* Adjust this value to move the dots closer to the text */
+    }
+    
+    .hero-dots {
+        list-style: none;
+        padding: 0;
+        display: inline-block;
+    }
+    
+    .hero-dot {
+        width: 11px;
+        height: 11px;
+        background: white;
+        cursor: pointer;
+        margin: 5px;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.3s ease;
+    }
+    
+    .hero-dot.orange {
+        background: #333;
+    }
+
+    .infoSection{
+        margin-top: 35%;
+    }
+    @media (max-width: 1024px) {
+        .hero-text {
+        font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
+        }
+    }
+  
+    @media (max-width: 768px) {
+        .hero-text {
+        font-size: 20px; /* Even smaller font size for mobile devices */
+        }
+        .background {
+            background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
+        }
+    }
+
+    @media (min-width: 769px) {
+        .background {
+            background-position: 50% 50%; /* Center the image on larger screens */
+        }
+    }
