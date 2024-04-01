@@ -14,7 +14,6 @@ const Footer = () => {
           <a href="/status">Operating Status</a>
         </div>
         <div className="footer-subscribe">
-          <p>Stay up to date with the latest.</p>
           <button>Join Our Email List →</button>
         </div>
         <div className="footer-social">

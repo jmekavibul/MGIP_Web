@@ -1,33 +1,83 @@
 .team-container {
-    width: 100%;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 120px;
   }
   
   .search-bar {
-    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
   }
   
   .search-bar input {
-    width: 100%;
     padding: 10px;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    font-size: 16px;
   }
   
-  .member-grid {
+  .alphabet {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .alphabet a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+  }
+  
+  .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
   }
   
-  .member-card {
+  .team-member {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
   }
   
-  .member-card img {
+  .team-member img {
     width: 100%;
-    height: auto;
-    border-radius: 5px;
+    max-width: 180px;
+    margin-bottom: 15px;
+  }
+  
+  .member-info h3 {
+    font-size: 1.1em;
+    margin-bottom: 5px;
+  }
+  
+  .member-info p {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  /* Responsive design for the footer and navbar to stay at the bottom and top respectively */
+  /* Add this to your main CSS file */
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #root { /* Assuming your root div has an id of 'root' */
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  footer { /* Style your footer accordingly */
+    margin-top: auto; /* Pushes the footer to the bottom */
   }
   

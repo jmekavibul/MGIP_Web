@@ -40,8 +40,12 @@ export const About = () => {
         {presentData.map((item, index) => (
             <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
             <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
-                <p style={{fontSize:" 35px", fontWeight: "450"}}>{item.text1}</p>
-                <p style={{fontSize:" 20px", fontWeight: "350"}}>{item.text2}</p>
+                <div className='hero-header'>
+                    <p>{item.text1}</p>
+                </div>
+                <div className='hero-content'>
+                    <p>{item.text2}</p>
+                </div>
             </div>
             </div>
         ))}

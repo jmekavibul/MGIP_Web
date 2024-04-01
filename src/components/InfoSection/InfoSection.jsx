@@ -18,13 +18,13 @@ const InfoSection = () => {
           </div>
           {/* ... */}
           <div className="service-point">
-            <h3>Patent</h3>
+            <h3>Trade Mark</h3>
             <p>Strategic advisors to the world’s greatest thinkers, makers, and doers.</p>
             <a href="/services/patent">View service →</a>
           </div>
           <div className="service-point">
 
-                <ContentBox style={{bottom:"100px"}} 
+            <ContentBox style={{bottom:"100px"}} 
             content={
                     <div>
                         <h2>2023 US TRADEMARK REGISTRATION TOTEBOARD</h2>

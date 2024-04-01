@@ -5,7 +5,7 @@ import {NavBar} from './components/NavBar/NavBar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import './App.css'
-
+import joe from './assets/Joe-Muncy.jpg';
 function App() {
     const teamMembers = [
         {
@@ -14,7 +14,7 @@ function App() {
           title: 'Technology Specialist',
           location: 'New York',
           phone: '917-956-5951',
-          photo: 'dc.jpg', // Replace with the path to the photo
+          photo: joe, // Replace with the path to the photo
           keywords: 'tech specialist'
         },
         // ...more members

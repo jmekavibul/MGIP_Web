@@ -41,10 +41,29 @@
         top: 30%; /* Adjust this value to move the text up or down */
         left: 20%;
         transform: translateX(-50%);
-        font-size: 35px; /* Default font size for large screens */
         font-weight: 450;
     }
-
+    .hero-header p {
+        font-size: 35px;
+        font-weight: 450;
+        color: white;
+        text-align: center;
+        transition: opacity 2s ease-in-out;
+        opacity: 0; /* Initially hidden, will become visible with .visible class */
+      }
+      
+    .hero-content p {
+        font-size: 20px;
+        font-weight: 350;
+        color: white;
+        text-align: center;
+        transition: opacity 2s ease-in-out;
+        opacity: 0; /* Initially hidden, will become visible with .visible class */
+    }
+    .hero-text.visible .hero-header p,
+    .hero-text.visible .hero-content p {
+        opacity: 1;
+    }
     .hero-text.visible {
         opacity: 1;
     }
@@ -78,25 +97,49 @@
     }
 
     .infoSection{
-        margin-top: 35%;
+        margin-top: 70vh;
     }
-    @media (max-width: 1024px) {
-        .hero-text {
-        font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
+
+    @media (max-width: 768px) {
+        .hero-header p {
+            font-size: 15px; /* Smaller font size for mobile devices */
+          }
+          
+          .hero-content p {
+            font-size: 15px; /* Smaller font size for mobile devices */
+        }
+        .background {
+            background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
+        }
+        .infoSection{
+            margin-top: 30vh;
         }
     }
-  
-    @media (max-width: 768px) {
+    @media (max-width: 850px) {
         .hero-text {
         font-size: 20px; /* Even smaller font size for mobile devices */
         }
         .background {
             background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
         }
+        .infoSection{
+            margin-top: 55vh;
+        }
     }
-
-    @media (min-width: 769px) {
+    @media (max-width: 1024px) {
+        .hero-text {
+        font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
+        }
+        .infoSection{
+            margin-top: 60vh;
+        }
+    }
+  
+    @media (min-width: 1025px) {
         .background {
             background-position: 50% 50%; /* Center the image on larger screens */
+        }
+        .infoSection{
+            margin-top: 70vh;
         }
     }
