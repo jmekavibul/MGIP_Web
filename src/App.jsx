@@ -10,10 +10,10 @@ function App() {
     const teamMembers = [
         {
           id: 1,
-          name: 'Ahmed Abdelqader',
-          title: 'Technology Specialist',
-          location: 'New York',
-          phone: '917-956-5951',
+          name: 'Joe Ken',
+          title: 'Lawyer',
+          location: 'Alexandria Virginia',
+          phone: '111-111-1111',
           photo: joe, // Replace with the path to the photo
           keywords: 'tech specialist'
         },
