@@ -10,7 +10,8 @@ function App() {
     const teamMembers = [
         {
           id: 1,
-          name: 'Joe Ken',
+          firstName: 'Joe',
+          lastName: 'Ken',
           title: 'Lawyer',
           location: 'Alexandria Virginia',
           phone: '111-111-1111',

@@ -25,7 +25,7 @@ export const Team = ({ members }) => {
   };
 
   const filteredMembers = members.filter((member) =>
-    member.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+    member.lastName.toLowerCase().startsWith(searchQuery.toLowerCase())
   );
 
   return (
@@ -34,7 +34,7 @@ export const Team = ({ members }) => {
         <input
         className="the-search-bar"
         type="text"
-        placeholder="Search by first name"
+        placeholder="Search by Last Name"
         value={searchQuery}
         onChange={handleSearchChange}
         />
@@ -59,7 +59,7 @@ export const Team = ({ members }) => {
           <div className="team-member" key={index}>
             <img src={member.photo} alt={member.name} /> {/* Ensure correct image path */}
             <div className="member-info">
-              <h3>{member.name}</h3>
+              <h3>{`${member.firstName} ${member.lastName}`}</h3>
               <p>{member.title}</p>
               <p>{member.location}</p>
               <p>{member.phone}</p>
