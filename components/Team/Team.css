@@ -5,13 +5,7 @@
     padding: 120px;
     box-sizing: border-box;
   }
-  .search-container {
-    width: 100%;
-    max-width: 1100px; /* Maximum width of the search input */
-    padding: 10px;
-    margin: 0 auto 20px; /* Auto margins for centering, with margin-bottom */
-    text-align: center; /* Center text for the alphabet navigation */
-  }
+
   .team-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid layout */
@@ -79,9 +73,30 @@
   .alphabet-navigation button:hover {
     background-color: #f0f0f0; /* Change as per your color scheme */
   }
-  
+    .search-items {
+        position: relative;
+        display: flex; /* Use flex to better manage child elements */
+        justify-content: center; /* Center children */
+        width: 100%;
+        max-width: 600px; /* Adjust maximum width as needed */
+        margin: 0 auto; /* Centering the search-items container */
+    }
+    .search-icon {
+        position: absolute;
+        right: 10px; /* Ensure icon stays on the far right */
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none; /* Make icon non-interactive */
+    }
+    .search-container {
+    width: 100%;
+    max-width: 1100px; /* Maximum width of the search input */
+    padding: 10px;
+    margin: 0 auto 20px; /* Auto margins for centering, with margin-bottom */
+    text-align: center; /* Center text for the alphabet navigation */
+  }
   .the-search-bar {
-    width: 60%;
+    width: 100%;
     padding: 10px 20px;
     border: 1px solid #ccc;
     border-radius: 20px;
