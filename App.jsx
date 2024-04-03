@@ -5,7 +5,7 @@ import {NavBar} from './components/NavBar/NavBar'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import './App.css'
-import joe from './assets/Joe-Muncy.jpg';
+import joe from './pictures/Joe-Muncy.jpg';
 function App() {
     const teamMembers = [
         {
