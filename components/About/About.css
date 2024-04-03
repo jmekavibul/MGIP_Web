@@ -109,10 +109,11 @@
             font-size: 15px; /* Smaller font size for mobile devices */
         }
         .background {
-            background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
+             /* Adjust this percentage to maintain the focus area on smaller screens */
         }
         .infoSection{
             margin-top: 30vh;
+            margin-left: 1vh;
         }
     }
     @media (max-width: 850px) {
