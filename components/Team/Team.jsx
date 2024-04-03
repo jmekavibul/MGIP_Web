@@ -14,8 +14,14 @@ export const Team = ({ members }) => {
 
   const handleLetterClick = (letter) => {
     // Set active letter and update search query to match the clicked letter
-    setActiveLetter(letter);
-    setSearchQuery(letter);
+    if (activeLetter === letter) {
+        setActiveLetter('');
+        setSearchQuery('');
+      } else {
+        // Otherwise, set active letter and update search query to match the clicked letter
+        setActiveLetter(letter);
+        setSearchQuery(letter);
+      }
   };
 
   const filteredMembers = members.filter((member) =>
@@ -24,29 +30,30 @@ export const Team = ({ members }) => {
 
   return (
     <div className="team-container">
-      <div className="search-bar">
+    <div className="search-container">
         <input
-          type="text"
-          placeholder="Search by first name"
-          value={searchQuery}
-          onChange={handleSearchChange}
+        className="the-search-bar"
+        type="text"
+        placeholder="Search by first name"
+        value={searchQuery}
+        onChange={handleSearchChange}
         />
         <div className="alphabet">
-          {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
+        {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
             <a
-              key={letter}
-              href={`#${letter}`}
-              className={activeLetter === letter ? 'active' : ''}
-              onClick={(e) => {
+            key={letter}
+            href={`#${letter}`}
+            className={activeLetter === letter ? 'active' : ''}
+            onClick={(e) => {
                 e.preventDefault();
                 handleLetterClick(letter);
-              }}
+            }}
             >
-              {letter}
+            {letter}
             </a>
-          ))}
+        ))}
         </div>
-      </div>
+    </div>
       <div className="team-grid">
         {filteredMembers.map((member, index) => (
           <div className="team-member" key={index}>
