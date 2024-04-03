@@ -1,23 +1,56 @@
-import React from 'react';
-import './Team.css'; // Make sure to create this CSS file
-import joe from '../../pictures/Joe-Muncy.jpg'
+import React, { useState } from 'react';
+import './Team.css';
+import joe from '../../pictures/Joe-Muncy.jpg';
+
 export const Team = ({ members }) => {
+    const [searchQuery, setSearchQuery] = useState('');
+  const [activeLetter, setActiveLetter] = useState('');
+
+  const handleSearchChange = (e) => {
+    // Clear active letter when typing in search
+    setActiveLetter('');
+    setSearchQuery(e.target.value);
+  };
+
+  const handleLetterClick = (letter) => {
+    // Set active letter and update search query to match the clicked letter
+    setActiveLetter(letter);
+    setSearchQuery(letter);
+  };
+
+  const filteredMembers = members.filter((member) =>
+    member.name.toLowerCase().startsWith(searchQuery.toLowerCase())
+  );
+
   return (
     <div className="team-container">
       <div className="search-bar">
-        {/* Implement search functionality here */}
-        <input type="text" placeholder="Search by last name" />
+        <input
+          type="text"
+          placeholder="Search by first name"
+          value={searchQuery}
+          onChange={handleSearchChange}
+        />
         <div className="alphabet">
-          {/* Map through the alphabet for quick search links */}
           {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
-            <a key={letter} href={`#${letter}`}>{letter}</a>
+            <a
+              key={letter}
+              href={`#${letter}`}
+              className={activeLetter === letter ? 'active' : ''}
+              onClick={(e) => {
+                e.preventDefault();
+                handleLetterClick(letter);
+              }}
+            >
+              {letter}
+            </a>
           ))}
         </div>
       </div>
       <div className="team-grid">
-        {members.map((member, index) => (
+        {filteredMembers.map((member, index) => (
           <div className="team-member" key={index}>
-            <img src={member.photo} alt={member.name} />
+            <img src={member.photo} alt={member.name} /> {/* Ensure correct image path */}
             <div className="member-info">
               <h3>{member.name}</h3>
               <p>{member.title}</p>
@@ -30,5 +63,3 @@ export const Team = ({ members }) => {
     </div>
   );
 };
-
- 

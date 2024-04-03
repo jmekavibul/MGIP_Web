@@ -9,9 +9,7 @@ const Footer = () => {
           <a href="/legal">Legal Policies</a>
           <a href="/rights">Statement of Client's Rights</a>
           <a href="/fees">Employment Tribunal and Immigration Fees</a>
-          <a href="/alumni">Alumni</a>
           <a href="/employees">For Employees</a>
-          <a href="/status">Operating Status</a>
         </div>
         <div className="footer-subscribe">
           <button>Join Our Email List →</button>

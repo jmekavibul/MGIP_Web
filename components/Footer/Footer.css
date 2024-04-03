@@ -59,7 +59,8 @@
     .footer-content {
       flex-direction: column;
     }
-  
+    .footer-content {padding: 10px;}
+    .site-footer {padding: 0;}
     .footer-links,
     .footer-social {
       justify-content: center;
