@@ -1,6 +1,6 @@
 import React from 'react';
 import './Team.css'; // Make sure to create this CSS file
-import joe from '../../assets/Joe-Muncy.jpg'
+import joe from '../../pictures/Joe-Muncy.jpg'
 export const Team = ({ members }) => {
   return (
     <div className="team-container">

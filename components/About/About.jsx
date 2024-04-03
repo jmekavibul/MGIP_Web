@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 
-import alexandria from '../../assets/alexandria.jpg';
-import uspto from '../../assets/uspto.jpg';
-import dc from '../../assets/dc.jpg'; // Ensure this is imported correctly
+import alexandria from '../../pictures/alexandria.jpg';
+import uspto from '../../pictures/uspto.jpg';
+import dc from '../../pictures/dc.jpg'; // Ensure this is imported correctly
 import './About.css';
 import { PopUp } from '../PopUp/PopUp'
 import { ContentBox } from '../ContentBox/ContentBox';
