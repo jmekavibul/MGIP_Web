@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'; // Ensure this points to your NavBar.css file correctly
-import logo from '../../pictures/mgip-logo.png'
+
 export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isNavExpanded, setIsNavExpanded] = useState(false);
@@ -21,7 +21,8 @@ export const NavBar = () => {
 
       <div className="navbar-logo">
         <Link to='/'>
-            <img src={logo} alt="Logo" />
+
+            <img src="mgip-logo.png" alt="Logo" />
         </Link>
       </div>
 
