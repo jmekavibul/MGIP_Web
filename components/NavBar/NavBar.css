@@ -5,7 +5,7 @@
     align-items: center;
     background-color: rgba(243, 243, 243, 0.85);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 50px 15px;
+    padding: 20px 50px 10px;
     top: 0; /* Aligns the navbar to the top */
     width: 100%; /* Ensures the navbar spans the full width of the viewport */
     z-index: 1000; /* Ensures the navbar stays above other content */
@@ -109,7 +109,7 @@
     @media (min-width: 769px) and (max-width: 1024px) {
         /* Adjustments for tablets or smaller desktop screens */
         .navbar-links li {
-        padding: 0 10px; /* Less padding for more space */
+        padding: 0 30px; /* Less padding for more space */
         }
     }
   

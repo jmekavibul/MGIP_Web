@@ -1,169 +1,174 @@
 .team-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 120px;
-    box-sizing: border-box;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 120px 20px; /* Reduced top/bottom padding for all views */
+  box-sizing: border-box;
+}
 
+.alphabet {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.alphabet a {
+  padding: 5px 10px;
+  cursor: pointer;
+  text-decoration: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.alphabet a:hover,
+.alphabet a:focus {
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+
+.alphabet a.active {
+  background-color: #0056b3;
+  color: white;
+}
+
+.search-items {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 55%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 1100px;
+  padding: 10px;
+  margin: 0 auto 20px;
+  text-align: center;
+}
+
+.the-search-bar {
+  width: 100%;
+  padding: 10px 20px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  font-size: 16px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+  padding: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.team-member {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.team-member img {
+  width: 100%; /* Image will fill the container width */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.member-info {
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  transform: translateY(calc(100% - 70px)); /* Adjust to control visible height */
+  transition: transform 0.5s ease, background-color 0.5s ease;
+  padding: 5px;
+  box-sizing: border-box;
+  width: 100%; /* Ensures the info box width matches the .team-member width */
+}
+
+.team-member:hover .member-info {
+  transform: translateY(0);
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
   .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Creates a responsive grid layout */
-    gap: 20px; /* Adjust the gap between grid items */
-    padding: 20px 0; /* Space above and below the grid */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller min width */
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .team-grid {
+    /* Try using repeat(3, 1fr) to fit three items per row, or adjust as needed */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Maintain a gap between items */
   }
   
   .team-member {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+    /* Adjust the team member's box if necessary, ensure it doesn't overflow */
+    margin: 0; /* Reset any margins that might push the content out of bounds */
   }
   
   .team-member img {
-    width: 100%; /* Make images responsive within their container */
-    max-width: 180px; /* Adjust maximum width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Space between image and text */
-  }
-
-  .alphabet {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px; /* Adjust the space between letters as needed */
-    margin: 20px 0; /* Space above and below the alphabet bar */
-  }
-  .alphabet a {
-    padding: 5px 10px;
-    cursor: pointer; /* Changes the cursor to a pointer to indicate a clickable item */
-    text-decoration: none; /* Removes the underline from links */
-    color: #333; /* Default color for the letters */
-    font-size: 16px;
-    font-weight: bold; /* Makes the letters bold */
-    transition: background-color 0.2s, color 0.2s; /* Smooth transition for hover and click effects */
-  }
-  .alphabet a:hover,
-.alphabet a:focus {
-  background-color: #007bff; /* Background color change on hover */
-  color: white; /* Text color change on hover */
-  border-radius: 4px; /* Optional: Rounds the corners of the hover background */
-}
-.alphabet a.active {
-    background-color: #0056b3; /* A darker background color for active state */
-    color: white;
-  }
-  .alphabet-navigation {
-    display: flex;
-    justify-content: center;
-    gap: 8px; /* Adjust the gap size as needed */
-    margin-bottom: 20px;
-  }
-  
-  .alphabet-navigation button {
-    background: none;
-    border: none;
-    padding: 5px 10px;
-    margin: 0 5px;
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .alphabet-navigation button:hover {
-    background-color: #f0f0f0; /* Change as per your color scheme */
-  }
-    .search-items {
-        position: relative;
-        display: flex; /* Use flex to better manage child elements */
-        justify-content: center; /* Center children */
-        width: 100%;
-        max-width: 600px; /* Adjust maximum width as needed */
-        margin: 0 auto; /* Centering the search-items container */
-    }
-    .search-icon {
-        position: absolute;
-        right: 10px; /* Ensure icon stays on the far right */
-        top: 50%;
-        transform: translateY(-50%);
-        pointer-events: none; /* Make icon non-interactive */
-    }
-    .search-container {
-    width: 100%;
-    max-width: 1100px; /* Maximum width of the search input */
-    padding: 10px;
-    margin: 0 auto 20px; /* Auto margins for centering, with margin-bottom */
-    text-align: center; /* Center text for the alphabet navigation */
-  }
-  .the-search-bar {
-    width: 100%;
-    padding: 10px 20px;
-    border: 1px solid #ccc;
-    border-radius: 20px;
-    font-size: 16px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
-  }
-
-  .search-bar input {
-    width: 100%;
-    padding: 10px 40px 10px 20px; /* Adjust padding as needed */
-    border: 1px solid #ccc;
-    border-radius: 20px; /* Adjust for roundness */
-    font-size: 16px;
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* subtle inset shadow */
-  }
-  
-  .search-button {
-    position: absolute;
-    right: 10px;
-    top: 50%;
-    transform: translateY(-50%);
-    background: none;
-    border: none;
-    cursor: pointer;
-  }
-  
-  /* For the button styling, use an SVG or font icon for better resolution */
-  .search-button img {
-    width: 24px; /* Adjust as needed */
+    /* Optional: Adjust image sizes if necessary */
+    max-width: 100%;
     height: auto;
   }
-  .member-info h3 {
-    margin: 5px 0; /* Adjust space around name */
-    font-size: 18px; /* Adjust font size for name */
+
+  .member-info {
+    /* Adjust member info styling if needed */
+    font-size: 0.9em; /* Slightly larger text than in mobile */
+    padding: 10px; /* Adjust padding */
+    /* Adjust the visible height of the member info */
+    transform: translateY(calc(100% - 50px));
   }
-  
-  .member-info p {
-    margin: 2px 0; /* Adjust space around job title and other info */
-    color: #666; /* Subtle text color, adjust as needed */
-    font-size: 14px; /* Smaller text for less important details */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .team-container {
+    padding: 120px 15px; /* Reduced padding for mobile */
   }
-  /* Add responsive adjustments as necessary */
-  @media (max-width: 1024px) {
-    .team-grid {
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjust grid items to be smaller on tablets */
-    }
-  
-    .team-member img {
-      max-width: 150px; /* Smaller images on tablet */
-    }
+
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    gap: 0.5rem; /* Reduced gap for mobile */
   }
-  @media (max-width: 768px) {
-    .alphabet-navigation {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(20px, 1fr));
-      width: 100%;
-    }
-  
-    .search-bar {
-      max-width: calc(100% - 40px); /* consider the padding */
-      margin: 0 auto;
-    }
-    .team-grid {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Single column on mobile */
-      }
-    
-      .team-member img {
-        max-width: 120px; /* Smaller images on mobile */
-      }
+
+  .team-member img {
+    /* If you want to reduce the image size further */
+    max-width: 100%; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
   }
+
+  .member-info {
+    /* Adjust text size and padding as needed for mobile */
+    font-size: 1.0em; /* Smaller text */
+    padding: 8px; /* Sufficient padding */
+    transform: translateY(calc(100% - 70px)); /* Adjust visible portion of member info */
+  }
+
+  .alphabet, /* Hide the alphabet navigation on mobile */
+  .alphabet-navigation { /* If there's any separate navigation, hide it too */
+    display: none;
+  }
+}
