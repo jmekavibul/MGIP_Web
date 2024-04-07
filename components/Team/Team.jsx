@@ -44,7 +44,10 @@ const filteredMembers = members.filter(member =>
 
   return (
     <div className="team-container">
-      <div className='background' style={{ backgroundImage: `url(${teamphoto})` }}/>
+        
+        <div className='background' style={{ backgroundImage: `url(${teamphoto})` }} />
+        <h1 style={{color: 'white'}}>Our Team</h1>
+
       <div className="search-container">
           <div className='search-items'>
 
