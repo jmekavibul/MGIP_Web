@@ -8,7 +8,8 @@
   box-sizing: border-box;
   margin-top: 10px;
 }
-.background {
+  
+.team-background {
     height: 25%;
     width: 100%;
     position: absolute;
@@ -26,7 +27,6 @@
     background-size: cover;
     background-position: center;
 }
-  
 .alphabet {
     display: flex;
     justify-content: center; /* Center the alphabet navigation */
