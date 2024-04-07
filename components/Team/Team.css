@@ -7,11 +7,13 @@
 }
 
 .alphabet {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 20px 0;
+    display: flex;
+    justify-content: center; /* Center the alphabet navigation */
+    margin-top: 20px; /* Add some space above the alphabet bar */
+    flex-wrap: wrap; 
+    gap: 8px;
+    margin: 0 20px;
+    flex-grow: 1;
 }
 
 .alphabet a {
@@ -39,35 +41,45 @@
 .search-items {
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  align-items: center;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
+  flex-grow: 1;
+  margin-right: auto;
+  padding: 0 1rem;
+  flex-shrink: 0;
 }
 
 .search-icon {
-  position: absolute;
-  right: 12px;
-  top: 55%;
-  transform: translateY(-50%);
-  pointer-events: none;
+    position: absolute;
+    right: 43%; /* Adjust based on padding and desired position */
+    top: 55%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .search-container {
-  width: 100%;
-  max-width: 1100px;
-  padding: 10px;
-  margin: 0 auto 20px;
-  text-align: center;
-}
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1250px; /* Match the width of your grid or other page content */
+    padding: 10px;
+    margin: 0 auto 20px;
+  }
 
 .the-search-bar {
-  width: 100%;
-  padding: 10px 20px;
   border: 1px solid #ccc;
   border-radius: 20px;
   font-size: 16px;
   box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+  flex-grow: 2;
+  margin-right: 1rem;
+  padding-right: 40px;
+  padding: 10px 35px 10px 10px;
 }
 
 .team-grid {
@@ -109,7 +121,27 @@
 .team-member:hover .member-info {
   transform: translateY(0);
 }
-
+.filters {
+    display: flex;
+    justify-content: space-between; /* Positions children on opposite ends */
+    padding: 10px 0;
+    align-items: center;
+    flex-shrink: 0;
+    flex-grow: 1;
+    margin-left: 1rem;
+    width: 200px; /* Set a fixed width to prevent changes affecting the layout */
+    min-width: 120px; /* Minimum width to accommodate smaller filter options */
+    margin-left: 20px;
+  }
+  
+  .filters select {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  .the-search-bar, .filter-input {
+    flex-basis: 48%; /* Each takes up less than half of the container width */
+  }
 /* Responsive adjustments */
 @media (max-width: 1024px) {
   .team-grid {
@@ -171,4 +203,27 @@
   .alphabet-navigation { /* If there's any separate navigation, hide it too */
     display: none;
   }
+
+  .search-container {
+    flex-direction: column;
+    align-items: stretch; /* This will make children (search bar and filter) stretch to full width */
+  }
+  .search-icon {
+    right: 43%; /* Adjust based on padding and desired position */
 }
+}
+@media (max-width: 620px) {
+    .search-icon {
+      right: 48%; /* Adjust based on padding and desired position */
+  }
+  }
+  @media (max-width: 560px) {
+    .search-icon {
+      right: 50%; /* Adjust based on padding and desired position */
+  }
+  }
+  @media (max-width: 500px) {
+    .search-icon {
+      right: 45%; /* Adjust based on padding and desired position */
+  }
+  }

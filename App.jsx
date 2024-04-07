@@ -16,47 +16,52 @@ function App() {
         {
           id: 1,
           name: 'Joe M. (Ken) Muncy',
+          email: 'km@mg-ip.com',
           title: 'PRINCIPAL SHAREHOLDER',
-          location: 'Alexandria Virginia',
-          phone: '111-111-1111',
+          phone: '(703)621-7140',
           photo: joe, // Replace with the path to the photo
-          keywords: 'tech specialist'
+          education: 'Industrial Engineering, Electrical Engineering, Mechanical Engineering',
+          memberships:'AIPPI, FICPI, ASIPI, INTA'
         },
         {
             id: 2,
             name: 'Martin R. Geissler',
             title: 'PRINCIPAL SHAREHOLDER',
-            location: 'Alexandria Virginia',
-            phone: '111-111-1111',
+            phone: '(703)621-7140',
+            email: 'mrg@mg-ip.com',
             photo: martin, // Replace with the path to the photo
-            keywords: 'tech specialist'
+            education: 'Electrical Engineering technology',
+            memberships: ' American Bar Association, American Intellectual Property Law Association, VPP'
           },
           {
             id: 3,
             name: 'Mark E. Olds',
             title: 'PRINCIPAL SHAREHOLDER',
-            location: 'Alexandria Virginia',
-            phone: '111-111-1111',
+            email: 'meo@mg-ip.com',
+            phone: '(703)621-7140',
             photo: mark, // Replace with the path to the photo
-            keywords: 'tech specialist'
+            education: 'Telecommunications',
+            memberships: 'American Bar Association, American Intellectual Property Law Association, and Virgina State Bar Intellectual Property Law Section.'
+
           },
           {
             id: 4,
             name: 'Scott L. Lowe',
             title: 'PRINCIPAL SHAREHOLDER',
-            location: 'Alexandria Virginia',
-            phone: '111-111-1111',
+            email: 'sll@mg-ip.com',
+            phone: '(703)621-7140',
             photo: scott, // Replace with the path to the photo
-            keywords: 'tech specialist'
+            education: 'Mechanical, Electrical Engineering, electro-mechanical, design patent prosecution',
+            memberships: ''
           },
           {
             id: 5,
             name: 'John L. Ciccozzi',
             title: 'PRINCIPAL SHAREHOLDER',
-            location: 'Alexandria Virginia',
-            phone: '111-111-1111',
+            email: 'jlc@mg-ip.com',
+            phone: '(703)621-7140',
             photo: john, // Replace with the path to the photo
-            keywords: 'tech specialist'
+            education: 'Electrical Engineering'
           },
         // ...more members
       ];
