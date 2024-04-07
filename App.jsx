@@ -73,6 +73,7 @@ function App() {
 
                     <Routes>
                         <Route path="/" element={<About />}/>
+                        <Route path="/MGIP_Web" element={<About />}/>
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
                     </Routes>
                 
