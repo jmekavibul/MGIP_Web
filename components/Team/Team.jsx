@@ -7,12 +7,37 @@ export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState('');
   const [selectedField, setSelectedField] = useState(null);
+  const [selectedTitle, setSelectedTitle] = useState(null);
+  const handleTitleChange = selectedOption => {
+    setSelectedTitle(selectedOption);
+  };
+  const titleOptions = [
+    { value: 'All', label: 'Titles' },
+    { value: 'PRINCIPAL', label: 'PRINCIPAL' },
+    { value: 'PRINCIPAL SHAREHOLDER', label: 'PRINCIPAL SHAREHOLDER' },
+    { value: 'OF COUNSEL', label: 'OF COUNSEL'},
+    { value: 'ASSOCIATES', label: 'ASSOCIATES'},
+    { value: 'PATENT AGENTS', label: 'PATENT AGENTS'},
+    { value: 'TECHNICAL ADVISORS', label: 'TECHNICAL ADVISORS'},
+    { value: 'INTELLECTUAL PROPERTY ADVISOR', label: 'INTELLECTUAL PROPERTY ADVISOR'},
+    { value: 'CONTROLLER', label: 'CONTROLLER'},
+    { value: 'OFFICE MANAGER', label: 'OFFICE MANAGER'}
+    // ... add more titles as needed
+  ];
   const options = [
     { value: 'All', label: 'Specialised field' },
     { value: 'Electrical Engineering', label: 'Electrical Engineering' },
     { value: 'Industrial Engineering', label: 'Industrial Engineering' },
     { value: 'Telecommunications', label: 'Telecommunications' },
-    { value: 'Mechanical', label: 'Mechanical Engineering' },
+    { value: 'Mechanical Engineering', label: 'Mechanical Engineering' },
+    { value: 'Cybersecurity', label: 'Cybersecurity'},
+    { value: 'Chemical', label: 'Chemical'},
+    { value: 'Electro-Mechanical', label: 'Electro-Mechanical'},
+    { value: 'Copyright', label: 'Copyright'},
+    { value: 'TradeMark', label: 'TradeMark'},
+    { value: 'Bio', label: 'Bio'},
+    
+
   ];
 
   const handleFieldChange = selectedOption => {
@@ -37,10 +62,12 @@ export const Team = ({ members }) => {
       }
   };
 
-const filteredMembers = members.filter(member =>
-  member.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-  (!selectedField || selectedField.value === 'All' || member.education.includes(selectedField.value))
-);
+    const filteredMembers = members.filter(member =>
+    member.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+    (!selectedField || selectedField.value === 'All' || member.education.includes(selectedField.value))
+    &&
+        (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value)
+    );
 
   return (
     <div className="team-container">
@@ -50,8 +77,6 @@ const filteredMembers = members.filter(member =>
 
       <div className="search-container">
           <div className='search-items'>
-
-
               <input
                 className="the-search-bar"
                 type="text"
@@ -72,6 +97,17 @@ const filteredMembers = members.filter(member =>
                         placeholder="Specialised field" // Placeholder is now purely visual
                         isSearchable={false}
                     />
+            </div>
+            <div className='filters'>
+                <Select
+                    value={selectedTitle}
+                    onChange={handleTitleChange}
+                    options={titleOptions}
+                    className="select-filter"
+                    isClearable={true}
+                    placeholder="Filter by Title"
+                    isSearchable={false}
+                />
             </div>
           </div>
 
@@ -105,7 +141,7 @@ const filteredMembers = members.filter(member =>
 
                 <p>{member.title}</p>
                 <p>{member.email}</p>
-                <p>{member.phone}</p>
+                <p>{member.memberships}</p>
               </div>
             </div>
           </div>
