@@ -17,7 +17,7 @@ export const Team = ({ members }) => {
     { value: 'PRINCIPAL SHAREHOLDER', label: 'PRINCIPAL SHAREHOLDER' },
     { value: 'OF COUNSEL', label: 'OF COUNSEL'},
     { value: 'ASSOCIATES', label: 'ASSOCIATES'},
-    { value: 'PATENT AGENTS', label: 'PATENT AGENTS'},
+    { value: 'PATENT AGENT', label: 'PATENT AGENT'},
     { value: 'TECHNICAL ADVISORS', label: 'TECHNICAL ADVISORS'},
     { value: 'INTELLECTUAL PROPERTY ADVISOR', label: 'INTELLECTUAL PROPERTY ADVISOR'},
     { value: 'CONTROLLER', label: 'CONTROLLER'},
@@ -36,7 +36,7 @@ export const Team = ({ members }) => {
     { value: 'Copyright', label: 'Copyright'},
     { value: 'TradeMark', label: 'TradeMark'},
     { value: 'Bio', label: 'Bio'},
-    
+
 
   ];
 
