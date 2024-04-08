@@ -36,7 +36,7 @@ import tetsu from './pictures/Tetsu-Yoshida.jpg';
 import tingting from './pictures/Tingting_Liu_340x464.jpg';
 import terry from './pictures/Terry_340x464.jpg';
 import shay from './pictures/Shay-Canfield.jpg';
-import kentary from './pictures/Kentaro-Higuchi.jpg';
+import kentaro from './pictures/Kentaro-Higuchi.jpg';
 import akiyo from './pictures/Akiyo-Yoshida.jpg';
 import susan from './pictures/Susan_340x464.jpg';
 import sherri from './pictures/Sherri_340x464.jpg';
@@ -191,7 +191,7 @@ function App() {
             title: 'PRINCIPAL',
             email: 'rgan@mg-ip.com',
             phone: '(703)621-7140',
-            photo: mary, // Replace with the path to the photo
+            photo: rebeccah, // Replace with the path to the photo
             education: 'Trademarks',
             memberships: 'INTA, ABA-IPL, APPI-US, FICPI'
           },
@@ -271,7 +271,7 @@ function App() {
             title: 'OF COUNSEL',
             email: 'rbp@mg-ip.com',
             phone: '(703)621-7140',
-            photo: jayK, // Replace with the path to the photo
+            photo: robertP, // Replace with the path to the photo
             education: 'IP',
             memberships: ''
           },
@@ -311,7 +311,7 @@ function App() {
             title: 'ASSOCIATE',
             email: 'tcc@mg-ip.com',
             phone: '(703)621-7140',
-            photo: roman, // Replace with the path to the photo
+            photo: tony, // Replace with the path to the photo
             education: 'Communication Engineering, Electrical Engineering, Telecommunications',
             memberships: ''
           },
@@ -371,7 +371,7 @@ function App() {
             title: 'TECHNICAL ADVISOR',
             email: 'kentaro.higuchi@mg-ip.com',
             phone: '(703)621-7140',
-            photo: shay, // Replace with the path to the photo
+            photo: kentaro, // Replace with the path to the photo
             education: 'Patent , IP',
             memberships: ''
           },
