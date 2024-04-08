@@ -75,8 +75,8 @@
 
 .search-icon {
     position: absolute;
-    right: 43%; /* Adjust based on padding and desired position */
-    top: 55%;
+    right: 61%; /* Adjust based on padding and desired position */
+    top: 56%;
     transform: translateY(-50%);
     pointer-events: none;
 }
@@ -195,9 +195,14 @@
     transform: translateY(calc(100% - 50px));
   }
 }
-
+.filterContainer{
+    display: flex;
+}
 /* Responsive adjustments */
 @media (max-width: 768px) {
+  .filterContainer{
+    display:grid;
+  }
   .team-container {
     padding: 120px 15px; /* Reduced padding for mobile */
   }
@@ -230,7 +235,8 @@
     align-items: stretch; /* This will make children (search bar and filter) stretch to full width */
   }
   .search-icon {
-    right: 43%; /* Adjust based on padding and desired position */
+    right: 43%; 
+    top: 52%;/* Adjust based on padding and desired position */
 }
 }
 @media (max-width: 620px) {
@@ -245,6 +251,6 @@
   }
   @media (max-width: 500px) {
     .search-icon {
-      right: 45%; /* Adjust based on padding and desired position */
+      right: 47%; /* Adjust based on padding and desired position */
   }
   }

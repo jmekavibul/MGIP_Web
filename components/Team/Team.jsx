@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Team.css';
-import teamphoto from '../../pictures/AITeamphoto.jpg'
+import teamphoto from '../../pictures/aiteam.jpg'
 import Select from 'react-select'
 
 export const Team = ({ members }) => {
@@ -87,28 +87,31 @@ export const Team = ({ members }) => {
               <div className="search-icon">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
               </div>
-            <div className="filters">
+            <div className='filterContainer'>
+                <div className="filters">
+                        <Select
+                            value={selectedField} // The value is now controlled by state
+                            options={options}
+                            onChange={handleFieldChange}
+                            className="select-filter"
+                            isClearable={true}
+                            placeholder="Specialised field" // Placeholder is now purely visual
+                            isSearchable={false}
+                        />
+                </div>
+                <div className='filters'>
                     <Select
-                        value={selectedField} // The value is now controlled by state
-                        options={options}
-                        onChange={handleFieldChange}
+                        value={selectedTitle}
+                        onChange={handleTitleChange}
+                        options={titleOptions}
                         className="select-filter"
                         isClearable={true}
-                        placeholder="Specialised field" // Placeholder is now purely visual
+                        placeholder="Filter by Title"
                         isSearchable={false}
                     />
+                </div>
             </div>
-            <div className='filters'>
-                <Select
-                    value={selectedTitle}
-                    onChange={handleTitleChange}
-                    options={titleOptions}
-                    className="select-filter"
-                    isClearable={true}
-                    placeholder="Filter by Title"
-                    isSearchable={false}
-                />
-            </div>
+
           </div>
 
 
