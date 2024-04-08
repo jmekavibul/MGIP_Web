@@ -16,9 +16,9 @@ export const Team = ({ members }) => {
     { value: 'PRINCIPAL', label: 'PRINCIPAL' },
     { value: 'PRINCIPAL SHAREHOLDER', label: 'PRINCIPAL SHAREHOLDER' },
     { value: 'OF COUNSEL', label: 'OF COUNSEL'},
-    { value: 'ASSOCIATES', label: 'ASSOCIATES'},
+    { value: 'ASSOCIATE', label: 'ASSOCIATE'},
     { value: 'PATENT AGENT', label: 'PATENT AGENT'},
-    { value: 'TECHNICAL ADVISORS', label: 'TECHNICAL ADVISORS'},
+    { value: 'TECHNICAL ADVISOR', label: 'TECHNICAL ADVISOR'},
     { value: 'INTELLECTUAL PROPERTY ADVISOR', label: 'INTELLECTUAL PROPERTY ADVISOR'},
     { value: 'CONTROLLER', label: 'CONTROLLER'},
     { value: 'OFFICE MANAGER', label: 'OFFICE MANAGER'}
