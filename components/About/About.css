@@ -36,12 +36,16 @@
         text-align: center;
         opacity: 0;
         transition: opacity 2s ease-in-out;
-        max-width: 400px;
+        max-width: 500px;
         position: absolute;
         top: 30%; /* Adjust this value to move the text up or down */
         left: 20%;
         transform: translateX(-50%);
-        font-weight: 450;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        font-family:  sans-serif;
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 24px;
     }
     .hero-header p {
         font-size: 35px;
@@ -67,56 +71,69 @@
     .hero-text.visible {
         opacity: 1;
     }
-    
-    .hero-dot-play {
-        position: absolute;
-        width: 100%;
-        text-align: center;
-        bottom: 30%; /* Adjust this value to move the dots closer to the text */
-    }
-    
-    .hero-dots {
-        list-style: none;
-        padding: 0;
-        display: inline-block;
-    }
-    
-    .hero-dot {
-        width: 11px;
-        height: 11px;
-        background: white;
-        cursor: pointer;
-        margin: 5px;
-        border-radius: 50%;
-        display: inline-block;
-        transition: background-color 0.3s ease;
-    }
-    
-    .hero-dot.orange {
-        background: #333;
-    }
 
+    .hero-bar-play {
+        position: absolute;
+        bottom: 32%; /* Adjust this as needed */
+        left: 52%;
+        transform: translateX(-50%);
+        display: flex;
+        justify-content: center;
+        width: 12%; /* Control the overall width of the progress bar container */
+      }
+      
+      .hero-bar-container {
+        flex: 1;
+        margin: 0 4px;
+        background: rgba(255, 255, 255, 0.5); /* Light background for the inactive bar */
+        height: 11px;
+        cursor: pointer;
+        position: relative; /* Needed to position the .hero-bar absolutely inside it */
+      }
+      
+      .hero-bar {
+        background: #0172ce; /* Full white for the active bar */
+        width: 0%; /* Start with no width */
+        height: 100%;
+        position: absolute;
+        left: 0;
+        transition: width 4.5s linear; /* This should be the same as your interval duration */
+      }
+      
+      /* When a bar's container is clicked, reset and start the animation */
+      .hero-bar-container.active .hero-bar {
+        width: 100%; /* Full width */
+      }
     .infoSection{
         margin-top: 70vh;
     }
-
     @media (max-width: 768px) {
-        .hero-header p {
-            font-size: 15px; /* Smaller font size for mobile devices */
+        .hero-bar-play {
+            width: 30%; /* Increase the width for smaller screens */
           }
           
-          .hero-content p {
-            font-size: 15px; /* Smaller font size for mobile devices */
-        }
-        .background {
-             /* Adjust this percentage to maintain the focus area on smaller screens */
-        }
-        .infoSection{
-            margin-top: 30vh;
-            margin-left: 4vh;
+          .hero-bar-container {
+            margin: 0 4px; /* Reduce the gap between the bars */
+            height: 12px; /* Make the bars thinner */
+          }
+          .hero-text {
+            left: 33%; /* Even smaller font size for mobile devices */
+            max-width: 800px;
+            }
+          .infoSection{
+            margin-top: 55vh;
         }
     }
-    @media (max-width: 850px) {
+
+    @media (min-width: 768px)and (max-width: 850px) {
+        .hero-bar-play {
+            width: 30%; /* Increase the width for smaller screens */
+          }
+          
+          .hero-bar-container {
+            margin: 0 4px; /* Reduce the gap between the bars */
+            height: 8px; /* Make the bars thinner */
+          }
         .hero-text {
         font-size: 20px; /* Even smaller font size for mobile devices */
         }
@@ -127,16 +144,33 @@
             margin-top: 55vh;
         }
     }
-    @media (max-width: 1024px) {
+    @media (min-width: 850px)  and (max-width: 1024px) {
+        .hero-bar-play {
+            width: 20%; /* Increase the width for smaller screens */
+          }
+          
+          .hero-bar-container {
+            margin: 0 4px; /* Reduce the gap between the bars */
+            height: 8px; /* Make the bars thinner */
+          }
         .hero-text {
-        font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
+            font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
+            left: 30%;
         }
         .infoSection{
             margin-top: 60vh;
         }
     }
   
-    @media (min-width: 1025px) {
+    @media (min-width:1024px)  and (max-width: 1250px) {
+        .hero-bar-play {
+            width: 15%; /* Increase the width for smaller screens */
+          }
+          
+          .hero-bar-container {
+            margin: 0 4px; /* Reduce the gap between the bars */
+            height: 12px; /* Make the bars thinner */
+          }
         .background {
             background-position: 50% 50%; /* Center the image on larger screens */
         }

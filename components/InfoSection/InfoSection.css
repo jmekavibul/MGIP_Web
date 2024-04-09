@@ -103,6 +103,7 @@
     .services-header h2,
     .all-services {
       margin-top: 10px;
+      margin-right:10px;
     }
   
     .service-points {

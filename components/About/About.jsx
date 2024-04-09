@@ -1,66 +1,88 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import alexandria from '../../pictures/alexandria.jpg';
 import uspto from '../../pictures/uspto.jpg';
-import dc from '../../pictures/dc.jpg'; // Ensure this is imported correctly
+import dc from '../../pictures/dc.jpg';
 import './About.css';
-import { PopUp } from '../PopUp/PopUp'
-import { ContentBox } from '../ContentBox/ContentBox';
 import InfoSection from '../InfoSection/InfoSection';
 
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
-  const [isUserInteracted, setIsUserInteracted] = useState(false); // New state to track user interaction
+  const [isUserInteracted, setIsUserInteracted] = useState(false);
   const presentData = [
-    { text1: "Innovative. Integrated. ", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
+    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
     { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: uspto },
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img:  alexandria}
+    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: alexandria }
   ];
-  
+
+  const resetProgressBars = () => {
+    document.querySelectorAll('.hero-bar').forEach(bar => {
+      bar.style.width = '0%';
+      bar.style.transition = 'none';
+    });
+  };
+
+  const startProgressBar = (index) => {
+    resetProgressBars();
+    const bar = document.querySelector(`.hero-bar[data-index="${index}"]`);
+    if (bar) {
+      // This forces the browser to repaint which ensures the transition will start from 0% width
+      bar.offsetWidth;
+      bar.style.transition = 'width 4.5s linear';
+      bar.style.width = '100%';
+    }
+  };
+
   useEffect(() => {
-    // Only set up the interval if the user has not interacted with the dots
     if (!isUserInteracted) {
       const intervalId = setInterval(() => {
-        setBackGroundCount(prevCount => (prevCount + 1) % presentData.length); // Cycle through 3 images
-      }, 3500); // Change image every 4.5 seconds
+        setBackGroundCount((prevCount) => (prevCount + 1) % presentData.length);
+      }, 4500);
+
+      // Start the progress bar for the initial image
+      startProgressBar(backgroundCount);
 
       return () => clearInterval(intervalId);
     }
-  }, [isUserInteracted]); // Depend on the isUserInteracted state
+  }, [backgroundCount, isUserInteracted, presentData.length]);
 
-
-
-  const handleDotClick = (index) => {
-    setBackGroundCount(index);
-    setIsUserInteracted(true); // Stop the automatic rotation
+  const handleBarClick = (index) => {
+    if (!isUserInteracted || backgroundCount !== index) {
+      setBackGroundCount(index);
+      setIsUserInteracted(true);
+      // Start the progress bar for the clicked index
+      startProgressBar(index);
+    }
   };
 
   return (
     <div className='about'>
-        {presentData.map((item, index) => (
-            <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
-            <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
-                <div className='hero-header'>
-                    <p>{item.text1}</p>
-                </div>
-                <div className='hero-content'>
-                    <p>{item.text2}</p>
-                </div>
+      {presentData.map((item, index) => (
+        <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
+          <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
+            <div className='hero-header'>
+              <p>{item.text1}</p>
             </div>
+            <div className='hero-content'>
+              <p>{item.text2}</p>
             </div>
-        ))}
-
-        <div className='hero-dot-play'>
-            <ul className='hero-dots'>
-            {presentData.map((_, index) => (
-                <li key={index} onClick={() => handleDotClick(index)} className={backgroundCount === index ? "hero-dot orange" : "hero-dot"}></li>
-            ))}
-            </ul>
+          </div>
         </div>
-        <div className='infoSection'>
-        
-        <InfoSection/>
+      ))}
+
+      <div className='hero-bar-play'>
+        {presentData.map((_, index) => (
+          <div key={index} className="hero-bar-container" onClick={() => handleBarClick(index)}>
+            <div className={`hero-bar`} data-index={index} style={{ width: backgroundCount === index ? '100%' : '0%' }}></div>
+          </div>
+        ))}
+      </div>
+
+      <div className='infoSection'>
+        <InfoSection />
       </div>
     </div>
   );
 };
+
+export default About;
