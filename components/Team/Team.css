@@ -241,16 +241,22 @@
 }
 @media (max-width: 620px) {
     .search-icon {
-      right: 48%; /* Adjust based on padding and desired position */
+        position: relative;
+        top:18px;
+        right: 52px; /* Adjust based on padding and desired position */
   }
   }
-  @media (max-width: 560px) {
+
+  @media (max-width: 490px) {
     .search-icon {
-      right: 50%; /* Adjust based on padding and desired position */
+      position: relative;
+      top:18px;
+      right: 35px; /* Adjust based on padding and desired position */
   }
+  .search-items{
+    right:10%
   }
-  @media (max-width: 500px) {
-    .search-icon {
-      right: 47%; /* Adjust based on padding and desired position */
+  .the-search-bar{
+    margin:0;
   }
   }
