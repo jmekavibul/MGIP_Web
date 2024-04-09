@@ -247,16 +247,21 @@
   }
   }
 
-  @media (max-width: 510px) {
+  @media (max-width: 548px) {
     .search-icon {
       position: relative;
-      top:18px;
-      right: 35px; /* Adjust based on padding and desired position */
-  }
-  .search-items{
-    right:10%
-  }
-  .the-search-bar{
-    margin:0;
-  }
+      top: -16px;
+      left: 290px; /* Adjust based on padding and desired position */
+    }
+    .search-items{
+        display: block;
+        align-items: center;
+        padding: 0;
+    }
+    .filterContainer{
+        display:flex;
+    }
+    .the-search-bar{
+        margin-left:80px;
+    }
   }
