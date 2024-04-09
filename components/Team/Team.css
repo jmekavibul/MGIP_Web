@@ -261,7 +261,7 @@ body, html {
     .search-icon {
       position: relative;
       top: -16px;
-      left: 270px; /* Adjust based on padding and desired position */
+      left: 80%; /* Adjust based on padding and desired position */
     }
     .search-items{
         display: block;
@@ -272,5 +272,26 @@ body, html {
         width: calc(100% - 100px); /* Example to make sure it doesn't overflow, adjust 100px to the space you want to leave */
         margin-left: auto;
         margin-right: auto;
+    }
+  }
+  @media (max-width: 463px) {
+    .search-icon {
+      position: relative;
+      top: -16px;
+      left: 75%; /* Adjust based on padding and desired position */
+    }
+  }
+  @media (max-width: 365px) {
+    .search-icon {
+      position: relative;
+      top: -16px;
+      left: 70%; /* Adjust based on padding and desired position */
+    }
+  }
+  @media (max-width: 360px) {
+    .search-icon {
+      position: relative;
+      top: -16px;
+      left: 68%; /* Adjust based on padding and desired position */
     }
   }
