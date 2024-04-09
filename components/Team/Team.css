@@ -1,6 +1,7 @@
 body, html {
     max-width: 100%;
     overflow-x: hidden;
+    margin: 0; /* Reset default margins */
   }
   .fixed-width-element {
     max-width: 100%;
@@ -260,17 +261,16 @@ body, html {
     .search-icon {
       position: relative;
       top: -16px;
-      left: 290px; /* Adjust based on padding and desired position */
+      left: 270px; /* Adjust based on padding and desired position */
     }
     .search-items{
         display: block;
         align-items: center;
         padding: 0;
     }
-    .filterContainer{
-        display:flex;
-    }
     .the-search-bar{
-        margin-left:80px;
+        width: calc(100% - 100px); /* Example to make sure it doesn't overflow, adjust 100px to the space you want to leave */
+        margin-left: auto;
+        margin-right: auto;
     }
   }
