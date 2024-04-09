@@ -14,14 +14,6 @@ const Footer = () => {
         <div className="footer-subscribe">
           <button>Join Our Email List →</button>
         </div>
-        <div className="footer-social">
-          <a href="https://www.linkedin.com">LinkedIn</a>
-          <a href="https://www.instagram.com">Instagram</a>
-          <a href="https://www.facebook.com">Facebook</a>
-          <a href="https://www.twitter.com">Twitter</a>
-          <a href="https://www.youtube.com">YouTube</a>
-          <a href="/rss">RSS</a>
-        </div>
         <div className="footer-legal">
           <p>© MUNCY, GEISSLER OLDS & LOWE 2024 All Rights Reserved.</p>
         </div>
