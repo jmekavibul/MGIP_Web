@@ -1,5 +1,10 @@
-
-
+body, html {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+  .fixed-width-element {
+    max-width: 100%;
+  } 
 .team-container {
   display: flex;
   flex-direction: column;
@@ -200,6 +205,10 @@
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
+    .element-causing-overflow {
+        width: auto; /* or other adjustments as needed */
+        margin: 0; /* or other adjustments as needed */
+      }
   .filterContainer{
     display:grid;
   }
