@@ -326,16 +326,6 @@ function App() {
             memberships: 'Japanese Patent Attorneys Association'
           },
           {
-            id: 28,
-            name: 'Tingting Liu',
-            title: 'PATENT AGENT',
-            email: 'tetsu.yoshida@mg-ip.com',
-            phone: '(703)621-7140',
-            photo: tingting, // Replace with the path to the photo
-            education: 'Chemistry, Biotechnology',
-            memberships: ''
-          },
-          {
             id: 29,
             name: 'Tingting Liu',
             title: 'PATENT AGENT',

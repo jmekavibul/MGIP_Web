@@ -27,8 +27,8 @@ const InfoSection = () => {
             <ContentBox style={{bottom:"100px"}} 
             content={
                     <div>
-                        <h2>2023 US TRADEMARK REGISTRATION TOTEBOARD</h2>
-                        <h1>Ranked: 1st</h1>
+                        <h1>Firm Highlights</h1>
+                        <h2>2023 US TRADEMARK REGISTRATION TOTEBOARD: 1st</h2>
                     </div>
                 } 
             url={"www.google.com"}/>

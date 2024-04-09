@@ -22,7 +22,7 @@ export const About = () => {
     if (!isUserInteracted) {
       const intervalId = setInterval(() => {
         setBackGroundCount(prevCount => (prevCount + 1) % presentData.length); // Cycle through 3 images
-      }, 3000); // Change image every 4.5 seconds
+      }, 3500); // Change image every 4.5 seconds
 
       return () => clearInterval(intervalId);
     }
