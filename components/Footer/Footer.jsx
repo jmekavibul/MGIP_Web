@@ -6,10 +6,7 @@ const Footer = () => {
     <footer className="site-footer">
       <div className="footer-content">
         <div className="footer-links">
-          <a href="/legal">Legal Policies</a>
-          <a href="/rights">Statement of Client's Rights</a>
-          <a href="/fees">Employment Tribunal and Immigration Fees</a>
-          <a href="/employees">For Employees</a>
+          <a href="/disclaimer">Disclaimer</a>
         </div>
 
         <div className="footer-legal">
