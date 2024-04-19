@@ -11,9 +11,7 @@ const Footer = () => {
           <a href="/fees">Employment Tribunal and Immigration Fees</a>
           <a href="/employees">For Employees</a>
         </div>
-        <div className="footer-subscribe">
-          <button>Join Our Email List →</button>
-        </div>
+
         <div className="footer-legal">
           <p>© MUNCY, GEISSLER OLDS & LOWE 2024 All Rights Reserved.</p>
         </div>

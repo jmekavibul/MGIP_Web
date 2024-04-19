@@ -13,8 +13,8 @@ export const Team = ({ members }) => {
   };
   const titleOptions = [
     { value: 'All', label: 'Titles' },
-    { value: 'PRINCIPAL', label: 'PRINCIPAL' },
     { value: 'PRINCIPAL SHAREHOLDER', label: 'PRINCIPAL SHAREHOLDER' },
+    { value: 'PRINCIPAL', label: 'PRINCIPAL' },
     { value: 'OF COUNSEL', label: 'OF COUNSEL'},
     { value: 'ASSOCIATE', label: 'ASSOCIATE'},
     { value: 'PATENT AGENT', label: 'PATENT AGENT'},
@@ -34,7 +34,7 @@ export const Team = ({ members }) => {
     { value: 'Chemical', label: 'Chemical'},
     { value: 'Electro-Mechanical', label: 'Electro-Mechanical'},
     { value: 'Copyright', label: 'Copyright'},
-    { value: 'TradeMark', label: 'TradeMark'},
+    { value: 'Trademark', label: 'Trademark'},
     { value: 'Bio', label: 'Bio'},
 
 

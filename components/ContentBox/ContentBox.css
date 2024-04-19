@@ -1,28 +1,36 @@
 .content-box-container {
     color: white;
+    background: #839ebd;
     padding: 20px;
-    background: #b7cddc;
-    border-radius: 10px;
+    border-radius: 30px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    min-width: 400px;
-    max-width: 1000px; /* Default width */
+    height: 500px;
     min-height: 200px;
-    width: auto;
+    width: 400px;
     transition: height 0.3s ease, background-color 0.2s;
-    cursor: pointer; /* Change cursor on hover to indicate it's clickable */
-  }
+    cursor: pointer;
+    box-sizing: border-box; /* Ensures padding is included in width calculation */
+}
   
   .content-box-container:hover {
-    background-color: #f0f0f0; /* Slight background change on hover */
+    color: black;
+    background-color: #ffffff; /* Slight background change on hover */
   }
   
   .content-box {
-    max-height: 500px; /* Default max height */
+    max-height: 500px;
     overflow-y: auto;
-  }
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure it takes up all available horizontal space within the container */
+}
 
-  @media (max-width: 768px) {
+@media(min-width: 894px) and (max-width: 1334.55px) {
     .content-box-container {
-        max-width: 400px;
+        width: 700px; /* Allows the container to use full width on smaller screens */
     }
-  }
+}
+@media (max-width: 768px) {
+    .content-box-container {
+        max-width: 100%; /* Allows the container to use full width on smaller screens */
+    }
+}

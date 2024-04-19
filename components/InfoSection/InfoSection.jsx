@@ -1,42 +1,57 @@
-import React from 'react';
-import './InfoSection.css'; // Ensure you have created this CSS file
-import {ContentBox} from '../ContentBox/ContentBox'
-const InfoSection = () => {
-  return (
-    <div className="info-section">
-      <div className="services-section">
-        <div className="services-header">
-          <h2>Services</h2>
-          <a href="/services" className="all-services">See all services</a>
-        </div>
-        <div className="service-points">
-          {/* Repeat structure for each service point */}
-          <div className="service-point">
-            <h3>Patent</h3>
-            <p>Strategic advisors to the world’s greatest thinkers, makers, and doers.</p>
-            <a href="/services/patent">View service →</a>
-          </div>
-          {/* ... */}
-          <div className="service-point">
-            <h3>Trade Mark</h3>
-            <p>Strategic advisors to the world’s greatest thinkers, makers, and doers.</p>
-            <a href="/services/patent">View service →</a>
-          </div>
-          <div className="service-point">
+import React, { useState } from 'react';
+import './InfoSection.css';
+import { PopUp } from '../PopUp/PopUp';
+import { ContentBox } from '../ContentBox/ContentBox';
 
-            <ContentBox style={{bottom:"100px"}} 
-            content={
-                    <div>
-                        <h1>Firm Highlights</h1>
-                        <h2>2023 US TRADEMARK REGISTRATION TOTEBOARD: 1st</h2>
+const InfoSection = () => {
+    const [popupOpen, setPopupOpen] = useState(false);
+    const [popupContent, setPopupContent] = useState('');
+
+    const handleOpenPopup = (content) => () => {
+        setPopupContent(content);
+        setPopupOpen(true);
+    };
+
+    const handleClosePopup = () => {
+        setPopupOpen(false);
+    };
+
+    return (
+        <div className="info-section">
+            <div className="services-section">
+                <div className="services-header">
+                    <h2>Services</h2>
+                    <a href="/services" className="all-services">See all services</a>
+                </div>
+                <div className="service-points">
+                <div className="content-box-wrapper">
+                        <ContentBox content={<div className="service-point">
+                            <h1>Trade Mark</h1>
+                            <p>A strong trade mark – as reliable as your good name
+Trade mark protection as a guarantee for your success on the market.</p>
+                        </div>} onClick={handleOpenPopup('Detail about Trade Mark Service')}/>
                     </div>
-                } 
-            url={"www.google.com"}/>
-          </div>
+                    <div className="content-box-wrapper">
+                        <ContentBox content={<div className="service-point">
+                            <h1>Patent</h1>
+                            <p>Protect industrial innovations for the long term with patents</p>
+                        </div>} onClick={handleOpenPopup('Detail about Patent Service')}/>
+                    </div>
+
+                    <div className="content-box-wrapper">
+                        <ContentBox content={<div className="service-point">
+                            <h1>Design</h1>
+                            <p>Safeguard unique designs in international competition</p>
+                        </div>} onClick={handleOpenPopup('Detail about Design Service')}/>
+                    </div>
+                    {/* Add more service points as needed */}
+                </div>
+            </div>
+            {popupOpen && (
+                <PopUp content={popupContent} onClose={handleClosePopup} />
+            )}
         </div>
-      </div>
-    </div>
-  );
+    );
 };
 
 export default InfoSection;

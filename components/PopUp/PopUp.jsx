@@ -1,25 +1,35 @@
 import React, { useState, useEffect, useRef } from 'react';
-import './PopUp.css'; // Make sure to create a corresponding CSS file
-
-export const PopUp = ({ content }) => {
+import './PopUp.css';
+import close from '../../pictures/close.png'
+export const PopUp = ({ content, onClose }) => {
   const [contentHeight, setContentHeight] = useState('auto');
-
-  // A ref to the content container to measure its size
   const contentRef = useRef(null);
 
   useEffect(() => {
-    // Check if the content height is larger than the default size
-    if (contentRef.current.scrollHeight > contentRef.current.clientHeight) {
+    if (contentRef.current) {
       setContentHeight(`${contentRef.current.scrollHeight}px`);
     }
-  }, [content]); // This effect should run every time content changes
+  }, [content]);
+
+  if (!content) {
+    return null;  // If no content is provided, do not render the PopUp
+  }
 
   return (
-    <div className="popup-background">
-      <div className="popup-container" style={{ height: contentHeight }}>
+    <div className="popup-background" onClick={onClose}>
+      <div className="popup-container" onClick={e => e.stopPropagation()}>
         <div className="popup-content" ref={contentRef}>
           {content}
         </div>
+        <img
+            src={close}
+            className="close-popup"
+            alt="Close"
+            onClick={(e) => {
+                e.stopPropagation();
+                onClose();
+            }}
+            />
       </div>
     </div>
   );

@@ -84,7 +84,7 @@ function App() {
             email: 'sll@mg-ip.com',
             phone: '(703)621-7140',
             photo: scott, // Replace with the path to the photo
-            education: 'Mechanical, Electrical Engineering, Electro-Mechanical, design patent prosecution',
+            education: 'Mechanical Engineering, Electrical Engineering, Electro-Mechanical, design patent prosecution',
             memberships: ''
           },
           {
@@ -112,7 +112,7 @@ function App() {
             email: 'smt@mg-ip.com',
             phone: '(703)621-7140',
             photo: scott_m, // Replace with the path to the photo
-            education: 'Mechanical, Chemical, Electro-Mechanical',
+            education: 'Mechanical Engineering, Chemical, Electro-Mechanical',
             memberships: ''
           },
           {
@@ -162,7 +162,7 @@ function App() {
             email: 'amt@mg-ip.com',
             phone: '(703)621-7140',
             photo: allison, // Replace with the path to the photo
-            education: 'Industrial Engineering, Mechanical, Electrical, Automotive',
+            education: 'Industrial Engineering, Mechanical Engineering, Electrical, Automotive',
             memberships: ''
           },
           {
@@ -222,7 +222,7 @@ function App() {
             email: 'rfg@mg-ip.com',
             phone: '(703)621-7140',
             photo: robert, // Replace with the path to the photo
-            education: 'Electrical, Electro-Mechanical, Mechanical ',
+            education: 'Electrical, Electro-Mechanical, Mechanical Engineering ',
             memberships: ''
           },
           {
@@ -232,7 +232,7 @@ function App() {
             email: 'rwg@mg-ip.com',
             phone: '(703)621-7140',
             photo: rui, // Replace with the path to the photo
-            education: 'Electrical, Electro-Mechanical, Mechanical ',
+            education: 'Electrical, Electro-Mechanical, Mechanical Engineering',
             memberships: 'Member of INTA Committee , Teaching US Legal Writing, Research and Analysis as Adjunct Professor at Georgetown University Law Center since 2022'
           },
           {

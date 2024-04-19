@@ -8,7 +8,7 @@
   
   .services-section {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1600px;
     margin: auto;
     padding-top: 100px; /* Default padding for larger screens */
   }
@@ -44,9 +44,9 @@
   
   .service-points {
     display: flex;
-    justify-content: space-between;
+    justify-content:space-between;
     flex-wrap: wrap;
-    padding-top: 30px; /* Space above service points */
+    padding-top: 10px; /* Space above service points */
   }
   
   .service-point {
@@ -60,32 +60,37 @@
     color: #333;
   }
   
-  .service-point p {
-    color: #666;
-  }
-  
-  .service-point a {
-    color: #007bff;
-    text-decoration: none;
-    transition: color 0.3s ease;
-  }
+
   
   .service-point a:hover,
   .service-point a:focus {
     color: #0056b3;
   }
-  
+  .content-box-wrapper {
+    margin: 20px; /* Adjust this value based on your design needs */
+}
   /* Media query for larger screens where the gap needs to be smaller */
-  @media (min-width: 1024px) {
+  @media (min-width: 1325.5px) {
     .services-section {
       padding-top: 0; /* Smaller padding-top for larger screens */
     }
+    
   }
-  
+  @media (min-width: 1024px) and (max-width: 1325.5px){
+    .service-points {
+        flex-direction: column;
+        align-items: center;
+    }
+    .services-section {
+        padding-top: 0; /* Smaller padding-top for larger screens */
+      }
+
+  }
   /* Media query for tablets and smaller desktop screens */
   @media (max-width: 1024px) {
     .service-points {
-      justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
     }
   
     .service-point {
