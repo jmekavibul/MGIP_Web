@@ -9,25 +9,31 @@ const InfoSection = () => {
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
     useEffect(() => {
+        // Correctly declare and instantiate the IntersectionObserver
         const observer = new IntersectionObserver(
-            ([entry]) => {
-                // Only trigger animation when the section is fully visible
+            (entries) => {
+                // entries: array of observed elements
+                const entry = entries[0];  // assuming you're observing one element
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect();
+                    observer.disconnect();  // Disconnect observer after it's visible
                 }
             },
             {
-                threshold: 0.5 // Adjust the threshold to when you want the animation to trigger
+                threshold: 0.25  // Trigger when 25% of the target is visible
             }
         );
 
+        // Make sure the element exists and then observe it
         if (sectionRef.current) {
             observer.observe(sectionRef.current);
         }
 
+        // Clean up the observer on component unmount
         return () => {
-            observer.disconnect();
+            if (observer) {
+                observer.disconnect();
+            }
         };
     }, []);
     const handleOpenPopup = (content) => () => {

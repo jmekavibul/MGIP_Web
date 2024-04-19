@@ -125,9 +125,14 @@
     .service-point {
       width: 100%; /* Full width on mobile */
     }
-    
+
+    .content-box-wrapper {
+        width: 100%;  
+    }
     .services-section {
-      padding-top: 80px; /* Increased padding-top for mobile to avoid overlap */
+        padding-top: 50px; 
+        transform: translateX(0);  
+        opacity: 1;  
     }
   }
   
