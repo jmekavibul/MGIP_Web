@@ -91,7 +91,7 @@
       }
       
       .hero-bar {
-        background: #0172ce; /* Full white for the active bar */
+        background: #839ebd; /* Full white for the active bar */
         width: 0%; /* Start with no width */
         height: 100%;
         position: absolute;

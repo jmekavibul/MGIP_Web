@@ -34,14 +34,14 @@ Trade mark protection as a guarantee for your success on the market.</p>
                     <div className="content-box-wrapper">
                         <ContentBox content={<div className="service-point">
                             <h1>Patent</h1>
-                            <p>Protect industrial innovations for the long term with patents</p>
+                            <p>Protect industrial innovations - secure your innovations and creativity for the long term with patents</p>
                         </div>} onClick={handleOpenPopup('Detail about Patent Service')}/>
                     </div>
 
                     <div className="content-box-wrapper">
                         <ContentBox content={<div className="service-point">
                             <h1>Design</h1>
-                            <p>Safeguard unique designs in international competition</p>
+                            <p>Protect unique designs in international competitions, secure intellectual property rights</p>
                         </div>} onClick={handleOpenPopup('Detail about Design Service')}/>
                     </div>
                     {/* Add more service points as needed */}

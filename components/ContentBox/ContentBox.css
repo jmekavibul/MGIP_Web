@@ -1,6 +1,7 @@
 .content-box-container {
-    color: white;
-    background: #839ebd;
+    
+    color: black;
+    background-color: #fcfeff; /* Slight background change on hover */
     padding: 20px;
     border-radius: 30px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
@@ -13,8 +14,9 @@
 }
   
   .content-box-container:hover {
-    color: black;
-    background-color: #ffffff; /* Slight background change on hover */
+    
+    color: white;
+    background: #839ebd;
   }
   
   .content-box {
