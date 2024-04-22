@@ -1,0 +1,56 @@
+.timeLine-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .timeLine-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+  }
+  
+  .timeLine-step-with-connector .timeLine-icon-and-Line:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -15px; /* Adjust based on actual width of the Line */
+    width: 30px; /* This is the width of the connector Line */
+    border-top: 2px solid #ccc; /* Match this with the image */
+    transform: translateY(-50%);
+  }
+  
+  .timeLine-icon-and-Line {
+    position: relative;
+    padding: 10px;
+  }
+  
+  .timeLine-icon {
+    display: block;
+    margin-bottom: 8px;
+    width: 30px; /* Adjust based on actual size of your icons */
+    height: auto;
+  }
+  
+  .timeLine-info {
+    text-align: center;
+  }
+  
+  .timeLine-title {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 4px;
+  }
+  
+  .timeLine-time {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Additional styles for error state or other states */
+  .timeLine-step.error .timeLine-icon-and-Line {
+    /* Custom styles for error state, like a red Line or icon */
+  }
+  
+  /* Add additional styling as per the UI design */
+  

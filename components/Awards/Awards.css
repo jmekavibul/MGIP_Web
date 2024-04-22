@@ -1,15 +1,24 @@
-.awards-container {
-    /* Set the container to a full viewport height and add top padding */
-    min-height: 70vh;
-    padding-top: 55px; /* Additional padding at the top */
-    
-    /* Background image configuration */
+.background-image {
+    min-height: 150vh;
+    position: absolute;
+    top: 0px; /* Initial top position */
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-image: url('../../pictures/blankUS.svg');
-    background-attachment: fixed;
-    background-position: center 230px; /* Center the image in the container */
-    background-repeat: no-repeat; /* Do not repeat the background image */
-    background-size:auto; /* Change from 'cover' to 'contain' */
+    background-repeat: no-repeat;
+    background-size:auto; /* or 'contain' based on your desired effect */
+    
+    background-position: center 0px;
+    z-index: -1; /* Ensure it's behind the content */
   }
+  
+  .awards-container {
+    /* ... other styles ... */
+    position: relative; /* Needed for absolute positioning of the background div */
+    overflow: hidden; /* Ensures the background div is clipped to the container's bounds */
+  }
+  
   
   .awards-grid {
     display: grid;
@@ -58,4 +67,12 @@
   .award-logo {
     /* If logos are present in the design, add them here */
   }
-  
+  @media (max-width: 1200px) {
+    .awards-grid {
+        max-width: auto;
+        min-width: 0px;
+    }
+    .background-image{
+        background-size: contain;
+    }
+  }

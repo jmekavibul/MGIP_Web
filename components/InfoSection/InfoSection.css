@@ -4,22 +4,18 @@
     align-items: center;
     gap: 40px;
     padding: 50px 0; /* Consistent padding for top and bottom */
-    padding-bottom: 0;
-    background: transparent; /* Make background transparent */
-}
-
+  }
   
-.services-section {
+  .services-section {
     width: 100%;
     max-width: 1600px;
     margin: auto;
     padding-top: 100px; /* Default padding for larger screens */
-    opacity: 1; /* Make sure it's fully visible */
-    transform: translateX(0);
-    background: transparent; /* Make background transparent */
-    transition: transform 0.5s ease-out, opacity 0.5s ease-out;
-}
-.services-section.visible {
+    opacity: 0;
+    transform: translateX(-50%);
+    transition: transform 1s ease-out, opacity 1s ease-out;
+  }
+  .services-section.visible {
     opacity: 1;
     transform: translateX(0);
 }
@@ -63,8 +59,7 @@
     flex-basis: calc(25% - 20px); /* Adjust width based on spacing */
     margin: 10px;
     text-align: left;
-    background: transparent; /* Make individual service point background transparent */
-}
+  }
   
   .service-point h3 {
     margin-top: 0;
@@ -81,9 +76,15 @@
     margin: 20px; /* Adjust this value based on your design needs */
 }
   /* Media query for larger screens where the gap needs to be smaller */
-  @media (min-width: 1325.5px) {
+  @media  (min-width: 1335.1px){
+    .services-section {
+        padding-top: 0; /* Smaller padding-top for larger screens */
+      }
+  }
+  @media (min-width: 1325.5px) and (max-width: 1335px) {
     .services-section {
       padding-top: 0; /* Smaller padding-top for larger screens */
+      padding-left:250px;
     }
     
   }
