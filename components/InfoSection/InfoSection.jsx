@@ -36,6 +36,7 @@ const InfoSection = () => {
             }
         };
     }, []);
+    
     const handleOpenPopup = (content) => () => {
         setPopupContent(content);
         setPopupOpen(true);
@@ -50,7 +51,7 @@ const InfoSection = () => {
             <div ref={sectionRef} className={`services-section ${isVisible ? 'visible' : ''}`}>
                 <div className="services-header">
                     <h2>Services</h2>
-                    <a href="/services" className="all-services">See all services</a>
+                    <a href="/MGIP_Web/services" className="all-services">See all services</a>
                 </div>
                 <div className="service-points">
                 <div className="content-box-wrapper">

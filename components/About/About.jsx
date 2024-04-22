@@ -5,6 +5,7 @@ import uspto from '../../pictures/uspto.jpg';
 import dc from '../../pictures/dc.jpg';
 import './About.css';
 import InfoSection from '../InfoSection/InfoSection';
+import Awards from '../Awards/Awards';
 
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
@@ -81,6 +82,10 @@ export const About = () => {
       <div className='infoSection'>
         <InfoSection />
       </div>
+      <div className='awards'> 
+        <Awards></Awards>
+      </div>
+      
     </div>
   );
 };

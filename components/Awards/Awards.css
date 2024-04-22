@@ -1,0 +1,61 @@
+.awards-container {
+    /* Set the container to a full viewport height and add top padding */
+    min-height: 70vh;
+    padding-top: 55px; /* Additional padding at the top */
+    
+    /* Background image configuration */
+    background-image: url('../../pictures/blankUS.svg');
+    background-attachment: fixed;
+    background-position: center 230px; /* Center the image in the container */
+    background-repeat: no-repeat; /* Do not repeat the background image */
+    background-size:auto; /* Change from 'cover' to 'contain' */
+  }
+  
+  .awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Set the grid row gap to create the horizontal line */
+    grid-row-gap: 2px;
+    /* Adjust the width as needed */
+    max-width: 1200px;
+    min-width: 1200px;
+    margin: 0 auto;
+    padding-top: 20px;
+  }
+  
+  .award-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Remove padding and background to overlay the text on the background image */
+    padding: 5px;
+    padding-bottom: 20px;
+  }
+  
+  /* Add a right border for the vertical lines, except for the last item in a row */
+  .award-card:not(:nth-child(3n)) {
+    border-right: 2px solid #b8b8b8;
+  }
+  
+  /* Add a top border to all items except those in the first row */
+  .award-card:nth-child(n+4) {
+    border-top: 2px solid #b8b8b8;
+  }
+  
+  .award-number {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 80px;
+    font-weight: bold;
+    color: transparent; /* Make the text color transparent */
+    -webkit-text-stroke: 2px rgb(36, 112, 140); /* Apply a 2px stroke */
+  }
+  
+  .award-description {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .award-logo {
+    /* If logos are present in the design, add them here */
+  }
+  
