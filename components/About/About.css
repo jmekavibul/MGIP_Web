@@ -3,7 +3,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: flex-start; /* Aligns children to the start of the flex container */
-        width: 100%;
+        width: auto;
         /* If you want a minimum height for the .about section, you can uncomment the following line */
         /* min-height: 100vh; */
     }

@@ -95,4 +95,14 @@
   .text-section button:hover {
     background-color: #0052a3;
   }
-  
+
+  @media (max-width: 500px) {
+   .card-container{
+        display: grid;
+        justify-content: center;
+        padding-left: 50px;
+    }
+    .image-section{
+        display: none;
+    }
+  }
