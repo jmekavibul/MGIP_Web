@@ -1,6 +1,9 @@
 .timeLine-container {
     display: flex;
     align-items: center;
+    justify-content: center; /* Centers the steps horizontally */
+    padding: 10px;
+    border-radius: 5px; /* Optional: if you want rounded corners */
   }
   
   .timeLine-step {
@@ -8,49 +11,64 @@
     flex-direction: column;
     align-items: center;
     position: relative;
+    padding: 25px;
   }
   
-  .timeLine-step-with-connector .timeLine-icon-and-Line:after {
+  /* The arrow is created using a combination of before and after pseudo-elements */
+  .timeLine-step:not(:last-child)::after {
     content: '';
     position: absolute;
-    top: 50%;
-    right: -15px; /* Adjust based on actual width of the Line */
-    width: 30px; /* This is the width of the connector Line */
-    border-top: 2px solid #ccc; /* Match this with the image */
-    transform: translateY(-50%);
+    top: 59%;
+    right: -18px; /* Half of your arrow width */
+    border-top: 2px solid #ccc;
+    width: 35px;
   }
   
-  .timeLine-icon-and-Line {
-    position: relative;
-    padding: 10px;
+  /* Add specific styles for each type of step based on the provided image */
+  .timeLine-step.draft .timeLine-icon {
+    /* Styles for the draft icon */
+  }
+  
+  .timeLine-step.scheduled .timeLine-icon {
+    /* Styles for the scheduled icon */
+  }
+  
+  .timeLine-step.error .timeLine-icon {
+    /* Styles for the error icon */
   }
   
   .timeLine-icon {
-    display: block;
-    margin-bottom: 8px;
-    width: 30px; /* Adjust based on actual size of your icons */
+    width: 40px; /* Adjust based on actual size of your icons */
     height: auto;
   }
   
   .timeLine-info {
     text-align: center;
+    padding: 5px 0;
   }
   
   .timeLine-title {
-    font-size: 16px;
+    font-weight: bold;
     color: #333;
-    margin-bottom: 4px;
   }
   
   .timeLine-time {
-    font-size: 14px;
-    color: #666;
+    font-size: 12px;
+    color: #999;
   }
   
-  /* Additional styles for error state or other states */
-  .timeLine-step.error .timeLine-icon-and-Line {
-    /* Custom styles for error state, like a red Line or icon */
+  /* Style for the details button */
+  .timeLine-step.error .timeLine-details {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 5px 10px;
+    background-color: #d9534f;
+    color: white;
+    font-size: 12px;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
   }
   
-  /* Add additional styling as per the UI design */
+  /* Add hover effects and other stylings as needed */
   

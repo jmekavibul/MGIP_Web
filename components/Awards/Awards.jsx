@@ -4,6 +4,9 @@ import TimeLine from '../TimeLine/TimeLine';
 import { useEffect } from 'react';
 import DescriptionCard from '../DescriptionCard/DescriptionCard';
 import dcard from '../../pictures/descriptioncard.jpg';
+import building from '../../pictures/building.png';
+import lawyer from '../../pictures/lawyer.png';
+import city from '../../pictures/city.png';
 const AwardCard = ({ number, description, logo }) => (
   <div className="award-card">
     <div className="award-number">{number}</div>
@@ -22,9 +25,9 @@ const Awards = () => {
     { number: 'Ser', description: 'Our partnership '},
   ];
   const stepsData = [
-    { title: 'Em rascunho', time: '26/03/2019 09:51', picture: 'draft' },
-    { title: 'Agendado', time: '26/03/2019 09:51', picture: 'scheduled' },
-    { title: 'Erro', time: '26/03/2019 09:51', picture: 'error' },
+    { title: 'founded the firm', time: '2006', picture: building },
+    { title: 'expended team to 6', time: '2007', picture: lawyer },
+    { title: 'moved to fairfax', time: '2008', picture: city },
     // ... add more steps as needed
   ];
   const info = {

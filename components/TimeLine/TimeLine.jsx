@@ -1,10 +1,11 @@
 import React from 'react';
 import './TimeLine.css'; // Ensure you create this CSS file
+import { IoAccessibilityOutline } from "react-icons/io5";
 
 const TimeLineStep = ({ title, time, icon, isLast }) => (
   <div className={`timeLine-step ${isLast ? '' : 'timeLine-step-with-connector'}`}>
     <div className="timeLine-icon-and-Line">
-      <img src={icon} alt={title} className="timeLine-icon" />
+      <img src={icon}  className="timeLine-icon" />
       {!isLast && <div className="timeLine-Line"></div>}
     </div>
     <div className="timeLine-info">
@@ -21,9 +22,11 @@ const TimeLine = ({ steps }) => (
         key={index}
         title={step.title}
         time={step.time}
-        icon={step.icon}
+        icon={step.picture}
         isLast={index === steps.length - 1}
-      />
+
+      ></TimeLineStep>
+      
     ))}
   </div>
 );
