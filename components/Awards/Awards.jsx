@@ -17,12 +17,12 @@ const AwardCard = ({ number, description, logo }) => (
 
 const Awards = () => {
   const awardsData = [
-    { number: '30+', description: 'Attorneys' },
-    { number: '30', description: 'Cities Coast to Coast' },
-    { number: '35+', description: 'States with ' },
-    { number: '200', description: 'Strategic '},
-    { number: 'BTI', description: 'Recommended '},
-    { number: 'Ser', description: 'Our partnership '},
+    { number: '1500+', description: 'Trademark registrations 2023' },
+    { number: '1700+', description: 'Patent registrations 2023' },
+    { number: '4+', description: 'Countries of clients' },
+    { number: '>8m', description: 'To USPTO office'},
+    { number: '1st, 1st', description: '2023 US Trademark, 2022 US Trademark'},
+    { number: 'Top 10', description: '2023 US Patent, 2022 US Patent'},
   ];
   const stepsData = [
     { title: 'founded the firm', time: '2006', picture: building },
