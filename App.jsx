@@ -45,6 +45,7 @@ import soon from './pictures/SooC_340x464.jpg';
 import sally from './pictures/Sally_Mueller_340x464.jpg';
 
 function App() {
+  console.log('test1234');
     const teamMembers = [
         {
           id: 1,
@@ -432,14 +433,10 @@ function App() {
             <div className='App'>
                 <NavBar/>
                 <main>
-
-                    <Routes>
-                        <Route path="/" element={<About />}/>
-                        <Route path="/MGIP_Web" element={<About />}/>
-                        <Route path="/team" element={<Team members={teamMembers}/>}/>
-                        <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
-                    </Routes>
-                
+                  <Routes>
+                    <Route path="/" element={<About />}/>
+                    <Route path="/team" element={<Team members={teamMembers}/>}/>
+                  </Routes>
                 </main>
                 <Footer/>
             </div>
