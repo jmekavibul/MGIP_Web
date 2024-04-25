@@ -150,5 +150,8 @@
         transform: translateX(0);  
         opacity: 1;  
     }
+    .info-section{
+        margin-top: 58vh;
+    }
   }
   
