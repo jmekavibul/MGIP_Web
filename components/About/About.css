@@ -62,13 +62,14 @@
     .hero-content p {
         font-family: "Urbanist", sans-serif;
         font-weight: 400;
-        font-size: 22px;
+        font-size: 20px;
         line-height: 1.5;
         font-style: normal;
         word-wrap: break-word;
         color: rgb(255, 255, 255);
         text-align: center;
         max-width: 900;
+        padding-top: 15px;
     }
 
     .hero-text.visible .hero-header p,
@@ -130,6 +131,9 @@
         }
           .infoSection{
             margin-top: 55vh;
+        }
+        .hero-content p {
+            font-size: 17px;
         }
     }
 
