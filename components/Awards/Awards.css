@@ -57,6 +57,7 @@
     font-weight: bold;
     color: transparent; /* Make the text color transparent */
     -webkit-text-stroke: 2px rgb(36, 112, 140); /* Apply a 2px stroke */
+    transition: margin-right 2s;
   }
   
   .award-description {
