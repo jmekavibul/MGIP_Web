@@ -46,7 +46,6 @@
   .all-services {
     text-decoration: none;
     color: #839ebd;
-    align-self: flex-end; /* Ensures the link aligns to the bottom of the parent */
     padding-bottom: 12px;
   }
   
