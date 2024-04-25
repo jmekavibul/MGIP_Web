@@ -6,6 +6,10 @@ import dc from '../../pictures/dc.jpg';
 import './About.css';
 import InfoSection from '../InfoSection/InfoSection';
 import Awards from '../Awards/Awards';
+import TimeLine from '../TimeLine/TimeLine';
+import building from '../../pictures/building.png';
+import lawyer from '../../pictures/lawyer.png';
+import city from '../../pictures/city.png';
 
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
@@ -55,7 +59,12 @@ export const About = () => {
       startProgressBar(index);
     }
   };
-
+  const stepsData = [
+    { title: 'founded the firm', time: '2006', picture: building },
+    { title: 'expended team to 6', time: '2007', picture: lawyer },
+    { title: 'moved to fairfax', time: '2008', picture: city },
+    // ... add more steps as needed
+  ];
   return (
     <div className='about'>
       {presentData.map((item, index) => (
@@ -82,10 +91,8 @@ export const About = () => {
       <div className='infoSection'>
         <InfoSection />
       </div>
-      <div className='awards'> 
-        <Awards></Awards>
-      </div>
-      
+
+      <TimeLine steps={stepsData} />
     </div>
   );
 };

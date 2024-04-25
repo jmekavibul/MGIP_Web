@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef  } from 'react';
 import './InfoSection.css';
 import { PopUp } from '../PopUp/PopUp';
 import { ContentBox } from '../ContentBox/ContentBox';
+import Awards from '../Awards/Awards';
 
 const InfoSection = () => {
     const [popupOpen, setPopupOpen] = useState(false);
@@ -50,9 +51,10 @@ const InfoSection = () => {
         <div className="info-section">
             <div ref={sectionRef} className={`services-section ${isVisible ? 'visible' : ''}`}>
                 <div className="services-header">
-                    <h2>Services</h2>
+                    <h2>Firm Highlight</h2>
                     <a href="/MGIP_Web/services" className="all-services">See all services</a>
                 </div>
+                <Awards></Awards>
                 <div className="service-points">
                 <div className="content-box-wrapper">
                         <ContentBox content={<div className="service-point">

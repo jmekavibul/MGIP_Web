@@ -4,9 +4,7 @@ import TimeLine from '../TimeLine/TimeLine';
 import { useEffect } from 'react';
 import DescriptionCard from '../DescriptionCard/DescriptionCard';
 import dcard from '../../pictures/descriptioncard.jpg';
-import building from '../../pictures/building.png';
-import lawyer from '../../pictures/lawyer.png';
-import city from '../../pictures/city.png';
+
 const AwardCard = ({ number, description, logo }) => (
   <div className="award-card">
     <div className="award-number">{number}</div>
@@ -24,12 +22,7 @@ const Awards = () => {
     { number: '1st, 1st', description: '2023 US Trademark, 2022 US Trademark'},
     { number: 'Top 10', description: '2023 US Patent, 2022 US Patent'},
   ];
-  const stepsData = [
-    { title: 'founded the firm', time: '2006', picture: building },
-    { title: 'expended team to 6', time: '2007', picture: lawyer },
-    { title: 'moved to fairfax', time: '2008', picture: city },
-    // ... add more steps as needed
-  ];
+
   const info = {
     title: 'Client Counseling for IP law',
     description: 'We provide legal services to large domestic and foreign corporations and to a wide range of mid-sized and start-up organizations. Our technical, business, and legal experience allows us to assist our clients in obtaining protection for their intellectual property in an efficient and cost-effective manner.',
@@ -65,11 +58,7 @@ const Awards = () => {
   return (
     <div className="awards-container">
         <div className="background-image"></div> 
-      <div className="awards-grid">
-        {awardsData.map((award, index) => (
-          <AwardCard key={index} {...award} />
-        ))}
-      </div>
+
       
       <DescriptionCard
         title={info.title}
@@ -83,9 +72,12 @@ const Awards = () => {
             'Secondary Private Equity Transactions'
         ]}
         />
-
-
-      <TimeLine steps={stepsData}/>
+        
+      <div className="awards-grid">
+        {awardsData.map((award, index) => (
+          <AwardCard key={index} {...award} />
+        ))}
+      </div>
     </div>
   );
 };

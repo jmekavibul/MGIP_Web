@@ -5,7 +5,7 @@ export default defineConfig({
   base: "/MGIP_Web",
   plugins: [react()],
   build: {
-    outDir: 'dist',  // Change this from 'build' to 'dist'
+    outDir: 'build',  // Change this from 'build' to 'dist'
     // ... any other build options you want to specify
   },
 });

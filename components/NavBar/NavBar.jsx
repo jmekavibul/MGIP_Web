@@ -21,7 +21,6 @@ export const NavBar = () => {
 
       <div className="navbar-logo">
         <Link to='/'>
-
             <img src="mgip-logo.png" alt="Logo" />
         </Link>
       </div>

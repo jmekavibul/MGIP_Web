@@ -24,8 +24,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    padding-top: 50px;
+    padding-top: 30px;
     gap: 100px;
+    padding-bottom: 50px;
   }
   
   .text-section {
