@@ -123,7 +123,7 @@
   /* Media query for mobile screens */
   @media (max-width: 768px) {
     .services-header {
-        padding-top: 70px;
+        padding-top: 80px;
       flex-direction: column;
       align-items: center;
     }
@@ -149,9 +149,6 @@
     .services-section {
         transform: translateX(0);  
         opacity: 1;  
-    }
-    .info-section{
-        margin-top: 58vh;
     }
   }
   
