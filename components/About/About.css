@@ -83,7 +83,7 @@
     .hero-bar-play {
         position: absolute;
         bottom: 32%; /* Adjust this as needed */
-        left: 52%;
+        left: 50%;
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
@@ -94,7 +94,7 @@
         flex: 1;
         margin: 0 4px;
         background: rgba(255, 255, 255, 0.5); /* Light background for the inactive bar */
-        height: 11px;
+        height: 14px;
         cursor: pointer;
         position: relative; /* Needed to position the .hero-bar absolutely inside it */
       }
@@ -117,12 +117,13 @@
     }
     @media (max-width: 768px) {
         .hero-bar-play {
-            width: 30%; /* Increase the width for smaller screens */
+            width: 25%; /* Increase the width for smaller screens */
+            bottom: 35%;
           }
           
           .hero-bar-container {
             margin: 0 4px; /* Reduce the gap between the bars */
-            height: 12px; /* Make the bars thinner */
+            height: 14px; /* Make the bars thinner */
           }
           .hero-text {
             top:35%;
@@ -139,12 +140,13 @@
 
     @media (min-width: 768px)and (max-width: 850px) {
         .hero-bar-play {
-            width: 30%; /* Increase the width for smaller screens */
+            width: 25%; /* Increase the width for smaller screens */
+            bottom: 35%;
           }
           
           .hero-bar-container {
             margin: 0 4px; /* Reduce the gap between the bars */
-            height: 8px; /* Make the bars thinner */
+            height: 14px; /* Make the bars thinner */
           }
         .hero-text {
             top:35%;
@@ -159,12 +161,13 @@
     }
     @media (min-width: 850px)  and (max-width: 1024px) {
         .hero-bar-play {
-            width: 20%; /* Increase the width for smaller screens */
+            width: 20%; /* Increase the width for smaller screens */            
+            bottom: 35%;
           }
           
           .hero-bar-container {
             margin: 0 4px; /* Reduce the gap between the bars */
-            height: 8px; /* Make the bars thinner */
+            height: 14px; /* Make the bars thinner */
           }
         .hero-text {
             top:35%;
@@ -179,11 +182,12 @@
     @media (min-width:1024px)  and (max-width: 1250px) {
         .hero-bar-play {
             width: 15%; /* Increase the width for smaller screens */
+            bottom: 35%;
           }
           
           .hero-bar-container {
             margin: 0 4px; /* Reduce the gap between the bars */
-            height: 12px; /* Make the bars thinner */
+            height: 14px; /* Make the bars thinner */
           }
         .background {
             background-position: 50% 50%; /* Center the image on larger screens */

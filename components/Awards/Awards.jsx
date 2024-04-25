@@ -65,11 +65,11 @@ const Awards = () => {
         description={info.description}
         gridItems={[
             'We counsel U.S. and international clients.',
-            'We counsel clients on all copyright matters.',
-            'North American Transaction Focus',
-            'Corporate Carve-Outs',
-            'Majority Ownership',
-            'Secondary Private Equity Transactions'
+            'We counsel clients on all Patent, Trademark.',
+            'We protect clients for their intellectual property',
+            'We provide service in multiple languages',
+            'Attorneys with science and technical background',
+            'Located in the DC metro area'
         ]}
         />
         
