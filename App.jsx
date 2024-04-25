@@ -442,6 +442,7 @@ function App() {
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/MGIP_Web/contact" element={<Contact/>}></Route>
+                        <Route path="/contact" element={<Contact/>}></Route>
                     </Routes>
                 
                 </main>
