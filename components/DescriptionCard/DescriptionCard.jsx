@@ -1,12 +1,11 @@
 import React, { useEffect, useRef } from 'react';
 import './DescriptionCard.css';
 
-const DescriptionCard = ({ title, description, picture }) => {
+const DescriptionCard = ({ title, description, gridItems }) => {
   const textRef = useRef(null);
-  const imageRef = useRef(null);
+  const gridRef = useRef(null);
 
   useEffect(() => {
-
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach(entry => {
@@ -18,11 +17,13 @@ const DescriptionCard = ({ title, description, picture }) => {
       },
       { threshold: 0.5 } // Triggers when 50% of the target is visible
     );
+
     if (textRef.current) {
       observer.observe(textRef.current);
     }
-    if (imageRef.current) {
-      observer.observe(imageRef.current);
+
+    if (gridRef.current) {
+      observer.observe(gridRef.current);
     }
 
     return () => observer.disconnect();
@@ -35,8 +36,17 @@ const DescriptionCard = ({ title, description, picture }) => {
         <p>{description}</p>
         <button>OUR APPROACH</button>
       </div>
-      <div ref={imageRef} className="image-section">
-        <img src={picture} alt={title} />
+      <div ref={gridRef} className="grid-section">
+        {gridItems.map((item, index) => (
+          <div key={index} className="grid-item">
+            <span className="checkmark">
+              <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
+                <path d="M19 22h-19v-19h19v2h-1v-1h-17v17h17v-9.502h1v10.502zm5-19.315l-14.966 15.872-5.558-6.557.762-.648 4.833 5.707 14.201-15.059.728.685z"/>
+              </svg>
+            </span>
+            <p>{item}</p>
+          </div>
+        ))}
       </div>
     </div>
   );

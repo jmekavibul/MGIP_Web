@@ -71,7 +71,19 @@ const Awards = () => {
         ))}
       </div>
       
-      <DescriptionCard title={info.title} description={info.description} picture={info.picture}></DescriptionCard>
+      <DescriptionCard
+        title={info.title}
+        description={info.description}
+        gridItems={[
+            'We counsel U.S. and international clients.',
+            'We counsel clients on all copyright matters.',
+            'North American Transaction Focus',
+            'Corporate Carve-Outs',
+            'Majority Ownership',
+            'Secondary Private Equity Transactions'
+        ]}
+        />
+
 
       <TimeLine steps={stepsData}/>
     </div>

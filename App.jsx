@@ -43,6 +43,7 @@ import sherri from './pictures/Sherri_340x464.jpg';
 import christopher from './pictures/ChrisE_340x464.jpg';
 import soon from './pictures/SooC_340x464.jpg';
 import sally from './pictures/Sally_Mueller_340x464.jpg';
+import Scrollbars from 'rc-scrollbars';
 
 function App() {
     const teamMembers = [
@@ -430,6 +431,7 @@ function App() {
     return(
         <Router>
             <div className='App'>
+                
                 <NavBar/>
                 <main>
 
@@ -443,6 +445,7 @@ function App() {
                 </main>
                 <Footer/>
             </div>
+
         </Router>
     )
 }
