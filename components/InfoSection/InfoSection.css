@@ -107,7 +107,8 @@
   /* Media query for tablets and smaller desktop screens */
   @media (max-width: 1024px) {
     .services-header {
-        padding-top: 100px;}
+        padding-top: 100px;
+    }
     .service-points {
         padding-top: 70px;
         flex-direction: column;

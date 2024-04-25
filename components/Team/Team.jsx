@@ -144,7 +144,7 @@ export const Team = ({ members }) => {
 
                 <p>{member.title}</p>
                 <p>{member.email}</p>
-                <p>{member.memberships}</p>
+                <p>{member.phone}</p>
               </div>
             </div>
           </div>

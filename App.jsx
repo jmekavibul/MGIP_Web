@@ -44,6 +44,7 @@ import christopher from './pictures/ChrisE_340x464.jpg';
 import soon from './pictures/SooC_340x464.jpg';
 import sally from './pictures/Sally_Mueller_340x464.jpg';
 import Scrollbars from 'rc-scrollbars';
+import Contact from './components/Contact/Contact';
 
 function App() {
     const teamMembers = [
@@ -440,6 +441,7 @@ function App() {
                         <Route path="/MGIP_Web" element={<About />}/>
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
+                        <Route path="/MGIP_Web/contact" element={<Contact/>}></Route>
                     </Routes>
                 
                 </main>

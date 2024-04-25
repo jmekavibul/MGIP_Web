@@ -86,7 +86,7 @@
   }
   
   .grid-item p {
-    font-size: 15px;
+    font-size: 18px;
   }
   
   .checkmark {
@@ -110,7 +110,7 @@
   
     .text-section, 
     .grid-section {
-      width: 90%;
+      width: 70%;
     }
   
     .grid-section {
