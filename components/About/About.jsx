@@ -10,7 +10,7 @@ import TimeLine from '../TimeLine/TimeLine';
 import building from '../../pictures/building.png';
 import lawyer from '../../pictures/lawyer.png';
 import city from '../../pictures/city.png';
-import Contact from '../Contact/Contact'
+import GoogleMapComp from '../GoogleMap.jsx/GoogleMapComp';
 
 export const About = () => {
   const [backgroundCount, setBackGroundCount] = useState(0);
@@ -92,7 +92,6 @@ export const About = () => {
       <div className='infoSection'>
         <InfoSection />
       </div>
-        <Contact></Contact>
       <TimeLine steps={stepsData} />
     </div>
   );
