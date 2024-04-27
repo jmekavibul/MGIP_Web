@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import './DescriptionCard.css';
-
+import { useNavigate } from "react-router-dom";
 const DescriptionCard = ({ title, description, gridItems }) => {
   const textRef = useRef(null);
   const gridRef = useRef(null);
@@ -29,12 +29,18 @@ const DescriptionCard = ({ title, description, gridItems }) => {
     return () => observer.disconnect();
   }, []);
 
+  let navigate = useNavigate(); 
+  const routeChange = () =>{ 
+    let path = '/contact'; 
+    navigate(path);
+  }
+
   return (
     <div className="card-container">
       <div ref={textRef} className="text-section">
         <h2>{title}</h2>
         <p>{description}</p>
-        <button>OUR APPROACH</button>
+        <button onClick={routeChange}>SCHEDULE WITH US</button>
       </div>
       <div ref={gridRef} className="grid-section">
         {gridItems.map((item, index) => (
