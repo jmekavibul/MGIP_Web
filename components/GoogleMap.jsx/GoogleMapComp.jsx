@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, DirectionsRenderer } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '60%',
+  width: '65%',
   height: '500px',
   borderRadius: '20px'
 };
