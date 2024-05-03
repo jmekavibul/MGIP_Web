@@ -29,17 +29,18 @@ const Awards = () => {
     picture: dcard // Replace with your image path
   };
   useEffect(() => {
-    const parallaxStartScrollY = 750;
+    const parallaxStartScrollY = window.innerWidth < 500 ? 500 : 750;
     const background = document.querySelector('.background-image');
-  
+
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-  
+
       if (background) {
         if (currentScrollY > parallaxStartScrollY) {
           // Apply parallax effect only when scrolling down past the threshold
           const offset = currentScrollY - parallaxStartScrollY;
-          const parallaxSpeed = 0.5;
+          // Adjust parallax speed based on screen width
+          const parallaxSpeed = window.innerWidth < 500 ? 0.9 : 0.5; // Faster speed for smaller screens
           background.style.transform = `translateY(${offset * parallaxSpeed}px)`;
         } else {
           // Keep background position fixed when above the threshold
@@ -47,12 +48,12 @@ const Awards = () => {
         }
       }
     };
-  
+
     window.addEventListener('scroll', handleScroll);
-  
+
     // Cleanup function to remove the event listener when the component unmounts
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+}, []);
   
   
   return (
