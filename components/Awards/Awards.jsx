@@ -40,7 +40,7 @@ const Awards = () => {
           // Apply parallax effect only when scrolling down past the threshold
           const offset = currentScrollY - parallaxStartScrollY;
           // Adjust parallax speed based on screen width
-          const parallaxSpeed = window.innerWidth < 500 ? 0.8 : 0.5; // Faster speed for smaller screens
+          const parallaxSpeed = window.innerWidth < 500 ? 0.7 : 0.5; // Faster speed for smaller screens
           background.style.transform = `translateY(${offset * parallaxSpeed}px)`;
         } else {
           // Keep background position fixed when above the threshold
