@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Team.css';
 import teamphoto from '../../pictures/aiteam.jpg'
 import Select from 'react-select'
+import { Link } from 'react-router-dom';
 
 export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -36,8 +37,6 @@ export const Team = ({ members }) => {
     { value: 'Copyright', label: 'Copyright'},
     { value: 'Trademark', label: 'Trademark'},
     { value: 'Bio', label: 'Bio'},
-
-
   ];
 
   const handleFieldChange = selectedOption => {
@@ -80,13 +79,11 @@ export const Team = ({ members }) => {
               <input
                 className="the-search-bar"
                 type="text"
-                placeholder="Search by Name"
+                placeholder="Search by Name             🔎︎"
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
-              <div className="search-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-              </div>
+
             <div className='filterContainer'>
                 <div className="filters">
                         <Select
@@ -136,18 +133,18 @@ export const Team = ({ members }) => {
       </div>
       <div className="team-grid">
         {filteredMembers.map((member, index) => (
-          <div className="team-member" key={index}>
+          <Link to={`/MGIP_Web/${member.id}`} key={index} className="team-member">
             <img src={member.photo} alt={member.name} />
             <div className="member-info">
               <h3>{member.name}</h3>
               <div className="additional-info">
 
                 <p>{member.title}</p>
-                <p>{member.email}</p>
-                <p>{member.phone}</p>
+                <p>✉ {member.email}</p>
+                <p>☎ {member.phone}</p>
               </div>
             </div>
-          </div>
+            </Link>
         ))}
       </div>
     </div>

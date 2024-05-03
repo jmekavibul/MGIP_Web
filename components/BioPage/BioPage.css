@@ -1,0 +1,91 @@
+.bio-full-page {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    width: 100%;
+    min-height: 100vh;
+    color: #333;
+    font-family: 'ESRebondGrotesque',sans-serif; /* Using a more modern font */
+    padding-top: 100px; /* Adjusted padding for better view */
+    box-sizing: border-box;
+  }
+  
+  .bio-image-section {
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .bio-large-photo {
+    width: 100%; /* Full width of the container */
+    max-width: 300px; /* Limiting size to maintain aesthetics */
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Subtle shadow for depth */
+  }
+  
+  .bio-info-section {
+    width: 70%;
+    padding: 40px; /* Increased padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    background: #f9f9f9; /* Softer background color */
+    border-left: 2px solid #ddd; /* Subtle border for visual separation */
+  }
+  
+  .bio-header {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 30px; /* Increased margin for better separation */
+  }
+  
+  .bio-header h1 {
+    font-size: 28px; /* Larger font size for prominence */
+    color: #2a2a2a; /* Slightly darker color for more contrast */
+  }
+  
+  .bio-header h2 {
+    font-size: 20px;
+    color: #555; /* Adjusted for better visibility */
+    font-weight: 500; /* Medium weight for differentiation */
+  }
+  
+  .bio-contact p, .bio-social-links p {
+    font-size: 16px;
+    margin: 10px 0; /* Increased margin for better readability */
+    color: #444; /* Darker grey for better readability */
+  }
+  
+  .bio-details {
+    flex-grow: 1;
+  }
+  
+  .bio-section h3 {
+    font-size: 20px; /* Slightly larger for emphasis */
+    color: #333;
+    margin-bottom: 15px; /* More space below headers */
+  }
+  
+  .bio-section p {
+    font-size: 16px;
+    line-height: 1.75; /* Increased line height for readability */
+    margin-bottom: 10px; /* Space between paragraphs */
+  }
+  
+  @media (max-width: 768px) {
+    .bio-full-page {
+      flex-direction: column;
+    }
+  
+    .bio-image-section, .bio-info-section {
+      width: 100%;
+      padding: 20px; /* Adjust padding for mobile */
+    }
+  
+    .bio-info-section {
+      border-left: none;
+      border-top: 2px solid #ddd; /* Border on top for mobile */
+    }
+  }
+  

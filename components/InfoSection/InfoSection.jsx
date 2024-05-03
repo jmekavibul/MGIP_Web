@@ -54,7 +54,14 @@ const InfoSection = () => {
                     <h2>Firm Highlight</h2>
                     <a href="/MGIP_Web/services" className="all-services">See all services</a>
                 </div>
+
                 <Awards></Awards>
+                <div className="services-header2">
+                    <svg className="line-animation" width="100%" height="2">
+                        <rect x="50%" width="0" height="100%" fill="#839ebd"></rect>
+                    </svg>
+                    <h2 className="services-title">Our Service</h2>
+                </div>
                 <div ref={sectionRef} className={`service-points ${isVisible ? 'visible' : ''}`}>
                 <div className="content-box-wrapper">
                         <ContentBox content={<div className="service-point">

@@ -8,7 +8,7 @@
     background-image: url('../../pictures/blankUS.svg');
     background-repeat: no-repeat;
     background-size:auto; /* or 'contain' based on your desired effect */
-    
+    padding-top: 50px;
     background-position: center 0px;
     z-index: -1; /* Ensure it's behind the content */
   }
@@ -17,6 +17,7 @@
     /* ... other styles ... */
     position: relative; /* Needed for absolute positioning of the background div */
     overflow: hidden; /* Ensures the background div is clipped to the container's bounds */
+    padding-bottom: 150px;
   }
   
   
@@ -78,6 +79,9 @@
     }
   }
   @media (max-width:660px){
+    .awards-container{
+        padding-bottom: 100px;
+    }
     .awards-grid{
         grid-template-columns: none;
     }
