@@ -38,7 +38,7 @@
   .services-title {
     position: relative;
     z-index: 1; /* Ensures the text is above the SVG line */
-    color: #000000;
+    color: #036;
     font-size: 35px;
     text-align: center; /* Ensures text is always centered in the div */
   }
@@ -123,7 +123,9 @@
     margin: 10px;
     text-align: left;
   }
-  
+  .service-point h1{
+    color: #036;
+  }
   .service-point h3 {
     margin-top: 0;
     color: #333;

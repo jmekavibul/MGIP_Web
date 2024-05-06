@@ -44,7 +44,7 @@
   }
   .navbar-links li a:hover,
   .navbar-links li a:focus { /* Ensures that hover and focus have the same style */
-    color: #007bff; /* Color change on hover */
+    color: #036; /* Color change on hover */
     transform: scale(1.05); /* Slightly enlarges the link */
     text-decoration: none; /* Ensures the underline does not appear on hover */
   }

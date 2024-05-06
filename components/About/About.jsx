@@ -92,7 +92,6 @@ export const About = () => {
       <div className='infoSection'>
         <InfoSection />
       </div>
-      <TimeLine steps={stepsData} />
     </div>
   );
 };
