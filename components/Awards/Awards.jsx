@@ -29,7 +29,7 @@ const Awards = () => {
     picture: dcard // Replace with your image path
   };
   useEffect(() => {
-    const parallaxStartScrollY = window.innerWidth < 500 ? 400 : 750;
+    const parallaxStartScrollY = 750;
     const background = document.querySelector('.background-image');
 
     const handleScroll = () => {
@@ -40,7 +40,7 @@ const Awards = () => {
           // Apply parallax effect only when scrolling down past the threshold
           const offset = currentScrollY - parallaxStartScrollY;
           // Adjust parallax speed based on screen width
-          const parallaxSpeed = window.innerWidth < 500 ? 0.6 : 0.5; // Faster speed for smaller screens
+          const parallaxSpeed = 0.5; // Faster speed for smaller screens
           background.style.transform = `translateY(${offset * parallaxSpeed}px)`;
         } else {
           // Keep background position fixed when above the threshold
