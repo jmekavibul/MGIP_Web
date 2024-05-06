@@ -66,21 +66,26 @@ function App() {
             id: "Martin",
             name: 'Martin R. Geissler',
             title: 'PRINCIPAL SHAREHOLDER',
-            phone: '(703)621-7140',
+            phone: '(703)621-7140 x 102',
             email: 'mrg@mg-ip.com',
             photo: martin, // Replace with the path to the photo
-            education: 'Electrical Engineering technology',
-            memberships: ' American Bar Association, American Intellectual Property Law Association, VPP'
+            education: ['New Jersey Institute of Technology (B.S., Electrical Engineering Technology)', 'Franklin Pierce Law Center (J.D.)'],
+            memberships: [ 'American Bar Association', 'American Intellectual Property Law Association', 'VPP (Association of German Patent Professionals)'],
+            experience: ["Mr. Geissler practices in the intellectual property field, specializing particularly in electrical, complex electronics, computer hardware/ software, mechanical arts, and trademarks. He has drafted and prosecuted patent and trademark applications for various major corporations, both domestic and international. Mr. Geissler works directly with inventors and corporate counsel to advise them on establishing, developing and maintaining their patent and trademark portfolios, including licensing. He also prepares legal opinions regarding issues of patentability, patent infringement, and patent validity, and has counseled corporations on how to avoid infringement of various patents."],
+            bar: ["New York", "Registered to practice before the U.S. Patent and Trademark Office"]
           },
           {
             id: "Mark",
             name: 'Mark E. Olds',
             title: 'PRINCIPAL SHAREHOLDER',
             email: 'meo@mg-ip.com',
-            phone: '(703)621-7140',
+            phone: '(703)621-7140 x 103',
             photo: mark, // Replace with the path to the photo
-            education: 'Telecommunications',
-            memberships: 'American Bar Association, American Intellectual Property Law Association, and Virgina State Bar Intellectual Property Law Section.'
+            education: ['Duquesne University (J.D., cum laude)','Georgetown University Law Center (1998-1999, visiting student)',
+            'Case Western Reserve University (MSEE)','Gannon University (BSEE).'],
+            memberships: ['American Bar Association', 'American Intellectual Property Law Association', 'Virgina State Bar Intellectual Property Law Section'],
+            experience: ["Mr. Olds has experience in various aspects of intellectual property law including U.S. and foreign patent prosecution, reexamination, reissue, portfolio management, patent pooling & standards and client counseling. He has experience in the areas of image processing / multimedia (including MPEG and DVD), digital signal processing, telecommunications (including 3G, CDMA and TDMA), wireless networking (802.11 and Bluetooth) microprocessors, programmable logic controllers, industrial automation, robotics, motors, power systems, laser systems, optics, satellite communications, GPS systems, flight systems and avionics, e-commerce and business method patents."],
+            bar:["Commonwealth of Virginia", "Registered to practice before the U.S. Patent and Trademark Office"]
 
           },
           {
@@ -88,19 +93,23 @@ function App() {
             name: 'Scott L. Lowe',
             title: 'PRINCIPAL SHAREHOLDER',
             email: 'sll@mg-ip.com',
-            phone: '(703)621-7140',
+            phone: '(703)621-7140 x 105',
             photo: scott, // Replace with the path to the photo
-            education: 'Mechanical Engineering, Electrical Engineering, Electro-Mechanical, design patent prosecution',
-            memberships: ''
+            education: ['George Mason University (BSEE)', 'George Mason University School of Law (J.D.)'],
+            memberships: '',
+            bar: ["Commonwealth of Virginia", "Registered to practice before the U.S. Patent and Trademark Office"],
+            experience: ["Mr. Lowe focuses his practice on mechanical, electrical, electro-mechanical and design patent prosecution. In addition to his domestic practice, Mr. Lowe manages the global patent prosecution for several of his clients. Mr. Lowe also provides infringement and validity opinions and assists in litigation matters. Mr. Lowe has drafted and prosecuted patent applications for several well-known domestic and international corporations. Mr. Lowe also has experience in the more unusual aspects of intellectual property law, including reexaminations and reissues.","Mr. Lowe was an Examiner at the United States Patent and Trademark Office for seven years and has practiced in the intellectual property field for over twenty years."]
           },
           {
             id: "John",
             name: 'John L. Ciccozzi',
             title: 'PRINCIPAL SHAREHOLDER',
             email: 'jlc@mg-ip.com',
-            phone: '(703)621-7140',
+            phone: '(703)621-7140 x 119',
             photo: john, // Replace with the path to the photo
-            education: 'Electrical Engineering'
+            education: ["B.S. in Electrical Engineering from Gannon University, Erie, PA (1983)", "M.S. in Systems Management (Research and Development Option), University of Southern California, Los Angeles, CA (1986)", "J.D. from University of Akron School of Law, Akron, OH (1998)"],
+            bar: ["The District of Columbia; The US Patent & Trademark Office. Previously registered as in-house for the state of California."],
+            experience: ["Mr. Ciccozzi has 15 years as an electrical engineer and over 12 years experience in the patent field, primarily dealing in all facets of the electrical arts. He was also a Captain in the United States Air Force. He is also a former Patent Examiner in the Microprocessor and Input/Output Devices Art Units at the USPTO.", "He is experienced in a wide range of disciplines, including counseling clients on invalidity and non-infringement, patent portfolio strategy including drafting and prosecuting patent applications, patent portfolio mapping and mining, licensing, litigation and reexamination strategy. He is also experienced in analyzing and evaluating IP and has also mediation and negotiation experience. In addition to his engineering and law firm experience, Mr. Ciccozzi has 6 years of in-house counsel experience at both HTC and Qualcomm."]
           },
           {
             id: "Daniel",
@@ -109,7 +118,10 @@ function App() {
             email: 'dp@mg-ip.com',
             phone: '(703)621-7140',
             photo: daniel, // Replace with the path to the photo
-            education: 'Computer Engineering, EV, Cybersecurity, Telecommunications'
+            education: ['University of Virginia (Computer Engineering)', 'George Mason University (J.D.)'],
+            bar: ['Commonwealth of Virginia', 'Registered to practice before the U.S. Patent and Trademark Office'],
+            experience:['Mr. Podhajny drafts and prosecutes domestic patent applications and PCT applications, and has managed prosecution of applications in many different foreign jurisdictions, including Japan, Korea, China, India and the EPO. Mr. Podhajny also frequently prepares invalidity and non-infringement opinions, and is experienced in various post-grant proceedings at the USPTO, such as Ex Partes Reexaminations. Mr. Podhajny has worked with clients’ engineering resources to modify products/services so as to avoid potential infringement by both NPE patents as well as competitor patents. Mr. Podhajny has performed due diligence in association with several mergers and acquisitions. Mr. Podhajny has also performed due diligence with respect to the acquisition of bulk patent portfolios.', 'Mr. Podhajny has experience in many different technical fields, including the following:'],
+            experienceList:["EVs and EV battery module configurations;", "Battery electrode compositions;", "Cybersecurity, including enterprise network vulnerability analysis;", "Various telecommunications session protocols, including VoIP, PTT, BCCMS, MBMS and e-MBMS, SIP, and IMS;", "Various telecommunications RATs or core network types, including 3G/4G/5G/NR.", "Various telecommunications features including location-based enhancements and presence;", "Internal cell phone OS and power management aspects;", "P2P and D2D protocols (e.g., NFC, Bluetooth, LTE-D, WiFi-Direct, etc.) related to features such as device discovery, ad-hoc session handling protocols (e.g., local leader selection, local interface configurations, etc.) and media streaming (e.g., Miracast-R1 or Miracast-R2);", "The Internet of Things (IoT or IoE) related to features such as IoT control schemes, sensor deployments, and device discovery and onboarding protocols;", "Network routing (e.g., TCP/IP, IPv4 and IPv6, header compression protocols such as RoHC, proxy routing schemes for enhanced compression and/or user anonymity, etc.);", " Mobile advertising and e-commerce platforms;", "Location-positioning systems such as SPS or GPS and hybrid terrestrial-SPS schemes;", "Optics for LIDAR systems;", "Database security systems;", "Video encoding/decoding (e.g., MPEG4)."]
           },          
           {
             id: "Scott",

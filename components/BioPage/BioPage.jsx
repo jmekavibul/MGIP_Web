@@ -29,11 +29,20 @@ const BioPage = ({ member }) => {
             <h3>Education</h3>
             {member.education.map((edu, index) => <p key={index}>{edu}</p>)}
           </div>
-          <div className="bio-section">
-            <h3>Experience</h3>
-            <p>{member.experience[0]}</p>
-            <p>{member.experience[1]}</p>
-          </div>
+            <div className="bio-section">
+                <h3>Experience</h3>
+                <p>{member.experience[0]}</p>
+                {member.experience.length > 1 ? <p>{member.experience[1]}</p> : <div></div>}
+
+                {member.experienceList ? (
+                    <ul>
+                        {member.experienceList.map((exp) => {
+                            console.log(exp);
+                            return <li>{exp}</li>; // Make sure to return the <li> element
+                        })}
+                    </ul>
+                ) : <div></div>}
+            </div>
         </div>
       </div>
     </div>
