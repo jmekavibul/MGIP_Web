@@ -82,19 +82,21 @@
 
     .hero-bar-play {
         position: absolute;
-        bottom: 32%; /* Adjust this as needed */
+        top: 68.9%; /* Adjust based on actual layout needs */
         left: 50%;
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        width: 12%; /* Control the overall width of the progress bar container */
-      }
+        width: 105%;
+        z-index: 10; /* Make sure this is above other content */
+        cursor: pointer; /* Explicitly show it's clickable */
+    }
       
       .hero-bar-container {
         flex: 1;
-        margin: 0 4px;
+        margin: 0 25px;
         background: rgba(255, 255, 255, 0.5); /* Light background for the inactive bar */
-        height: 14px;
+        height: 10px;
         cursor: pointer;
         position: relative; /* Needed to position the .hero-bar absolutely inside it */
       }
@@ -116,15 +118,14 @@
         margin-top: 70vh;
     }
     @media (max-width: 768px) {
+
         .hero-bar-play {
-            width: 25%; /* Increase the width for smaller screens */
-            bottom: 35%;
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 14px; /* Make the bars thinner */
-          }
+            width: 112%;
+        }
+        .hero-bar-container {
+            margin: 0 20px;
+        }
+
           .hero-text {
             top:35%;
             left: 50%; /* Even smaller font size for mobile devices */
@@ -140,14 +141,13 @@
 
     @media (min-width: 768px)and (max-width: 850px) {
         .hero-bar-play {
-            width: 25%; /* Increase the width for smaller screens */
-            bottom: 35%;
-          }
+            width: 112%;
+        }
+        .hero-bar-container {
+            margin: 0 20px;
+        }
           
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 14px; /* Make the bars thinner */
-          }
+
         .hero-text {
             top:35%;
         font-size: 20px; /* Even smaller font size for mobile devices */
@@ -161,14 +161,11 @@
     }
     @media (min-width: 850px)  and (max-width: 1024px) {
         .hero-bar-play {
-            width: 20%; /* Increase the width for smaller screens */            
-            bottom: 35%;
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 14px; /* Make the bars thinner */
-          }
+            width: 112%;
+        }
+        .hero-bar-container {
+            margin: 0 20px;
+        }
         .hero-text {
             top:35%;
             font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
@@ -181,16 +178,10 @@
   
     @media (min-width:1024px)  and (max-width: 1250px) {
         .hero-bar-play {
-            width: 15%; /* Increase the width for smaller screens */
-            bottom: 35%;
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 14px; /* Make the bars thinner */
-          }
-        .background {
-            background-position: 50% 50%; /* Center the image on larger screens */
+            width: 112%;
+        }
+        .hero-bar-container {
+            margin: 0 20px;
         }
         .infoSection{
             margin-top: 70vh;
