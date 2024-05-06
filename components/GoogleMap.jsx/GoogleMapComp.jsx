@@ -3,8 +3,8 @@ import { GoogleMap, useJsApiLoader, Marker, DirectionsRenderer } from '@react-go
 
 const containerStyle = {
   width: '90%',
-  height: '60%',
-  top: '200px',
+  height: '70%',
+  top: '180px',
 };
 
 const center = {

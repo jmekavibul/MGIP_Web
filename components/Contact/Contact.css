@@ -20,6 +20,6 @@
 .map-section {
     flex: 1;
     position: relative;
-    left: -110px; /* Adjust according to your layout */
+    left: -120px; /* Adjust according to your layout */
     z-index: 9; 
 }
