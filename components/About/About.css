@@ -82,7 +82,7 @@
 
     .hero-bar-play {
         position: absolute;
-        top: 68.9%; /* Adjust based on actual layout needs */
+        top: 68.83%; /* Adjust based on actual layout needs */
         left: 50%;
         transform: translateX(-50%);
         display: flex;
