@@ -1,0 +1,25 @@
+.contact-container {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* Prevents any overflow from the map or form */
+}
+
+.form-section {
+    flex: 1;
+    background-color: #2a2a2a; /* Black for the form side */
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    position: relative;
+    z-index: 1; /* Ensures form is above the map at the overlap */
+}
+
+.map-section {
+    flex: 1;
+    position: relative;
+    left: -110px; /* Adjust according to your layout */
+    z-index: 9; 
+}

@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, DirectionsRenderer } from '@react-google-maps/api';
 
 const containerStyle = {
-  width: '60%',
-  height: '500px',
-  borderRadius: '20px'
+  width: '90%',
+  height: '60%',
+  top: '200px',
 };
 
 const center = {
