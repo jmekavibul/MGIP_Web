@@ -29,7 +29,7 @@ const Awards = () => {
     picture: dcard // Replace with your image path
   };
   useEffect(() => {
-    const parallaxStartScrollY = 750;
+    const parallaxStartScrollY = window.innerWidth < 500 ? 400 : 750;
     const background = document.querySelector('.background-image');
 
     const handleScroll = () => {
