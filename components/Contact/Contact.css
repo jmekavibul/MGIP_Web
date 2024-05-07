@@ -1,13 +1,13 @@
 .contact-container {
     display: flex;
+    flex-direction: row; /* Ensures horizontal layout on larger screens */
     width: 100vw;
     height: 100vh;
-    overflow: hidden; /* Prevents any overflow from the map or form */
 }
 
 .form-section {
     flex: 1;
-    background-color: #adadad; /* Black for the form side */
+    background-color: #adadad; /* Gray for the form side */
     color: #fff;
     display: flex;
     justify-content: center;
@@ -21,5 +21,19 @@
     flex: 1;
     position: relative;
     left: -120px; /* Adjust according to your layout */
-    z-index: 9; 
+    z-index: 9;
 }
+
+@media (max-width: 768px) {
+    .contact-container {
+        display: grid;
+        height: auto; /* Adjust height for stacked layout */
+    }
+
+    .map-section {
+       height: 900px;
+       left: 0;
+       padding: 0;
+    }
+}
+

@@ -1,32 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GoogleMap, useJsApiLoader, Marker, DirectionsRenderer } from '@react-google-maps/api';
+import './GoogleMapComp.css'; // Import the CSS file
 
-const containerStyle = {
-  width: '90%',
-  height: '70%',
-  top: '180px',
-};
-
-const center = {
-  lat: 38.80388,
-  lng: -77.043918
-};
-
-const uspto = {
-  lat: 38.80139,
-  lng: -77.0640639171357
-};
-const infoBoxStyle = {
-    background: 'white',
-    border: '1px solid black',
-    padding: '5px',
-    borderRadius: '8px',
-    position: 'absolute',
-    bottom: '150%', // Adjust these values as needed
-    left: '50%',
-    transform: 'translateX(-50%)',
-    zIndex: 10
-  };
 function GoogleMapComp() {
   const [directionsResponse, setDirectionsResponse] = useState(null);
   const [markerIcon, setMarkerIcon] = useState(null);
@@ -37,8 +12,15 @@ function GoogleMapComp() {
     googleMapsApiKey: "AIzaSyBkUqTWrqUzv16mdBfOzNvAXAUs9YdCSso", // Replace with your actual API key
     libraries: ['places']
   });
-
-  console.log(showInfoBox)
+  const center = {
+    lat: 38.80388,
+    lng: -77.043918
+  };
+  
+  const uspto = {
+    lat: 38.80139,
+    lng: -77.0640639171357
+  };
   useEffect(() => {
     if (isLoaded) {
       setMarkerIcon({
@@ -55,7 +37,7 @@ function GoogleMapComp() {
         if (status === window.google.maps.DirectionsStatus.OK) {
           setDirectionsResponse(result);
         } else {
-          console.error(`error fetching directions: ${status}`);
+          console.error(`error fetching directions ${status}`);
         }
       });
     }
@@ -65,55 +47,65 @@ function GoogleMapComp() {
     setShowInfoBox(prevState => ({ ...prevState, [marker]: !prevState[marker] }));
   };
 
-  return isLoaded ? (
-    <GoogleMap
-      mapContainerStyle={containerStyle}
-      center={center}
-      zoom={15}
-    >
-      {directionsResponse && (
-        <DirectionsRenderer
-          directions={directionsResponse}
-          options={{ suppressMarkers: true }}
-        />
-      )}
+  return (
+    <div className="map-container">
+      <div className="sidebar">
+        <h2>ADDRESS</h2>
+        <p>125 S Royal St, Alexandria, VA 22314<br/>Alexandria, VA 22314</p>
+        <h2>CALL US</h2>
+        <p>1 (703) 621-7140</p>
+        <h2>OPENING HOURS</h2>
+        <p>Monday-Friday: 10 am - 8 pm<br/>Saturday, Sunday: Closed</p>
+      </div>
 
-      {markerIcon && (
-        <Marker
-          position={center}
-          icon={markerIcon}
-          title="MGIP"
-          onClick={() => toggleInfoBox('MGIP')}
+      {isLoaded ? (
+        <GoogleMap
+          mapContainerClassName="map-style"
+          center={center}
+          zoom={15}
         >
-          {showInfoBox.MGIP && (
-            <div style={infoBoxStyle}>
-                {console.log("supposedly here")}
-              <h1>MGIP</h1>
-              <p>Info about MGIP</p>
-              <button onClick={() => toggleInfoBox('MGIP')}>Close</button>
-            </div>
+          {directionsResponse && (
+            <DirectionsRenderer
+              directions={directionsResponse}
+              options={{ suppressMarkers: true }}
+            />
           )}
-        </Marker>
-      )}
-
-      {markerIcon && (
-        <Marker
-          position={uspto}
-          icon={markerIcon}
-          title="USPTO"
-          onClick={() => toggleInfoBox('USPTO')}
-        >
-          {showInfoBox.USPTO && (
-            <div >
-              <h1>USPTO</h1>
-              <p>Info about USPTO</p>
-              <button onClick={() => toggleInfoBox('USPTO')}>Close</button>
-            </div>
+          {markerIcon && (
+            <Marker
+              position={center}
+              icon={markerIcon}
+              title="MGIP"
+              onClick={() => toggleInfoBox('MGIP')}
+            >
+              {showInfoBox.MGIP && (
+                <div className="info-box">
+                  <h1>MGIP</h1>
+                  <p>Info about MGIP</p>
+                  <button onClick={() => toggleInfoBox('MGIP')}>Close</button>
+                </div>
+              )}
+            </Marker>
           )}
-        </Marker>
-      )}
-    </GoogleMap>
-  ) : <div>Loading...</div>;
+          {markerIcon && (
+            <Marker
+              position={uspto}
+              icon={markerIcon}
+              title="USPTO"
+              onClick={() => toggleInfoBox('USPTO')}
+            >
+              {showInfoBox.USPTO && (
+                <div className="info-box">
+                  <h1>USPTO</h1>
+                  <p>Info about USPTO</p>
+                  <button onClick={() => toggleInfoBox('USPTO')}>Close</button>
+                </div>
+              )}
+            </Marker>
+          )}
+        </GoogleMap>
+      ) : <div>Loading...</div>}
+    </div>
+  );
 }
 
 export default GoogleMapComp;
