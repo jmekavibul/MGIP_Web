@@ -20,7 +20,7 @@
 .map-section {
     flex: 1;
     position: relative;
-    left: -120px; /* Adjust according to your layout */
+    left: -5%; /* Adjust according to your layout */
     z-index: 9;
 }
 
@@ -29,7 +29,7 @@
         display: grid;
         height: auto; /* Adjust height for stacked layout */
     }
-
+    .form-section {}
     .map-section {
        height: 900px;
        left: 0;
