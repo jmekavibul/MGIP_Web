@@ -21,10 +21,12 @@ const BioPage = ({ member }) => {
           </div>
         </div>
         <div className="bio-details">
-          <div className="bio-section">
-            <h3>Bar Admissions</h3>
-            {member.bar.map((edu, index) => <p key={index}>{edu}</p>)}
-          </div>
+          {member.bar.length > 1 ? <div className="bio-section"> 
+                <h3>Bar Admissions</h3>
+                    {member.bar.map((b) =>{
+                        return <p>{b}</p>
+                    })}
+            </div>:<></>}
           <div className="bio-section">
             <h3>Education</h3>
             {member.education.map((edu, index) => <p key={index}>{edu}</p>)}

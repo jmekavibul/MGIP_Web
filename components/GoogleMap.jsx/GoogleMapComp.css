@@ -39,12 +39,14 @@
   @media (max-width: 768px) {
     .sidebar {
         left: 30px;
-        top:20px;
+        top:0px;
         border: none;
     }
-
+    .sidebar-info{
+        display:grid;
+    }
     .map-style {
-        top: 450px;
+        top: 400px;
         left: 0px;
         height: 50%;
         width: 100%;
