@@ -3,7 +3,6 @@ import './Awards.css'; // Ensure this CSS file has the styles we discussed
 import TimeLine from '../TimeLine/TimeLine';
 import { useEffect } from 'react';
 import DescriptionCard from '../DescriptionCard/DescriptionCard';
-import dcard from '../../pictures/descriptioncard.jpg';
 
 const AwardCard = ({ number, description, logo }) => (
   <div className="award-card">
@@ -26,7 +25,6 @@ const Awards = () => {
   const info = {
     title: 'Client Counseling for IP law',
     description: 'We provide legal services to large domestic and foreign corporations and to a wide range of mid-sized and start-up organizations. Our technical, business, and legal experience allows us to assist our clients in obtaining protection for their intellectual property in an efficient and cost-effective manner.',
-    picture: dcard // Replace with your image path
   };
   useEffect(() => {
     const parallaxStartScrollY = window.innerWidth < 500 ? 400 : 750;
