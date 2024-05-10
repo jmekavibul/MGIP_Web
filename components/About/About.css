@@ -91,7 +91,7 @@ html, body {
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: 105%;
         z-index: 10; /* Make sure this is above other content */
         cursor: pointer; /* Explicitly show it's clickable */
     }
@@ -124,7 +124,7 @@ html, body {
     @media (max-width: 768px) {
 
         .hero-bar-play {
-            width: 100%;
+            width: 112%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -145,7 +145,7 @@ html, body {
 
     @media (min-width: 768px)and (max-width: 850px) {
         .hero-bar-play {
-            width: 100%;
+            width: 112%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -165,7 +165,7 @@ html, body {
     }
     @media (min-width: 850px)  and (max-width: 1024px) {
         .hero-bar-play {
-            width: 100%;
+            width: 112%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -182,7 +182,7 @@ html, body {
   
     @media (min-width:1024px)  and (max-width: 1250px) {
         .hero-bar-play {
-            width: 100%;
+            width: 112%;
         }
         .hero-bar-container {
             margin: 0 20px;
