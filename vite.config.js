@@ -7,5 +7,6 @@ export default defineConfig({
   build: {
     outDir: 'build',  // Change this from 'build' to 'dist'
     // ... any other build options you want to specify
+    chunkSizeWarningLimit: 1600
   },
 });

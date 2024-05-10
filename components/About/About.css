@@ -87,7 +87,7 @@
         transform: translateX(-50%);
         display: flex;
         justify-content: center;
-        width: 105%;
+        width: 100%;
         z-index: 10; /* Make sure this is above other content */
         cursor: pointer; /* Explicitly show it's clickable */
     }
@@ -120,7 +120,7 @@
     @media (max-width: 768px) {
 
         .hero-bar-play {
-            width: 112%;
+            width: 100%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -141,7 +141,7 @@
 
     @media (min-width: 768px)and (max-width: 850px) {
         .hero-bar-play {
-            width: 112%;
+            width: 100%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -161,7 +161,7 @@
     }
     @media (min-width: 850px)  and (max-width: 1024px) {
         .hero-bar-play {
-            width: 112%;
+            width: 100%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -178,7 +178,7 @@
   
     @media (min-width:1024px)  and (max-width: 1250px) {
         .hero-bar-play {
-            width: 112%;
+            width: 100%;
         }
         .hero-bar-container {
             margin: 0 20px;
