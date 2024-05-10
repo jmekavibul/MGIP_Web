@@ -1,6 +1,6 @@
 html, body {
     max-width: 100%;
-    overflow-x: hidden;
+    overflow-x: hidden
 }
 .about {
         display: flex;
@@ -124,7 +124,7 @@ html, body {
     @media (max-width: 768px) {
 
         .hero-bar-play {
-            width: 112%;
+            width: 105%;
         }
         .hero-bar-container {
             margin: 0 20px;
@@ -145,7 +145,7 @@ html, body {
 
     @media (min-width: 768px)and (max-width: 850px) {
         .hero-bar-play {
-            width: 112%;
+            width: 105%;
         }
         .hero-bar-container {
             margin: 0 20px;
