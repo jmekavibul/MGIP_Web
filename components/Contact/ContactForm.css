@@ -21,12 +21,22 @@
     justify-content: space-between;
     flex-wrap: wrap;  /* Ensure wrapping of elements on small screens */
 }
+.form-group.content {
+    width: 100%;  /* Set to 100% or any other value as desired */
+}
 
-.form-group {
+@media (max-width: 768px) {
+    .form-group .content {
+        width: 100%;  /* Ensures full width on small screens */
+    }
+}
+.form-group, .form-group-email {
+    position: relative; /* Added relative positioning */
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     width: 48%;  /* Makes input fields take half the form width */
+    margin-bottom: 10px; /* Ensure some space between groups */
 }
 
 .form-label {
@@ -36,7 +46,7 @@
 
 .form-control {
     padding: 0.75rem;
-    background: #fff;  /* White background for the input fields */
+    background: #ffffff;  /* Updated background color */
     border: none;
     border-radius: 4px;
     color: #333;  /* Dark text for visibility */
@@ -52,8 +62,12 @@
 }
 
 .error-message {
-    color: #dc3545;
-    font-size: 0.875rem;
+    position: absolute; /* Absolute positioning */
+    bottom: -40px; /* Adjust as necessary */
+    left: 0;
+    width: 100%; /* Error message takes full width of the form-group */
+    color: #f70019; /* Updated color code */
+    font-size: 1rem;
     padding-left: 0.25rem;
 }
 
@@ -65,7 +79,6 @@
     border-radius: 4px;
     cursor: pointer;
     font-size: 1rem;
-    left: 550px; 
     width: 150px;  /* Button width only as wide as its content */
 }
 
@@ -80,7 +93,7 @@
         flex-direction: column;
     }
 
-    .form-group {
+    .form-group, .form-group-email {
         width: 100%;  /* Full width for small screens */
     }
 

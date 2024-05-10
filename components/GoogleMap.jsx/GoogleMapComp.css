@@ -41,14 +41,15 @@
         left: 30px;
         top:0px;
         border: none;
+        min-width: 60%;
     }
     .sidebar-info{
         display:grid;
     }
     .map-style {
-        top: 400px;
+        top: 330px;
         left: 0px;
-        height: 50%;
+        height: 60%;
         width: 100%;
     }
   }

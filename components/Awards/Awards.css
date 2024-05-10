@@ -1,16 +1,17 @@
 .background-image {
     min-height: 150vh;
     position: absolute;
-    top: 0px; /* Initial top position */
+    top: 100px; /* Initial top position */
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../pictures/blankUS.svg');
+    background-image: url('../../pictures/blank_map.jpg');
     background-repeat: no-repeat;
     background-size:auto; /* or 'contain' based on your desired effect */
     padding-top: 50px;
     background-position: center 0px;
     z-index: -1; /* Ensure it's behind the content */
+    opacity: 0.5;
   }
   
   .awards-container {

@@ -3,6 +3,9 @@ import './Team.css';
 import teamphoto from '../../pictures/aiteam.jpg'
 import Select from 'react-select'
 import { Link } from 'react-router-dom';
+import { IoMdMail } from "react-icons/io";
+import { BsTelephoneFill } from "react-icons/bs";
+import { MdOutlineSearch } from "react-icons/md";
 
 export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -63,7 +66,7 @@ export const Team = ({ members }) => {
 
     const filteredMembers = members.filter(member =>
     member.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (!selectedField || selectedField.value === 'All' || member.education.includes(selectedField.value))
+    (!selectedField || selectedField.value === 'All' || member?.experience?.join().includes(selectedField.value))
     &&
         (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value)
     );
@@ -79,11 +82,13 @@ export const Team = ({ members }) => {
               <input
                 className="the-search-bar"
                 type="text"
-                placeholder="Search by Name             🔎︎"
+                placeholder={`  Search by Name `}
                 value={searchQuery}
                 onChange={handleSearchChange}
               />
-
+            <div className='search-icon'>
+                <MdOutlineSearch/>
+            </div>
             <div className='filterContainer'>
                 <div className="filters">
                         <Select
@@ -140,8 +145,10 @@ export const Team = ({ members }) => {
               <div className="additional-info">
 
                 <p>{member.title}</p>
-                <p>✉ {member.email}</p>
-                <p>☎ {member.phone}</p>
+                <IoMdMail/><a>{member.email}</a>
+                <br></br>
+                <BsTelephoneFill/><a>{member.phone}</a>
+                <a> </a>
               </div>
             </div>
             </Link>

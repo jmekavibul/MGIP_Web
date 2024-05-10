@@ -24,14 +24,14 @@
     z-index: 9;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 810px) {
     .contact-container {
         display: grid;
         height: auto; /* Adjust height for stacked layout */
     }
     .form-section {}
     .map-section {
-       height: 800px;
+       height: 820px;
        left: 0;
        padding: 0;
     }

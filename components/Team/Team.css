@@ -133,14 +133,14 @@ body, html {
 .member-info {
   text-align: center;
   position: absolute;
-  bottom: 0;
+  bottom: 7.5px;
   left: 0;
   right: 0;
   background-color: rgba(0, 0, 0, 0.6);
   color: white;
   transform: translateY(calc(100% - 70px)); /* Adjust to control visible height */
   transition: transform 0.5s ease, background-color 0.5s ease;
-  padding: 5px;
+  padding: 10px;
   box-sizing: border-box;
   width: 100%; /* Ensures the info box width matches the .team-member width */
 }

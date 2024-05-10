@@ -105,35 +105,19 @@ const ContactForm = () => {
             </div>
         </div>
 
-        <div className="form-row">
-            <div className="form-group">
-            <input
-                id="country"
-                name="country"
-                placeholder="Country"
-                type="text"
-                className={`form-control ${errors.country ? 'is-invalid' : ''}`}
-                {...register('country', { required: 'Country is required.' })}
-            />
-            {errors.country && <p className="error-message">{errors.country.message}</p>}
-            </div>
-            <div className="form-group">
-                <div>
-                    <textarea
-                    id="content"
-                    name="content"
-                    placeholder="Message"
-                    className={`form-control ${errors.content ? 'is-invalid' : ''}`}
-                    {...register('content', { required: 'Content is required.' })}
-                />
-                </div>
 
+        <div className="form-group content">
+            <textarea
+                id="content"
+                name="content"
+                placeholder="Message"
+                className={`form-control ${errors.content ? 'is-invalid' : ''}`}
+                {...register('content', { required: 'Content is required.' })}
+            />
             {errors.content && <p className="error-message">{errors.content.message}</p>}
-            </div>
         </div>
 
-
-        <div className="form-group">
+        <div className="form-group" >
           <button type="submit" className="btn btn-send">
             Submit
           </button>
