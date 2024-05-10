@@ -1,6 +1,5 @@
 import React from 'react';
 import './Awards.css'; // Ensure this CSS file has the styles we discussed
-import TimeLine from '../TimeLine/TimeLine';
 import { useEffect } from 'react';
 import DescriptionCard from '../DescriptionCard/DescriptionCard';
 
