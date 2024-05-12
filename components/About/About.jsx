@@ -1,88 +1,48 @@
 import React, { useState, useEffect } from 'react';
-
-import alexandria from '../../pictures/alexandria.jpg';
-import uspto from '../../pictures/uspto.jpg';
-import dc from '../../pictures/dc.jpg';
 import './About.css';
+import Hero from '../Hero/Hero'; // Ensure you have the correct path to the Hero component
 import InfoSection from '../InfoSection/InfoSection';
+import dc from '../../pictures/dc.jpg'
+import alexandria from '../../pictures/alexandria.jpg'
+import uspto from '../../pictures/uspto.jpg'
 
 export const About = () => {
-  const [backgroundCount, setBackGroundCount] = useState(0);
-  const [isUserInteracted, setIsUserInteracted] = useState(false);
-  const presentData = [
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img:  alexandria},
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: uspto }
-  ];
-
-  const resetProgressBars = () => {
-    document.querySelectorAll('.hero-bar').forEach(bar => {
-      bar.style.width = '0%';
-      bar.style.transition = 'none';
-    });
-  };
-
-  const startProgressBar = (index) => {
-    resetProgressBars();
-    const bar = document.querySelector(`.hero-bar[data-index="${index}"]`);
-    if (bar) {
-      // This forces the browser to repaint which ensures the transition will start from 0% width
-      bar.offsetWidth;
-      bar.style.transition = 'width 4.5s linear';
-      bar.style.width = '100%';
-    }
-  };
-
-  useEffect(() => {
-    if (!isUserInteracted) {
-      const intervalId = setInterval(() => {
-        setBackGroundCount((prevCount) => (prevCount + 1) % presentData.length);
+    const [backgroundCount, setBackgroundCount] = useState(0);
+    const [isUserInteracted, setIsUserInteracted] = useState(false);
+    const presentData = [
+      { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", url: dc },
+      { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", url: alexandria },
+      { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", url: uspto }
+    ];
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        if (!isUserInteracted) {
+          setBackgroundCount((prevCount) => (prevCount + 1) % presentData.length);
+        }
       }, 4500);
-
-      // Start the progress bar for the initial image
-      startProgressBar(backgroundCount);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [backgroundCount, isUserInteracted, presentData.length]);
-
-  const handleBarClick = (index) => {
-    if (!isUserInteracted || backgroundCount !== index) {
-      setBackGroundCount(index);
+      return () => clearInterval(interval);
+    }, [backgroundCount, isUserInteracted, presentData.length]);
+  
+    const handleHeroClick = (index) => {
       setIsUserInteracted(true);
-      // Start the progress bar for the clicked index
-      startProgressBar(index);
-    }
-  };
-
-  return (
-    <div className='about'>
-      {presentData.map((item, index) => (
-        <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
-          <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
-            <div className='hero-header'>
-              <p>{item.text1}</p>
-            </div>
-            <div className='hero-content'>
-              <p>{item.text2}</p>
-            </div>
-          </div>
+      setBackgroundCount(index);
+    };
+  
+    return (
+      <div className='about'>
+        <Hero
+          images={presentData}
+          backgroundIndex={backgroundCount}
+          handleHeroClick={handleHeroClick}
+          height={'70vh'}
+        />
+  
+        <div className='infoSection'>
+          <InfoSection />
         </div>
-      ))}
-
-      <div className='hero-bar-play'>
-        {presentData.map((_, index) => (
-          <div key={index} className="hero-bar-container" onClick={() => handleBarClick(index)}>
-            <div className={`hero-bar`} data-index={index} style={{ width: backgroundCount === index ? '100%' : '0%' }}></div>
-          </div>
-        ))}
       </div>
-
-      <div className='infoSection'>
-        <InfoSection />
-      </div>
-    </div>
-  );
-};
+    );
+  };
 
 export default About;
