@@ -98,7 +98,6 @@ html, body {
       
       .hero-bar-container {
         flex: 1;
-        margin: 0 25px;
         background: rgba(255, 255, 255, 0.5); /* Light background for the inactive bar */
         height: 10px;
         cursor: pointer;
@@ -126,9 +125,6 @@ html, body {
         .hero-bar-play {
             width: 100%;
         }
-        .hero-bar-container {
-            margin: 0 20px;
-        }
 
           .hero-text {
             top:35%;
@@ -147,9 +143,6 @@ html, body {
         .hero-bar-play {
             width: 100%;
         }
-        .hero-bar-container {
-            margin: 0 20px;
-        }
           
 
         .hero-text {
@@ -167,9 +160,6 @@ html, body {
         .hero-bar-play {
             width: 100%;
         }
-        .hero-bar-container {
-            margin: 0 20px;
-        }
         .hero-text {
             top:35%;
             font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
@@ -183,9 +173,6 @@ html, body {
     @media (min-width:1024px)  and (max-width: 1250px) {
         .hero-bar-play {
             width: 100%;
-        }
-        .hero-bar-container {
-            margin: 0 20px;
         }
         .infoSection{
             margin-top: 70vh;
