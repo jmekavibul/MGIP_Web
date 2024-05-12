@@ -38,7 +38,7 @@ export const About = () => {
           height={'70vh'}
         />
   
-        <div className='infoSection'>
+        <div className='infoSectionWrapper'>
           <InfoSection />
         </div>
       </div>

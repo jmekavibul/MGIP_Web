@@ -1,24 +1,28 @@
+
 .info-section {
-    
     font-family: 'Urbanist', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
     padding: 50px 0; /* Consistent padding for top and bottom */
+    width: 100%;  
+    max-width: none;  
   }
-  
-  .service-section {
+  .service-section{
+    font-family: "Lora", serif;
     width: 100%;
-    max-width: 1900px;
   }
   .services-header2 {
+    font-family: "Lora", serif;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     padding-bottom: 10px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
   
   .line-animation {
@@ -62,6 +66,8 @@
     position: relative; /* Positioning context for the pseudo-element */
     padding-bottom: 20px; /* Space for the line */
     margin-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
   }
   
   .services-header h2 {
@@ -104,8 +110,9 @@
   }
   
   .service-points {
+    font-family: "Lora", serif;
     display: flex;
-    justify-content:space-between;
+    justify-content:center;
     flex-wrap: wrap;
     padding-top: 50px; /* Space above service points */
     padding-bottom: 50px; /* Space above service points */
@@ -123,13 +130,19 @@
     margin: 10px;
     text-align: left;
   }
+  .service-point h1{
+    font-family: "Lora", serif;
+    color: #036;
+  }
   .service-point h3 {
     margin-top: 0;
     color: #333;
   }
   
 
-  
+  .service-point h1:hover{
+    color: white;
+  }
   .service-point a:hover,
   .service-point a:focus {
     color: #0056b3;
@@ -151,7 +164,7 @@
     }
     
   }
-  @media (min-width: 1024px) and (max-width: 1325.5px){
+  @media (max-width: 1300.5px){
     .service-points {
         padding-top: 70px;
         flex-direction: column;
@@ -162,26 +175,11 @@
     }
 
   }
-  /* Media query for tablets and smaller desktop screens */
-  @media (max-width: 1024px) {
-    .services-header {
-        padding-top: 100px;
-    }
-    .service-points {
-        padding-top: 70px;
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .service-point {
-      flex-basis: calc(50% - 20px); /* Adjust for tablet view */
-    }
-  }
+
   
   /* Media query for mobile screens */
-  @media (max-width: 768px) {
+  @media (max-width: 1300px) {
     .services-header {
-        padding-top: 100px;
       flex-direction: column;
       align-items: center;
     }

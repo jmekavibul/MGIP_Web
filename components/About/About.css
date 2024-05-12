@@ -3,5 +3,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width: auto;
+    width: 100%;
+}   
+.infoSectionWrapper{
+    display: flex;
+    flex-shrink: 0;
+    width: 100%;
 }

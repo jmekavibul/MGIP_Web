@@ -15,10 +15,15 @@
   }
   
   .awards-container {
+    font-family: "Lora", serif;
     /* ... other styles ... */
     position: relative; /* Needed for absolute positioning of the background div */
     overflow: hidden; /* Ensures the background div is clipped to the container's bounds */
     padding-bottom: 150px;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
   }
   
   

@@ -23,7 +23,7 @@
   .navbar-links {
     list-style: none;
     display: flex;
-    margin-right: 4%;
+    margin-right: 5%;
     padding: 0;
   }
   
@@ -38,7 +38,7 @@
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects and color */
     font-size: 20px;
     overflow: hidden;
-    font-weight: 600;
+    font-weight: 300;
 }
 
 .navbar-links li a::after {
@@ -47,7 +47,7 @@
     left: 0;
     right: 0;
     bottom: -5px;
-    height: 3px;
+    height: 2px;
     background-color: #036;
     transform: scaleX(0);
     transition: transform 0.3s ease;

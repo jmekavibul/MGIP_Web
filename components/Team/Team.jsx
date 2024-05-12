@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { IoMdMail } from "react-icons/io";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdOutlineSearch } from "react-icons/md";
-
+import Hero2 from '../Hero2/Hero2';
 export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState('');
@@ -74,8 +74,12 @@ export const Team = ({ members }) => {
   return (
     <div className="team-container">
         
-        <div className='team-background' style={{ backgroundImage: `url(${teamphoto})` }} />
-        <h1 style={{color: 'white'}}>Our Team</h1>
+        <Hero2
+            backgroundImage={teamphoto}
+            text="Our Team"
+            height="20vh"  // Set appropriate height as needed
+            subText=""  // Optional: add a subtitle if needed
+        />
 
       <div className="search-container">
           <div className='search-items'>
