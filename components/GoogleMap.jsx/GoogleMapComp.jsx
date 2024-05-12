@@ -48,6 +48,7 @@ function GoogleMapComp() {
   };
 
   return (
+    
     <div className="map-container">
       <div className="sidebar">
         <div className="sidebar-info">
@@ -55,8 +56,8 @@ function GoogleMapComp() {
             <p>125 S Royal St, Alexandria, VA 22314<br/>Alexandria, VA 22314</p>
             <h2>CALL US</h2>
             <p>1 (703) 621-7140</p>
-            <h2>OPENING HOURS</h2>
-            <p>Monday-Friday: 10 am - 8 pm<br/>Saturday, Sunday: Closed</p>
+            <h2>TO USPTO</h2>
+            <p>Driving 10 minutes</p>
         </div>
       </div>
 

@@ -35,7 +35,7 @@ export const About = () => {
           images={presentData}
           backgroundIndex={backgroundCount}
           handleHeroClick={handleHeroClick}
-          height={'70vh'}
+          height={'77vh'}
         />
   
         <div className='infoSectionWrapper'>

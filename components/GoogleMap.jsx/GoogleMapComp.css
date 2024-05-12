@@ -6,19 +6,21 @@
   .sidebar {
     position: absolute;
     width: 33%;
-    height: 66%;
+    height: 65.9%;
     left: 2%;
     top: 18%;
     padding: 20px;
     background: white;
-  }
+    border: 2px solid black; /* Updated this line */
+}
   
   .map-style {
-    width: 60%;
+    width: 62%;
     height: 70%;
     top: 18%;
     position: absolute;
-    left:40%;
+    left:39%;
+    border: 2px solid black; /* Updated this line */
   }
   
   .info-box {
@@ -33,7 +35,6 @@
     z-index: 10;
   }
   .sidebar-info{
-    padding: 10px;
     width: auto;
   }
   @media (max-width: 768px) {
@@ -44,7 +45,8 @@
         min-width: 60%;
     }
     .sidebar-info{
-        display:grid;
+        display:-ms-inline-grid;
+        
     }
     .map-style {
         top: 330px;

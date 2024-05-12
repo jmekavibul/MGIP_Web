@@ -2,7 +2,7 @@
 .contact-form-container {
     width: 100%;
     padding: 3rem;
-    background: #adadad;  /* Dark grey background */
+    background: #848484;  /* Dark grey background */
     color: #fff;  /* White text */
     display: flex;
     flex-direction: column;
@@ -58,15 +58,17 @@
 }
 
 .form-control.is-invalid {
-    border: 1px solid #dc3545;  /* Red border for validation errors */
+    border: 2px solid #ff0019;  /* Red border for validation errors */
 }
 
 .error-message {
     position: absolute; /* Absolute positioning */
-    bottom: -40px; /* Adjust as necessary */
+    bottom: -37px; /* Adjust as necessary */
+    font-family:Georgia, 'Times New Roman', Times, serif;
     left: 0;
     width: 100%; /* Error message takes full width of the form-group */
-    color: #f70019; /* Updated color code */
+    color: #ffffff; /* Updated color code */
+
     font-size: 1rem;
     padding-left: 0.25rem;
 }
@@ -89,6 +91,10 @@
 
 /* Responsiveness */
 @media (max-width: 768px) {
+    .error-message {
+        bottom: -30%;
+        color:red;
+    }
     .form-row {
         flex-direction: column;
     }

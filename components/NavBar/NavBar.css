@@ -98,7 +98,13 @@
         .hamburger {
         display: block; /* Show hamburger icon on smaller screens */
         }
-    
+        .navbar{
+            padding: 20px 50px 25px;
+        }
+        .navbar-shrink {
+            padding: 5px 50px 30px;
+            background-color: rgba(255, 255, 255, 0.95 );
+        }
         .navbar-links {
         display: none; /* Hide the links initially */
         position: fixed;
@@ -131,9 +137,6 @@
         padding: 10px 0; /* More padding for touch targets */
         }
 
-        .navbar {
-        padding: 10px 50px; /* Adjust navbar padding on smaller screens */
-        }
     }
   
     @media (min-width: 769px) and (max-width: 1024px) {

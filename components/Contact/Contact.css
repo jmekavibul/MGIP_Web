@@ -3,11 +3,12 @@
     flex-direction: row; /* Ensures horizontal layout on larger screens */
     width: 100vw;
     height: 100vh;
+    font-family: "Lora", serif;
 }
 
 .form-section {
     flex: 1;
-    background-color: #adadad; /* Gray for the form side */
+    background-color: #848484; /* Gray for the form side */
     color: #fff;
     display: flex;
     justify-content: center;
