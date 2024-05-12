@@ -86,7 +86,7 @@ export const Team = ({ members }) => {
               <input
                 className="the-search-bar"
                 type="text"
-                placeholder={`  Search by Name `}
+                placeholder="Search by Name"
                 value={searchQuery}
                 onChange={handleSearchChange}
               />

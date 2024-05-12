@@ -128,6 +128,7 @@
     .text-section, 
     .grid-section {
       padding: 0;
+      width: 50%;
     }
   
     .grid-section {

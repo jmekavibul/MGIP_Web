@@ -1,5 +1,6 @@
 import React from 'react';
 import './BioPage.css'; // Make sure to create a corresponding CSS file
+import ContentBox2 from '../ContentBox2/ContentBox2';
 
 const BioPage = ({ member }) => {
   return (
@@ -7,7 +8,7 @@ const BioPage = ({ member }) => {
       <div className="bio-image-section">
         <img src={member.photo} alt={member.name} className="bio-large-photo"/>
       </div>
-      <div className="bio-info-section">
+        <ContentBox2 content={<div>      <div className="bio-info-section">
         <div className="bio-header">
           <h1>{member.name}</h1>
           <h2>{member.title}</h2>
@@ -81,7 +82,7 @@ const BioPage = ({ member }) => {
             
         </div>
 
-      </div>
+      </div></div>}/>
     </div>
   );
 };

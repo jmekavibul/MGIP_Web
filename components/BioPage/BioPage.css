@@ -8,11 +8,11 @@
     font-family: 'Noto Sans', sans-serif;
     padding-top: 100px;
     box-sizing: border-box;
+    padding-top: 15vh;
 }
 
 .bio-image-section {
     width: 30%;
-    padding: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -27,8 +27,7 @@
 
 .bio-info-section {
     width: 70%;
-    padding: 40px;
-    background: #ffffff;
+    align-items: center;
 }
 
 .bio-header {
@@ -57,17 +56,21 @@
 }
 
 @media (max-width: 768px) {
+    .bio-header h1, .bio-section h3 {
+        font-size: 23px;
+        max-width: 300px;
+        color: #2a2a2a;
+    }
     .bio-full-page {
         flex-direction: column;
     }
 
     .bio-image-section, .bio-info-section {
         width: 100%;
-        padding: 20px;
+        padding-bottom: 20px;
     }
 
     .bio-info-section {
         border-left: none;
-        border-top: 2px solid #ddd;
     }
 }
