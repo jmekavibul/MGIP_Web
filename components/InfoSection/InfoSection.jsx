@@ -52,7 +52,6 @@ const InfoSection = () => {
             <div className='service-section'>
                 <div className="services-header">
                     <h2>Firm Highlight</h2>
-                    <a href="/MGIP_Web/services" className="all-services">See all services</a>
                 </div>
 
                 <Awards></Awards>

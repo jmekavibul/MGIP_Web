@@ -13,6 +13,7 @@ body, html {
   padding: 120px 20px; /* Reduced top/bottom padding for all views */
   box-sizing: border-box;
   margin-top: 10px;
+  padding-top: 120px;
 }
   
 .team-background {
@@ -76,7 +77,6 @@ body, html {
   margin: 0 auto;
   flex-grow: 1;
   margin-right: auto;
-  padding: 0 1rem;
   flex-shrink: 0;
 }
 
