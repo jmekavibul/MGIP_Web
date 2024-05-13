@@ -84,27 +84,57 @@
   .hamburger {
     display: none; /* Hidden by default */
     cursor: pointer;
-    font-size: 24px; /* Adjust based on your preference */
     position: absolute;
-    right: 20% ;
-    top: 15px;
+    right: 15% ;
+    top: -1%;
     background: transparent;
     border: none;
     color: #333; /* Change color to ensure visibility against your navbar background */
     z-index: 1010; /* Make sure it's above other content */
 }
+.hamburger, .hamburger::before, .hamburger::after {
+    transition: transform 0.3s ease, opacity 0.2s ease;
+    content: '';
+    display: block;
+    background: #626262; /* Color of the hamburger lines */
+    height: 2px;
+    width: 22px;
+    position: relative;
+}
 
+.hamburger::before, .hamburger::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    transition: transform 0.3s ease, top 0.2s ease 0.1s;
+}
+
+.hamburger::before {
+    top: -10px;
+}
+
+.hamburger::after {
+    top: 10px;
+}
+
+/* Rotate for active state */
+.hamburger.active {
+    background: transparent; /* Hide central bar */
+}
+
+.hamburger.active::before {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.hamburger.active::after {
+    transform: rotate(-45deg);
+    top: 0;
+}
     /* Styles to make the navbar links expandable for mobile */
     @media (max-width: 768px) {
         .hamburger {
         display: block; /* Show hamburger icon on smaller screens */
-        }
-        .navbar{
-            padding: 20px 50px 25px;
-        }
-        .navbar-shrink {
-            padding: 5px 50px 30px;
-            background-color: rgba(255, 255, 255, 0.95 );
         }
         .navbar-links {
         display: none; /* Hide the links initially */

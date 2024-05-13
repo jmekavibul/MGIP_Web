@@ -205,7 +205,10 @@
     }
   }
   @media (max-width: 400px) {
-    
+    .service-points{
+        max-width: 90%;
+        padding-top: 0;
+    }
     .content-box-wrapper {
         width: 100%;  
     }

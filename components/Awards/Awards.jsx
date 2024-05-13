@@ -67,7 +67,7 @@ const Awards = () => {
             'We protect clients for their intellectual property',
             'We provide service in multiple languages',
             'Attorneys with science and technical background',
-            'Located in the DC metro area'
+            'Located in the DC metro area, 8 minutes from USPTO'
         ]}
         />
         

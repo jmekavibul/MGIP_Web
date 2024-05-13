@@ -125,10 +125,13 @@
   }
   
   @media (max-width: 500px) {
+    .card-container {
+        padding-top: 0;
+    }
     .text-section, 
     .grid-section {
       padding: 0;
-      width: 50%;
+      width: 90%;
     }
   
     .grid-section {

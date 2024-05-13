@@ -30,7 +30,6 @@ export const NavBar = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
             aria-label="Toggle navigation"
         >
-            ☰
       </button>
 
       <ul className={`navbar-links ${isNavExpanded ? 'expanded' : ''}`}>
