@@ -1,13 +1,19 @@
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
 .heroContainer {
     position: relative;
     width: 100%; /* Ensure full width */
     height: 100vh; /* Adjust height dynamically through props */
     background-size: cover;
-    background-position: center;
     display: flex;
+    background-repeat:no-repeat;
+    background-position: center;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transition: background-image 1s ease-in-out;
 }
 @keyframes slideInFromBottom {
     from {
