@@ -2,8 +2,24 @@ import React, { useEffect, useState } from 'react';
 import './Hero.css';
 
 const Hero = ({ images, backgroundIndex, handleHeroClick, height }) => {
-  // State to track loaded state of bars
   const [loaded, setLoaded] = useState(Array(images.length).fill(false));
+  const [allImagesLoaded, setAllImagesLoaded] = useState(false);
+
+  // Function to preload images
+  const preloadImages = () => {
+    const imageObjects = images.map(image => {
+      const img = new Image();
+      img.src = image.url;
+      return new Promise((resolve) => {
+        img.onload = () => resolve();
+      });
+    });
+    Promise.all(imageObjects).then(() => setAllImagesLoaded(true));
+  };
+
+  useEffect(() => {
+    preloadImages();
+  }, [images]);
 
   useEffect(() => {
     // Reset all progress bars to 0 when changing images
