@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'; // Ensure this points to your NavBar.css file correctly
+import { RxHamburgerMenu } from "react-icons/rx";
 
 export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,7 @@ export const NavBar = () => {
             onClick={() => setIsNavExpanded(!isNavExpanded)}
             aria-label="Toggle navigation"
         >
+            <RxHamburgerMenu ></RxHamburgerMenu>
       </button>
 
       <ul className={`navbar-links ${isNavExpanded ? 'expanded' : ''}`}>
