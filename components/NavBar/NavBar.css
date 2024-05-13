@@ -87,7 +87,6 @@
     font-size: 24px; /* Adjust based on your preference */
     position: absolute;
     right: 20% ;
-    top: 15px;
     background: transparent;
     border: none;
     color: #333; /* Change color to ensure visibility against your navbar background */
@@ -100,31 +99,31 @@
         display: block; /* Show hamburger icon on smaller screens */
         }
         .navbar{
-            padding: 20px 50px 15px;
+            padding: 20px 50px 10px;
         }
         .navbar-shrink {
-            padding: 5px 50px 25px;
+            padding: 5px 50px 5px;
             background-color: rgba(255, 255, 255, 0.95 );
         }
         .navbar-links {
-        display: none; /* Hide the links initially */
-        position: fixed;
-        height: 20%;
-        top: -20px;
-        left: 0;
-        right: 0;
-        background-color: rgba(243, 243, 243, 0.9); /* Adjust the background to match your navbar */
-        flex-direction: column;
-        align-items: center;
-        justify-content: start;
-        padding-top: 60px; /* Add padding to top to avoid overlay with the hamburger icon */
-        width: 100%; /* Full width */
-        z-index: 1005; /* Ensure it appears above other content but below the hamburger */
-        transition: all 0.3s ease; /* Smooth transition */
+            display: none; /* Hide the links initially */
+            position: fixed;
+            height: 20%;
+            top: -20px;
+            left: 0;
+            right: 0;
+            background-color: rgba(243, 243, 243, 0.9); /* Adjust the background to match your navbar */
+            flex-direction: column;
+            align-items: center;
+            justify-content: start;
+            padding-top: 60px; /* Add padding to top to avoid overlay with the hamburger icon */
+            width: 100%; /* Full width */
+            z-index: 1005; /* Ensure it appears above other content but below the hamburger */
+            transition: all 0.3s ease; /* Smooth transition */
         }
     
         .navbar-links.expanded {
-        display: flex; /* Show the links when hamburger is clicked */
+            display: flex; /* Show the links when hamburger is clicked */
         }
     
         .navbar-links li {
