@@ -19,7 +19,6 @@ function App() {
                     <Routes>
                         <Route path="/" element={<About />}/>
                         <Route path="/MGIP_Web" element={<About />}/>
-                        <Route path="/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/MGIP_Web/contact" element={<Contact/>}></Route>
                         <Route path="/contact" element={<Contact/>}></Route>
