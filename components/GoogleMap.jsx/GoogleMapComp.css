@@ -5,22 +5,25 @@
   
   .sidebar {
     position: absolute;
-    width: 33%;
-    height: 65.7%;
+    top: 20%; /* Adjust this value to set the desired top offset */
     left: 2%;
-    top: 18%;
+    width: 34%;
+    height: 65%; /* Adjust height as needed */
     padding: 20px;
     background: white;
     border: 2px solid black; /* Updated this line */
-}
+    box-sizing: border-box; /* Ensure padding is included in the width */
+    overflow-y: auto; /* Add scroll if content overflows */
+  }
   
   .map-style {
-    width: 62%;
-    height: 70%;
-    top: 18%;
     position: absolute;
-    left:39%;
-    border: 2px solid black; /* Updated this line */
+    top: 20%; /* Adjust this value to set the desired top offset */
+    left: 36%;
+    width: 62%;
+    height: 65%; /* Adjust height as needed */
+    border: 1.4px solid black; /* Updated this line */
+    box-sizing: border-box; /* Ensure padding is included in the width */
   }
   
   .info-box {
