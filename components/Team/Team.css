@@ -227,7 +227,7 @@ body, html {
     /* Adjust text size and padding as needed for mobile */
     font-size: 1.0em; /* Smaller text */
     padding: 8px; /* Sufficient padding */
-    transform: translateY(calc(100% - 70px)); /* Adjust visible portion of member info */
+    transform: translateY(calc(100% - 68px)); /* Adjust visible portion of member info */
   }
 
   .alphabet, /* Hide the alphabet navigation on mobile */
@@ -236,9 +236,11 @@ body, html {
   }
 
   .search-container {
+    padding-left: 14%;
     flex-direction: column;
     align-items: stretch; /* This will make children (search bar and filter) stretch to full width */
   }
+
   .search-icon {
     top: 52%;/* Adjust based on padding and desired position */
 }
