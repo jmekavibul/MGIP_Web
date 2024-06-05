@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './About.css';
 import Hero from '../Hero/Hero'; // Ensure you have the correct path to the Hero component
 import InfoSection from '../InfoSection/InfoSection';
-import dc from '../../pictures/dc.jpg'
-import alexandria from '../../pictures/alexandria.jpg'
-import uspto from '../../pictures/uspto.jpg'
+import dc from '../../pictures/dc.webp'
+import alexandria from '../../pictures/alexandria.webp'
+import uspto from '../../pictures/uspto.webp'
 
 export const About = () => {
     const [backgroundCount, setBackgroundCount] = useState(0);
