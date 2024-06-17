@@ -37,21 +37,18 @@
   }
   
   .text-section h2 {
-    font-family: "Lora", serif;
     font-size: 2.5em;
     color: #003366;
     margin-bottom: 10px;
   }
   
   .text-section p {
-    font-family: 'Noto Sans', sans-serif;
     color: #2c353e;
     font-size: 22px;
     line-height: 1.5;
   }
   
   .text-section button {
-    font-family: "Urbanist", sans-serif;
     padding: 15px 20px;
     background-color: #0066cc;
     color: white;
@@ -75,7 +72,6 @@
   }
   
   .grid-item {
-    font-family: "Lora", serif;
     display: flex;
     align-items: center;
     padding: 8px;

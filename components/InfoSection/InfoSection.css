@@ -1,6 +1,5 @@
 
 .info-section {
-    font-family: 'Urbanist', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,11 +9,9 @@
     max-width: none;  
   }
   .service-section{
-    font-family: "Lora", serif;
     width: 100%;
   }
   .services-header2 {
-    font-family: "Lora", serif;
     position: relative;
     display: flex;
     justify-content: center;
@@ -110,7 +107,6 @@
   }
   
   .service-points {
-    font-family: "Lora", serif;
     display: flex;
     justify-content:center;
     flex-wrap: wrap;
@@ -131,7 +127,6 @@
     text-align: left;
   }
   .service-point h1{
-    font-family: "Lora", serif;
     color: #036;
   }
   .service-point h3 {
