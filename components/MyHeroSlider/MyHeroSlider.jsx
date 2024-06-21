@@ -1,10 +1,9 @@
 import React, { useRef } from 'react';
-import HeroSlider, { Slide, MenuNav, Overlay } from 'hero-slider';
+import HeroSlider, { Slide, Nav, Overlay } from 'hero-slider';
 import dc from '../../pictures/dc.webp';
 import alexandria from '../../pictures/alexandria.webp';
 import uspto from '../../pictures/uspto.webp';
 import 'hero-slider/dist/index.css';
-import './MyHeroSlider.css';
 import Title from '../Title';
 import Subtitle from '../Subtitle';
 import Wrapper from '../Wrapper';
@@ -14,11 +13,6 @@ const MyHeroSlider = () => {
   const goToPreviousSlideRef = useRef(null);
 
   const handleBeforeSliding = (previousSlide, nextSlide) => {
-    console.debug(
-      "onBeforeSliding(previousSlide, nextSlide): ",
-      previousSlide,
-      nextSlide
-    );
 
     const totalSlides = 3;
     if (nextSlide >= totalSlides) {
@@ -112,7 +106,7 @@ const MyHeroSlider = () => {
         </Overlay>
       </Slide>
 
-      <MenuNav />
+      <Nav />
     </HeroSlider>
   );
 };
