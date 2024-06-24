@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css';
 import { RxHamburgerMenu } from "react-icons/rx";
+import mgipLogo from '../../public/mgip-logo.png';
 
 export const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -35,7 +36,7 @@ export const NavBar = () => {
       <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
         <div className="navbar-logo">
           <Link to='/'>
-            <img src="mgip-logo.png" alt="Logo" />
+            <img src={mgipLogo} alt="Logo" />
           </Link>
         </div>
 
