@@ -9,8 +9,6 @@ import trademark from '../../pictures/trademark.webp';
 import copyright from '../../pictures/copyright.webp';
 
 const InfoSection = () => {
-    const [popupOpen, setPopupOpen] = useState(false);
-    const [popupContent, setPopupContent] = useState('');
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -39,15 +37,6 @@ const InfoSection = () => {
         };
     }, []);
 
-    const handleOpenPopup = (content) => () => {
-        setPopupContent(content);
-        setPopupOpen(true);
-    };
-
-    const handleClosePopup = () => {
-        setPopupOpen(false);
-    };
-
     return (
         <div className="info-section">
             <div className="service-section">
@@ -75,7 +64,6 @@ const InfoSection = () => {
                     </div>
                 </div>
             </div>
-            {popupOpen && <PopUp content={popupContent} onClose={handleClosePopup} />}
         </div>
     );
 };

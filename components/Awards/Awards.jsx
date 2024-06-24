@@ -10,14 +10,6 @@ const AwardCard = React.forwardRef(({ number, description }, ref) => (
 ));
 
 const Awards = () => {
-  const awardsData = [
-    { number: '1500+', description: 'Trademark registrations 2023' },
-    { number: '1700+', description: 'Patent registrations 2023' },
-    { number: '4+', description: 'Countries of clients' },
-    { number: '>8m', description: 'To USPTO office' },
-    { number: '1st, 1st', description: '2023 US Trademark, 2022 US Trademark' },
-    { number: 'Top 10', description: '2023 US Patent, 2022 US Patent' },
-  ];
 
   const info = {
     title: 'Client Counseling for IP law',
@@ -63,28 +55,6 @@ const Awards = () => {
     };
   }, []);
 
-  useEffect(() => {
-    const parallaxStartScrollY = window.innerWidth < 500 ? 400 : 750;
-    const background = document.querySelector('.background-image');
-
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-
-      if (background) {
-        if (currentScrollY > parallaxStartScrollY) {
-          const offset = currentScrollY - parallaxStartScrollY;
-          const parallaxSpeed = 0.5; // Faster speed for smaller screens
-          background.style.transform = `translateY(${offset * parallaxSpeed}px)`;
-        } else {
-          background.style.transform = 'translateY(0px)';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <div className="awards-container">
@@ -103,14 +73,6 @@ const Awards = () => {
       />
       <div className="awards-Wrapper" ref={wrapperRef}>
         <div className="awards-grid">
-          {/* {awardsData.map((award, index) => (
-            <AwardCard
-              key={index}
-              number={award.number}
-              description={award.description}
-              ref={el => (cardRefs.current[index] = el)}
-            />
-          ))} */}
         </div>
       </div>
     </div>
