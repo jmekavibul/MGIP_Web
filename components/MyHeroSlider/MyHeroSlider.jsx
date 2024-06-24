@@ -32,7 +32,7 @@ const MyHeroSlider = () => {
   return (
     <HeroSlider
       className="hero-slider"
-      height="100vh"
+      height="80vh"
       autoplay={{
         autoplayDuration: 8000,
         autoplayDebounce: 4000,
