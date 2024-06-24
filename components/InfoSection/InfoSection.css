@@ -69,9 +69,11 @@
 }
 
 .services-header h2 {
+    font-size: 2rem;
     color: #003366;
     position: relative;
     padding-bottom: 10px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 .services-header::after {
