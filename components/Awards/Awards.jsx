@@ -103,14 +103,14 @@ const Awards = () => {
       />
       <div className="awards-Wrapper" ref={wrapperRef}>
         <div className="awards-grid">
-          {awardsData.map((award, index) => (
+          {/* {awardsData.map((award, index) => (
             <AwardCard
               key={index}
               number={award.number}
               description={award.description}
               ref={el => (cardRefs.current[index] = el)}
             />
-          ))}
+          ))} */}
         </div>
       </div>
     </div>

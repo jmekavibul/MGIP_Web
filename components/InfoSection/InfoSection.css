@@ -1,17 +1,18 @@
-
 .info-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 40px;
-    padding: 50px 0; /* Consistent padding for top and bottom */
-    width: 100%;  
-    max-width: none;  
-  }
-  .service-section{
+    padding: 50px 0;
     width: 100%;
-  }
-  .services-header2 {
+    max-width: none;
+}
+
+.service-section {
+    width: 100%;
+}
+
+.services-header2 {
     position: relative;
     display: flex;
     justify-content: center;
@@ -20,191 +21,188 @@
     padding-bottom: 10px;
     margin-left: 10%;
     margin-right: 10%;
-  }
-  
-  .line-animation {
+}
+
+.line-animation {
     position: absolute;
-    bottom: 0; /* Line at the bottom of the header */
+    bottom: 0;
     width: 100%;
     height: 2px;
-  }
-  .line-animation rect {
+}
+
+.line-animation rect {
     fill: #959696;
     height: 100%;
-    width: 0; /* Initial state with no width */
-    transform-origin: center; /* Ensures scaling is done from the center */
-    animation: expandContractLine 4s ease-in-out infinite; /* Infinite looping animation */
-  }
-  
-  .services-title {
+    width: 0;
+    transform-origin: center;
+    animation: expandContractLine 4s ease-in-out infinite;
+}
+
+.services-title {
     position: relative;
-    z-index: 1; /* Ensures the text is above the SVG line */
+    z-index: 1;
     color: #036;
     font-size: 35px;
-    text-align: center; /* Ensures text is always centered in the div */
-  }
-  
-  @keyframes expandContractLine {
+    text-align: center;
+}
+
+@keyframes expandContractLine {
     0%, 100% {
-      width: 0%; /* Line is not visible at the start and end */
-      x: 50%; /* Keeps the rectangle aligned to the center at 0% width */
+        width: 0%;
+        x: 50%;
     }
     50% {
-      width: 100%; /* Full width at the midpoint of the animation */
-      x: 0%; /* Aligns to the full width of the container */
+        width: 100%;
+        x: 0%;
     }
-  }
-  
-  
-  .services-header {
+}
+
+.services-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative; /* Positioning context for the pseudo-element */
-    padding-bottom: 20px; /* Space for the line */
+    position: relative;
+    padding-bottom: 20px;
     margin-bottom: 20px;
     margin-left: 10%;
     margin-right: 10%;
-  }
-  
-  .services-header h2 {
-    color: #003366; /* Adjust color as needed */
+}
+
+.services-header h2 {
+    color: #003366;
     position: relative;
-    padding-bottom: 10px; /* Space below the text for the line */
-  }
-  
-  .services-header::after {
+    padding-bottom: 10px;
+}
+
+.services-header::after {
     content: '';
     position: absolute;
     left: 0;
-    bottom: 0; /* Position the line at the bottom of the header */
+    bottom: 0;
     height: 2px;
-    width: 0%; /* Start with no width */
-    background-color: #839ebd; /* Line color */
-    animation: expandLine 2s forwards; /* Animation to expand the line */
-  }
-  
-  @keyframes expandLine {
+    width: 0%;
+    background-color: #839ebd;
+    animation: expandLine 2s forwards;
+}
+
+@keyframes expandLine {
     from {
-      width: 0%;
+        width: 0%;
     }
     to {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  
-  .services-header h2 {
+}
+
+.services-header h2 {
     margin: 0;
     padding-bottom: 10px;
     color: #003366;
-  }
-  
-  .all-services {
+}
+
+.all-services {
     text-decoration: none;
     color: #839ebd;
     padding-bottom: 12px;
-  }
-  
-  .service-points {
+}
+
+.service-points {
     display: flex;
-    justify-content:center;
+    justify-content: center;
     flex-wrap: wrap;
-    padding-top: 50px; /* Space above service points */
-    padding-bottom: 50px; /* Space above service points */
+    padding-bottom: 50px;
     opacity: 0;
     transform: translateX(-50%);
     transition: transform 1s ease-out, opacity 1s ease-out;
-  }
-  
-  .service-points.visible {
+    gap: 5%;
+}
+
+.service-points.visible {
     opacity: 1;
     transform: translateX(0);
 }
-  .service-point {
-    flex-basis: calc(25% - 20px); /* Adjust width based on spacing */
+
+.service-point {
+    flex-basis: calc(25% - 20px);
     margin: 10px;
     text-align: left;
-  }
-  .service-point h1{
+}
+
+.service-point h1 {
     color: #036;
-  }
-  .service-point h3 {
+}
+
+.service-point h3 {
     margin-top: 0;
     color: #333;
-  }
-  
-
-  .service-point h1:hover{
-    color: white;
-  }
-  .service-point a:hover,
-  .service-point a:focus {
-    color: #0056b3;
-  }
-  .content-box-wrapper {
-    margin: 20px; /* Adjust this value based on your design needs */
 }
-  /* Media query for larger screens where the gap needs to be smaller */
-  @media  (min-width: 1335.1px){
+
+.service-point h1:hover {
+    color: white;
+}
+
+.service-point a:hover,
+.service-point a:focus {
+    color: #0056b3;
+}
+
+.content-box-wrapper {
+    margin: 20px;
+}
+
+@media (min-width: 1335.1px) {
     .services-section {
-        padding-top: 0; /* Smaller padding-top for larger screens */
-      }
-  }
-  @media (min-width: 1325.5px) and (max-width: 1335px) {
-    
-    .services-section {
-      padding-top: 0; /* Smaller padding-top for larger screens */
-      padding-left:250px;
+        padding-top: 0;
     }
-    
-  }
-  @media (max-width: 1300.5px){
+}
+
+@media (min-width: 1325.5px) and (max-width: 1335px) {
+    .services-section {
+        padding-top: 0;
+        padding-left: 250px;
+    }
+}
+
+@media (max-width: 1300.5px) {
     .service-points {
         padding-top: 70px;
         flex-direction: column;
         align-items: center;
     }
-        .services-section {
-      padding-top: 0; /* Smaller padding-top for larger screens */
+    .services-section {
+        padding-top: 0;
     }
+}
 
-  }
-
-  
-  /* Media query for mobile screens */
-  @media (max-width: 1300px) {
+@media (max-width: 1300px) {
     .services-header {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
     .services-header h2,
     .all-services {
-      margin-top: 10px;
-      margin-right:10px;
+        margin-top: 10px;
+        margin-right: 10px;
     }
-  
     .service-points {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
-  
     .service-point {
-      width: 100%; /* Full width on mobile */
+        width: 100%;
     }
-
     .services-section {
-        transform: translateX(0);  
-        opacity: 1;  
+        transform: translateX(0);
+        opacity: 1;
     }
-  }
-  @media (max-width: 400px) {
-    .service-points{
+}
+
+@media (max-width: 400px) {
+    .service-points {
         max-width: 90%;
         padding-top: 0;
     }
     .content-box-wrapper {
-        width: 100%;  
+        width: 100%;
     }
-  }
+}

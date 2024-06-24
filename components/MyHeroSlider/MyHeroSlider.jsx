@@ -4,16 +4,15 @@ import dc from '../../pictures/dc.webp';
 import alexandria from '../../pictures/alexandria.webp';
 import uspto from '../../pictures/uspto.webp';
 import 'hero-slider/dist/index.css';
-import Title from '../Title';
-import Subtitle from '../Subtitle';
-import Wrapper from '../Wrapper';
+import Title from '../Title/Title';
+import Subtitle from '../Subtitle/Subtitle';
+import Wrapper from '../Wrapper/Wrapper';
 
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
 
   const handleBeforeSliding = (previousSlide, nextSlide) => {
-
     const totalSlides = 3;
     if (nextSlide >= totalSlides) {
       setTimeout(() => {
@@ -40,7 +39,7 @@ const MyHeroSlider = () => {
       }}
       controller={{
         initialSlide: 1,
-        slidingDuration: 500,
+        slidingDuration: 300, // Faster sliding duration
         slidingDelay: 100,
         onSliding: (nextSlide) =>
           console.debug("onSliding(nextSlide): ", nextSlide),
@@ -59,11 +58,10 @@ const MyHeroSlider = () => {
       }}
     >
       <Slide
-        shouldRenderMask
         label="Washington, D.C."
         background={{
           backgroundImageSrc: dc,
-          backgroundAnimation: 'zoom', // Add zoom animation
+          backgroundAnimation: 'zoom',
         }}
       >
         <Overlay>
@@ -75,11 +73,10 @@ const MyHeroSlider = () => {
       </Slide>
 
       <Slide
-        shouldRenderMask
         label="Alexandria"
         background={{
           backgroundImageSrc: alexandria,
-          backgroundAnimation: 'zoom', // Add zoom animation
+          backgroundAnimation: 'zoom',
         }}
       >
         <Overlay>
@@ -91,11 +88,10 @@ const MyHeroSlider = () => {
       </Slide>
 
       <Slide
-        shouldRenderMask
         label="USPTO"
         background={{
           backgroundImageSrc: uspto,
-          backgroundAnimation: 'zoom', // Add zoom animation
+          backgroundAnimation: 'zoom',
         }}
       >
         <Overlay>

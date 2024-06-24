@@ -40,12 +40,14 @@
     font-size: 2.5em;
     color: #003366;
     margin-bottom: 10px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
   
   .text-section p {
     color: #2c353e;
     font-size: 22px;
     line-height: 1.5;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
   
   .text-section button {
