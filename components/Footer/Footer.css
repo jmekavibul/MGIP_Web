@@ -1,73 +1,90 @@
-.site-footer {
-    background-color: rgba(73, 73, 73, 0.85);; /* Dark background */
-    color: #fff; /* White text */
-    padding: 20px 0; /* Top and bottom padding */
-    font-family: "Lora", serif; /* Sample font */
+.footer-container {
+    width: 100%;
+    padding: 5px 0;
+    color: #003366;
+    background-color: rgb(247, 247, 247);
+  }
+  
+  .footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #003366;
+    width: 100%;
   }
   
   .footer-content {
-    display: block;
-    flex-direction: row;
+    display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
+    width: 100%;
     max-width: 1200px;
-    margin: auto;
-    padding: 0 20px; /* Padding on the sides */
-    flex-wrap: wrap; /* Wrap items on smaller screens */
   }
   
-  .footer-links a,
-  .footer-social a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px; /* Margin between links */
-    font-size: 0.9em; /* Smaller font size for links */
-  }
-  
-  .footer-links {
+  .link-parent {
     display: flex;
-    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 80px;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
   }
   
-  .footer-subscribe p {
-    margin: 0;
-    font-size: 1.2em; /* Larger font size for the subscription text */
+  .footer-section.company-info {
+    margin-top: 20px; /* Adjust this value to lower the logo */
   }
   
-  .footer-subscribe button {
-    background: none;
-    border: none;
-    color: #fff;
-    cursor: pointer;
+  .footer-section h3,
+  .footer-section h4 {
+    margin-bottom: 10px;
+    font-weight: 700;
   }
   
-  .footer-social {
+  .footer-section ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .footer-section li {
+    margin-bottom: 10px;
+  }
+  
+  .footer-section a {
+    color: #003366;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-credits {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    width: 80%;
+    max-width: 1200px;
+    font-family: 'Noto Sans', sans-serif;
+    font-size: 0.875rem;
   }
   
-  .footer-legal {
-    text-align: center;
-    width: 100%; /* Full width */
-    margin-top: 20px; /* Margin top for legal text */
-  }
-  
-  /* Responsive adjustments */
   @media (max-width: 768px) {
     .footer-content {
       flex-direction: column;
+      align-items: center;
     }
-    .footer-content {padding: 10px;}
-    .site-footer {padding: 0;}
-    .footer-links {
-      justify-content: center;
-      margin-bottom: 10px; /* Space between the sections */
+  
+    .footer-section {
+      margin-bottom: 20px;
+      align-items: center;
     }
-    .footer-subscribe,
-    .footer-social{
-        display: none;
+  
+    .footer-credits {
+      flex-direction: column;
+      align-items: center;
     }
   }
   
