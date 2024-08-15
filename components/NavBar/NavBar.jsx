@@ -51,7 +51,8 @@ export const NavBar = () => {
         <ul className={`navbar-links ${isNavExpanded ? 'expanded' : ''}`}>
           <li><Link to="/" onClick={() => setIsNavExpanded(false)}>About</Link></li>
           <li><Link to="/team" onClick={() => setIsNavExpanded(false)}>Team</Link></li>
-          <li><Link to="/contact" onClick={() => setIsNavExpanded(false)}>Contact</Link></li>
+          <li><Link to="/careers" onClick={() => setIsNavExpanded(false)}>Careers</Link></li>
+          <li><Link to="/contact" onClick={() => setIsNavExpanded(false)}>Contact Us</Link></li>
         </ul>
       </nav>
 

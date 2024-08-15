@@ -1,2 +1,23 @@
-.about{
+.about {
+    position: relative; /* Ensure .about section is positioned relative to contain absolute elements */
+}
+
+.background-image2 {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../pictures/blank_map.jpg');
+    background-repeat: no-repeat;
+    background-size:80%; /* or 'contain' based on your desired effect */
+    padding-top: 50px;
+    background-position: center 0px;
+    z-index: -1; /* Ensure it's behind the content */
+    opacity: 0.14;
+}
+
+.infoSectionWrapper {
+    position: relative; /* Make sure this is positioned relative so it's above the background */
+    z-index: 2; /* Ensure content appears above the background image */
 }

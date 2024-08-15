@@ -5,7 +5,7 @@
     align-items: center;
     background-color: rgba(243, 243, 243, 0.85);
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    padding: 20px 50px 10px;
+    padding: 20px 40px 25px;
     top: 0; /* Aligns the navbar to the top */
     width: 100%; /* Ensures the navbar spans the full width of the viewport */
     z-index: 1000; /* Ensures the navbar stays above other content */
@@ -13,7 +13,7 @@
   }
   /* Smaller navbar size after scrolling */
   .navbar-shrink {
-    padding: 5px 50px 3px;
+    padding: 15px 40px 15px;
     background-color: rgba(255, 255, 255, 0.95 );
   }
   .navbar-logo img {
@@ -49,7 +49,7 @@
     right: 0;
     bottom: -5px;
     height: 2px;
-    background-color: #036;
+    background-color: #577C8E;
     transform: scaleX(0);
     transition: transform 0.3s ease;
     transform-origin: left center;
@@ -57,7 +57,7 @@
 
 .navbar-links li a:hover,
 .navbar-links li a:focus {
-    color: #036; /* Change color on hover */
+    color: #577C8E; /* Change color on hover */
 }
 
 .navbar-links li a:hover::after,
@@ -76,7 +76,7 @@
 .navbar-links li a.active,
 .navbar-links li a.active:hover,
 .navbar-links li a.active:focus {
-    color: #036; /* Active link color */
+    color: #577C8E; /* Active link color */
 }
 
   

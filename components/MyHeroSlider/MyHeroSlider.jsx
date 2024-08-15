@@ -52,7 +52,7 @@ const MyHeroSlider = () => {
       }}
       accessibility={{
         orientation: 'horizontal',
-        shouldDisplayButtons: true,
+        shouldDisplayButtons: false,
       }}
       animations={{
         slidingAnimation: 'fade',
