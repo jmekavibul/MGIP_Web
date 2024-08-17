@@ -55,7 +55,9 @@
 .form-group.full-width.form-control {
     height: 550px; /* Make the message box larger */resize: vertical; /* Allow resizing of the message box */
 }
-
+.form-control.messageis-invalid{
+    height:200px;
+}
 .error-message {
     color: #ff0019;  /* Red text for error messages */font-size: 14px;
     margin-top: -0.5rem;
