@@ -1,0 +1,98 @@
+.threeCardSection {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+  
+  .sectionTitle {
+    margin-bottom: 80px;
+    font-size: 2rem;
+    text-align: center;
+    font-family: 'Playfair Display';
+    font-size: 53px;
+    font-weight: 600;
+    line-height: 70.65px;
+
+  }
+  
+  .cardContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    gap: 40px; /* Adds space between the cards */
+  }
+  
+  .card {
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    padding: 40px;
+    width: 30%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .iconWrapper {
+    margin-bottom: 20px;
+    padding: 20px;
+    border-radius: 10%;
+    display: inline-block;
+    width: 80px; /* Limit the width of the icon wrapper */
+    height: 80px; /* Limit the height of the icon wrapper */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .cardTitle {
+    margin-bottom: 20px;
+    margin-top: 0;
+    color: #36454F;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 52.79px;
+    text-align: left;
+  }
+  
+  .cardDescription {
+    color: #36454F;
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 37.71px;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0px;
+    flex-grow: 1;
+  }
+  
+  .learnMore {
+    color: #2F4157;
+    text-decoration: underline;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    font-family: 'Source Sans 3';
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 37.71px;
+    text-align: left;
+    align-self: flex-start; /* Ensures the button is aligned left */
+    padding-bottom: 20px;
+  }
+  
+  .learnMore:hover {
+    color: #0056b3;
+  }
+  
+  .cardContainer > .card {
+    flex-grow: 1;
+  }
+  
