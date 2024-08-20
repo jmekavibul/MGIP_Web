@@ -3,6 +3,9 @@
     padding: 0 100px 200px 100px;
     width: 70%;
     background-color: white;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
   }
   
   .gridContainer {
