@@ -27,14 +27,17 @@ const ContactForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="contact-form">
         <div className="form-group">
           <label htmlFor="title" className="form-label">Title (Optional)</label>
-          <input
-            id="title"
-            name="title"
-            placeholder="Select"
-            type="text"
-            className={`form-control ${errors.title ? 'is-invalid' : ''}`}
-            {...register('title')}
-          />
+            <select            
+                id="title"
+                name="title"             
+                className={`form-control ${errors.title ? 'is-invalid' : ''}`}
+                {...register('title')}>
+                    <option value="">Select</option>
+                    <option value="Mr">Mr</option>
+                    <option value="Ms">Ms</option>
+                    <option value="Mrs">Mrs</option>
+                    <option value="Dr">Dr</option>
+            </select>
           {errors.title && <p className="error-message">{errors.title.message}</p>}
         </div>
         

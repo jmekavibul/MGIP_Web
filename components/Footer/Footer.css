@@ -1,15 +1,15 @@
 .footer-container {
     width: 100%;
-    padding: 5px 0;
-    color: #003366;
-    background-color: rgb(247, 247, 247);
+    background-color: 
+    #577C8E; /* Blue background color */
+    padding: 20px 0;
   }
   
   .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: #003366;
+    color: #fff;
     width: 100%;
   }
   
@@ -17,8 +17,9 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%;
+    width: 80%;
     max-width: 1200px;
+    margin-bottom: 20px;
   }
   
   .link-parent {
@@ -34,13 +35,10 @@
     justify-content: center;
   }
   
-  .footer-section.company-info {
-    margin-top: 20px; /* Adjust this value to lower the logo */
-  }
-  
   .footer-section h3,
   .footer-section h4 {
     margin-bottom: 10px;
+    font-family: "Lora", serif;
     font-weight: 700;
   }
   
@@ -51,10 +49,11 @@
   
   .footer-section li {
     margin-bottom: 10px;
+    font-family: 'Noto Sans', sans-serif;
   }
   
   .footer-section a {
-    color: #003366;
+    color: #fff;
     text-decoration: none;
   }
   
@@ -70,6 +69,7 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.875rem;
   }
+  
   
   @media (max-width: 768px) {
     .footer-content {

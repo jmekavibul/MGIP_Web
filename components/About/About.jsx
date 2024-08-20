@@ -5,7 +5,7 @@ import MyHeroSlider from '../MyHeroSlider/MyHeroSlider';
 import ButtonCard from '../ButtonCard/ButtonCard';
 
 export const About = () => {
-  
+    
     return (
       <div className='about'>
         <MyHeroSlider/>
