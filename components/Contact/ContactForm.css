@@ -51,7 +51,17 @@
 .form-control.is-invalid {
     border: 2px solid #ff0019;  /* Red border for validation errors */
 }
-
+select.form-control {
+    padding: 0.75rem30px0.75rem1rem; /* Adjust the padding-right value */background: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    color: #333;
+    font-size: 16px;
+    height: 48px;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,...'); /* Your custom arrow SVG data */
+    background-repeat: no-repeat;
+    background-position: right 10px center; /* Adjust this value to move the arrow left */background-size: 12px;
+}
 .form-group.full-width.form-control {
     height: 550px; /* Make the message box larger */resize: vertical; /* Allow resizing of the message box */
 }

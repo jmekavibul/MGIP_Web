@@ -68,7 +68,7 @@ const MyHeroSlider = () => {
         <Overlay>
           <Wrapper>
             <Title>Experienced</Title>
-            <Subtitle>Top TradeMark Registration 2023</Subtitle>
+            <Subtitle>Trusted Advisors for Over 50 Years            </Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
