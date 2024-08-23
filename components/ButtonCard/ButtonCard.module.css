@@ -3,7 +3,7 @@
   }
   
   .description {
-    font-family: 'Source Sans Pro';
+    font-family: 'Source Sans 3';
     font-size: 30px;
     font-weight: 400;
     text-align: left;
@@ -21,11 +21,11 @@
     font-weight: 600;
     line-height: 24px;
     text-align: center;
-
   }
 
   .buttonTitle {
     font-family: 'Playfair Display';
+    color: #2F4157;
     font-size: 48px;
     font-weight: 600;
     line-height: 63.98px;

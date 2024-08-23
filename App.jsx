@@ -14,24 +14,19 @@ function App() {
     return(
         <Router>
             <div className='App'>
-                <NavBar/>
+                {/* <NavBar/> */}
                 <main>
                     <Routes>
                         <Route path="/" element={<About />}/>
-                        <Route path="/MGIP_Web" element={<About />}/>
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
-                        <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
-                        <Route path="/MGIP_Web/contact" element={<Contact/>}></Route>
-                        <Route path="/contact" element={<Contact/>}></Route>
+                        <Route path="/contact" element={<Contact/>}/>
                         {teamMembers.map(member => (
-                            <Route key={member.id} path={`/MGIP_Web/${member.id}`} element={<BioPage member={member} />}/>
+                            <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} />}/>
                         ))}
                     </Routes>
-
                 </main>
                 <Footer/>
             </div>
-
         </Router>
     )
 }

@@ -37,7 +37,7 @@
     border-radius: 12px;  /* Rounded corners for the input boxes */
     color: #51555D;  /* Dark text */
     font-size: 20px; /* Adjust font size to match Figma */
-    font-family:"Source Sans Pro";
+    font-family:"Source Sans 3";
     padding-left: 10px;
     height: 48px; /* Adjusted height for input boxes */
 }

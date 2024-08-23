@@ -142,7 +142,7 @@ export const Team = ({ members }) => {
       </div>
       <div className="team-grid">
         {filteredMembers.map((member, index) => (
-          <Link to={`/MGIP_Web/${member.id}`} key={index} className="team-member">
+          <Link to={`/${member.id}`} key={index} className="team-member">
             <img src={member.photo} alt={member.name} />
             <div className="member-info">
               <h3>{member.name}</h3>

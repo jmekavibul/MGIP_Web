@@ -70,7 +70,7 @@ export const About = () => {
             content="Muncy, Geissler, Olds & Lowe PC is a boutique intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively."
             buttonText=""
             borderRadius=""
-            textColor="#36454F"
+            textColor="#2F4157"
           />
         </div>
         <ThreeCardSection cards={serviceCards} colors={serviceColors} iconBackgroundColor={iconBackgroundColor} />
