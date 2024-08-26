@@ -9,17 +9,19 @@ import Footer from './components/Footer/Footer';
 import './App.css'
 import Contact from './components/Contact/Contact';
 import { teamMembers } from './teamMembers';
+import { Careers } from './components/Careers/Careers';
 function App() {
 
     return(
         <Router>
             <div className='App'>
-                {/* <NavBar/> */}
+                <NavBar/>
                 <main>
                     <Routes>
                         <Route path="/" element={<About />}/>
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
                         <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/careers" element={<Careers/>}/>
                         {teamMembers.map(member => (
                             <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} />}/>
                         ))}

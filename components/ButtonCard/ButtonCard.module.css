@@ -1,39 +1,90 @@
 .buttonCard {
-    padding: 170px 300px; /* Large padding as specified */
+    padding: 100px 150px; /* Reduced padding for smaller screens */
   }
   
   .description {
     font-family: 'Source Sans 3';
-    font-size: 30px;
+    font-size: 26px; /* Adjusted font size for better readability on smaller screens */
     font-weight: 400;
     text-align: left;
+    padding-bottom: 20px; /* Reduced padding for smaller screens */
   }
   
   .cardButton {
-    padding: 24px 72px;
-    background-color: #6C8EAD; /* Adjust to match the button color */
+    padding: 16px 43px; /* Adjusted padding for smaller screens */
+    background-color: #577C8E;
     border: none;
-    border-radius: 50px; /* Slight border radius for the button */
+    border-radius: 15px;
     color: white;
     cursor: pointer;
     font-family: 'Noto Sans';
-    font-size: 30px;
+    font-size: 20px; /* Adjusted font size for smaller screens */
     font-weight: 600;
-    line-height: 24px;
+    line-height: 22px;
     text-align: center;
   }
-
+  
   .buttonTitle {
     font-family: 'Playfair Display';
     color: #2F4157;
-    font-size: 48px;
+    font-size: 42px; /* Adjusted font size for smaller screens */
     font-weight: 600;
-    line-height: 63.98px;
+    line-height: 48px; /* Adjusted line height for smaller screens */
     text-align: left;
-    padding-bottom: 30px;
+    padding-bottom: 20px; /* Reduced padding for smaller screens */
   }
   
   .cardButton:hover {
-    background-color: #5a7182; /* Darker shade on hover */
+    background-color: #5a7182;
+  }
+  
+  /* Media queries for responsiveness */
+
+  
+  @media (min-width: 1080px) {
+    .buttonCard {
+      padding: 170px 300px; /* Original padding for larger screens */
+    }
+    
+    .description {
+      font-size: 30px; /* Original font size for larger screens */
+      padding-bottom: 30px;
+    }
+    
+    .cardButton {
+      padding: 16px 48px; /* Original padding for larger screens */
+      font-size: 20px; /* Original font size for larger screens */
+      line-height: 24px;
+    }
+    
+    .buttonTitle {
+      font-size: 48px; /* Original font size for larger screens */
+      line-height: 63.98px;
+      padding-bottom: 30px;
+    }
+  }
+  
+  /* Mobile view (max-width: 767px) */
+  @media (max-width: 800px) {
+    .buttonCard {
+      padding: 80px 30px; /* Some padding for mobile screens */
+    }
+  
+    .description {
+      font-size: 26px; /* Adjust font size for mobile */
+      padding-bottom: 15px;
+    }
+    
+    .cardButton {
+      padding: 20px 40px; /* Adjust padding for mobile */
+      line-height: 20px;
+      font-size: 20px; /* Adjust font size for mobile */
+
+    }
+    
+    .buttonTitle {
+      line-height: 42px;
+      padding-bottom: 15px;
+    }
   }
   
