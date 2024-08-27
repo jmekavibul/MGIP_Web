@@ -141,7 +141,7 @@ export const Team = ({ members }) => {
 
       </div>
       <div className="team-grid">
-        {filteredMembers.map((member, index) => (
+        {filteredMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
           <Link to={`/${member.id}`} key={index} className="team-member">
             <img src={member.photo} alt={member.name} />
             <div className="member-info">

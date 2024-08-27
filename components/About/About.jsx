@@ -43,13 +43,13 @@ export const About = () => {
     },
     {
       title: "Trademark",
-      description: "Our trademark services cover registration, monitoring, and enforcement. We help you establish and protect your brand identity, ensuring your trademarks are secure and recognized in the marketplace.",
+      description: "A trademark is a distinctive sign or symbol used to identify and distinguish the goods or services of one seller or provider from those of others. Trademarks can take various forms, including words, names, logos, slogans, symbols, designs, colors, or even sounds and smells. Essentially, a trademark serves as a brand identifier, helping consumers recognize and associate certain products or services with a particular source or origin.",
       icon: FaTrademark,
       linkText: "Learn More",
     },
     {
       title: "Copyright",
-      description: "We provide full copyright services, from registration to enforcement. Our experts safeguard your creative works, ensuring your intellectual property rights are upheld and protected against infringement.",
+      description: "Copyright is a form of intellectual property law that grants exclusive rights to the creators of original works, allowing them to control the use and distribution of their creations. It protects a wide range of creative works, including literary, artistic, musical, and dramatic works, as well as software code, architectural designs, and other original expressions.",
       icon: FaCopyright,
       linkText: "Learn More",
     },
@@ -67,7 +67,7 @@ export const About = () => {
           <ButtonCard
             backgroundColor="transparent"
             title="Client Counseling for IP law"
-            content="Muncy, Geissler, Olds & Lowe PC is a boutique intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively."
+            content="Muncy, Geissler, Olds & Lowe PC is an intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively."
             buttonText=""
             borderRadius=""
             textColor="#2F4157"

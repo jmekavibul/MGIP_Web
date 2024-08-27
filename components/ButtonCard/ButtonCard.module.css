@@ -47,18 +47,18 @@
     }
     
     .description {
-      font-size: 30px; /* Original font size for larger screens */
+      font-size: 25px; /* Original font size for larger screens */
       padding-bottom: 30px;
     }
     
     .cardButton {
-      padding: 16px 48px; /* Original padding for larger screens */
-      font-size: 20px; /* Original font size for larger screens */
+      padding: 16px 45px; /* Original padding for larger screens */
+      font-size: 18px; /* Original font size for larger screens */
       line-height: 24px;
     }
     
     .buttonTitle {
-      font-size: 48px; /* Original font size for larger screens */
+      font-size: 40px; /* Original font size for larger screens */
       line-height: 63.98px;
       padding-bottom: 30px;
     }
