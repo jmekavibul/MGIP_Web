@@ -1,7 +1,6 @@
 .bioFullPage {
   padding: 15px;
-  width: 70%; /* Set the width to 75% of the screen */
-  /* max-width: 1200px; Optional: Set a maximum width to prevent it from getting too large on very wide screens */
+  width: 70%;
   margin: 0 auto; /* Center the content */
 }
 
@@ -140,5 +139,8 @@ p {
 
   .memberPhoto {
     margin: 0 auto; /* Center the photo */
+  }
+  .bioFullPage {
+    width: 90%;
   }
 }
