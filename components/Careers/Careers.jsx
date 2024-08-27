@@ -12,6 +12,7 @@ export function Careers(){
                 buttonText="Apply now"
                 borderRadius=""
                 textColor="#2F4157"
+                url="https://recruiting.paylocity.com/recruiting/jobs/All/5847c0ea-c9f8-4ed7-8865-cbd0d03e3e2d/Muncy-Geissler-Olds-Lowe-PC"
             />
         </div>
 

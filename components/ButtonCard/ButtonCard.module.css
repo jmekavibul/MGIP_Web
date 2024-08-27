@@ -47,7 +47,7 @@
     }
     
     .description {
-      font-size: 25px; /* Original font size for larger screens */
+      font-size: 30px; /* Original font size for larger screens */
       padding-bottom: 30px;
     }
     
@@ -58,7 +58,6 @@
     }
     
     .buttonTitle {
-      font-size: 40px; /* Original font size for larger screens */
       line-height: 63.98px;
       padding-bottom: 30px;
     }

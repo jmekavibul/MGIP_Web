@@ -21,6 +21,12 @@
 
 @media (max-width: 768px) {
     .contact-form-section {
-        width: 90%; /* Adjust width for mobile view */
+        width: 80%; /* Adjust width for mobile view */
+    }
+    .contact-page-container{
+        padding-bottom: 0;
+    }
+    .contact-banner{
+        height: 100px;
     }
 }

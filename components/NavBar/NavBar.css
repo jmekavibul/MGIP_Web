@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: rgba(250, 250, 250, 0.9);
+    background-color: rgba(239, 249, 252, 0.9);
     padding: 6px 60px; /* Adjusted padding for better spacing */
     top: 0; /* Aligns the navbar to the top */
     width: 100%; /* Ensures the navbar spans the full width of the viewport */
@@ -14,7 +14,7 @@
 /* Smaller navbar size after scrolling */
 .navbar-shrink {
     padding: 1px 60px;
-    background-color: rgba(255, 255, 255, 0.95 );
+    background-color: rgba(242, 249, 252, 0.95);
 }
 
 .navbar-logo img {
