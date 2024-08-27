@@ -32,7 +32,7 @@
   font-family: 'Playfair Display';
   font-size: 48px;
   font-weight: 600;
-  line-height: 63.98px;
+  line-height: 64px;
   margin-bottom: 10px;
   margin-top: 0px;
 }
@@ -141,5 +141,8 @@ p {
 
   .memberPhoto {
     margin: 0 auto; /* Center the photo */
+  }
+  .bioFullPage {
+    width: 90%;
   }
 }
