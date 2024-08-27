@@ -77,7 +77,7 @@ export const Team = ({ members }) => {
         <Hero2
             backgroundImage={teamphoto}
             text="Our Team"
-            height="20vh"  // Set appropriate height as needed
+            height="50vh"  // Set appropriate height as needed
             subText=""  // Optional: add a subtitle if needed
         />
 

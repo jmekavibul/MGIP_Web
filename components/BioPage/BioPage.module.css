@@ -1,5 +1,6 @@
 .bioFullPage {
-  padding: 15px;
+    
+  padding: 150px 15px;
   width: 70%; /* Set the width to 75% of the screen */
   /* max-width: 1200px; Optional: Set a maximum width to prevent it from getting too large on very wide screens */
   margin: 0 auto; /* Center the content */
