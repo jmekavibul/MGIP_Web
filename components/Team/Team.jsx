@@ -7,6 +7,7 @@ import { IoMdMail } from "react-icons/io";
 import { BsTelephoneFill } from "react-icons/bs";
 import { MdOutlineSearch } from "react-icons/md";
 import Hero2 from '../Hero2/Hero2';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState('');
@@ -73,85 +74,88 @@ export const Team = ({ members }) => {
 
   return (
     <div className="team-container">
-        
-        <Hero2
-            backgroundImage={teamphoto}
-            text="Our Team"
-            height="50vh"  // Set appropriate height as needed
-            subText=""  // Optional: add a subtitle if needed
-        />
+            <Hero2
+                backgroundImage={teamphoto}
+                text="Our Team"
+                height="50vh"  // Set appropriate height as needed
+                subText=""  // Optional: add a subtitle if needed
+            />
 
-      <div className="search-container">
-          <div className='search-items'>
-              <input
-                className="the-search-bar"
-                type="text"
-                placeholder="Search by Name"
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-            <div className='search-icon'>
-                <MdOutlineSearch/>
-            </div>
-            <div className='filterContainer'>
-                <div className="filters">
-                        <Select
-                            value={selectedField} // The value is now controlled by state
-                            options={options}
-                            onChange={handleFieldChange}
-                            className="select-filter"
-                            isClearable={true}
-                            placeholder="Specialised field" // Placeholder is now purely visual
-                            isSearchable={false}
-                        />
-                </div>
-                <div className='filters'>
-                    <Select
-                        value={selectedTitle}
-                        onChange={handleTitleChange}
-                        options={titleOptions}
-                        className="select-filter"
-                        isClearable={true}
-                        placeholder="Filter by Title"
-                        isSearchable={false}
+        <div className='teamBesidesHero'>
+            <div className="search-container">
+                <div className='search-items'>
+                    <input
+                        className="the-search-bar"
+                        type="text"
+                        placeholder="Search by Name"
+                        value={searchQuery}
+                        onChange={handleSearchChange}
                     />
+                    <div className='search-icon'>
+                        <MdOutlineSearch/>
+                    </div>
+                    <div className='filterContainer'>
+                        <div className="filters">
+                                <Select
+                                    value={selectedField} // The value is now controlled by state
+                                    options={options}
+                                    onChange={handleFieldChange}
+                                    className="select-filter"
+                                    isClearable={true}
+                                    placeholder="Specialised field" // Placeholder is now purely visual
+                                    isSearchable={false}
+                                />
+                        </div>
+                        <div className='filters'>
+                            <Select
+                                value={selectedTitle}
+                                onChange={handleTitleChange}
+                                options={titleOptions}
+                                className="select-filter"
+                                isClearable={true}
+                                placeholder="Filter by Title"
+                                isSearchable={false}
+                            />
+                        </div>
+                    </div>
+
                 </div>
-            </div>
-
-          </div>
 
 
-          <div className="alphabet">
-          {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
-              <a
-              key={letter}
-              href={`#${letter}`}
-              className={activeLetter === letter ? 'active' : ''}
-              onClick={(e) => {
-                  e.preventDefault();
-                  handleLetterClick(letter);
-              }}
-              >
-              {letter}
-              </a>
-          ))}
-          </div>
+                <div className="alphabet">
+                {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
+                    <a
+                    key={letter}
+                    href={`#${letter}`}
+                    className={activeLetter === letter ? 'active' : ''}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleLetterClick(letter);
+                    }}
+                    >
+                    {letter}
+                    </a>
+                ))}
+                </div>
 
-          
-
-      </div>
-      <div className="team-grid">
-        {filteredMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
-          <Link to={`/${member.id}`} key={index} className="team-member">
-            <img src={member.photo} alt={member.name} />
-            <div className="member-info">
-              <h3>{member.name}</h3>
-              <p>{member.title}</p>
+                
 
             </div>
-            </Link>
-        ))}
-      </div>
+        </div>
+        <div className="team-grid">
+                {filteredMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
+                <Link to={`/${member.id}`} key={index} className="team-member">
+                    <img src={member.photo} alt={member.name} />
+                    <div className="member-info">
+                    <h3>{member.name}</h3>
+                    <p>{member.title}</p>
+
+                    </div>
+
+                </Link>
+                
+                ))}
+            </div>
     </div>
   );
 };
