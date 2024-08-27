@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import HeroSlider, { Slide, Nav, Overlay } from 'hero-slider';
 import dc from '../../pictures/dc.webp';
-import alexandria from '../../pictures/alexandria.webp';
+import alexandria from '../../pictures/monument.jpg';
 import uspto from '../../pictures/uspto.webp';
 import 'hero-slider/dist/index.css';
 import Title from '../Title/Title';

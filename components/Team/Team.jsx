@@ -146,14 +146,8 @@ export const Team = ({ members }) => {
             <img src={member.photo} alt={member.name} />
             <div className="member-info">
               <h3>{member.name}</h3>
-              <div className="additional-info">
+              <p>{member.title}</p>
 
-                <p>{member.title}</p>
-                <IoMdMail/><a>{member.email}</a>
-                <br></br>
-                <BsTelephoneFill/><a>{member.phone}</a>
-                <a> </a>
-              </div>
             </div>
             </Link>
         ))}

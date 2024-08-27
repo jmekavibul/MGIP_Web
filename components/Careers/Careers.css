@@ -2,6 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Make sure the container takes up the full height of the viewport */
+    height: 98vh; /* Make sure the container takes up the full height of the viewport */
     box-sizing: border-box;
+
 }

@@ -1,7 +1,7 @@
 .threeCardSection {
-  max-width: 70%;
+  max-width: 75%;
   margin: 0 auto;
-  padding: 20px 0 200px 0;
+  padding: 20px 0 100px 0;
 }
 
 .sectionTitle {
@@ -18,13 +18,13 @@
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  gap: 32px;
+  gap: 45px;
 }
 
 .card {
   background-color: #f7f9fc;
   border-radius: 8px;
-  padding: 32px;
+  padding: 25px;
   flex: 1;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
