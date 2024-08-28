@@ -4,7 +4,7 @@ import styles from './ThreeCardSection.module.css';
 const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
   return (
     <div className={styles.threeCardSection}>
-      <h2 className={styles.sectionTitle}>Our Services</h2>
+      <h2 className={styles.sectionTitle}>Services</h2>
       <div className={styles.cardContainer}>
         {cards.map((card, index) => (
           <div

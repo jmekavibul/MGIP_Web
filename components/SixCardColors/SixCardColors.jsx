@@ -4,7 +4,6 @@ import styles from './SixCardColors.module.css';
 const SixCardColors = ({ data, colors }) => {
   return (
     <div className={styles.sixCardColors}>
-      <h2>Transaction Profile</h2>
       <div className={styles.gridContainer}>
         {data.map((item, index) => (
           <div

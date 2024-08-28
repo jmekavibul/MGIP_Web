@@ -9,6 +9,7 @@ import Footer from './components/Footer/Footer';
 import './App.css'
 import Contact from './components/Contact/Contact';
 import { teamMembers } from './teamMembers';
+import { Careers } from './components/Careers/Careers';
 function App() {
 
     return(
@@ -18,20 +19,16 @@ function App() {
                 <main>
                     <Routes>
                         <Route path="/" element={<About />}/>
-                        <Route path="/MGIP_Web" element={<About />}/>
                         <Route path="/team" element={<Team members={teamMembers}/>}/>
-                        <Route path="/MGIP_Web/team" element={<Team members={teamMembers}/>}/>
-                        <Route path="/MGIP_Web/contact" element={<Contact/>}></Route>
-                        <Route path="/contact" element={<Contact/>}></Route>
+                        <Route path="/contact" element={<Contact/>}/>
+                        <Route path="/careers" element={<Careers/>}/>
                         {teamMembers.map(member => (
-                            <Route key={member.id} path={`/MGIP_Web/${member.id}`} element={<BioPage member={member} />}/>
+                            <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} />}/>
                         ))}
                     </Routes>
-
                 </main>
                 <Footer/>
             </div>
-
         </Router>
     )
 }

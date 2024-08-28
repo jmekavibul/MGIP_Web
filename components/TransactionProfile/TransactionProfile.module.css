@@ -41,10 +41,10 @@
     line-height: 49.03px;
 }
 
-h2 {
+.transactionProfileTitle h2 {
     color: #2F394D;
     font-family: 'Lora';
-    font-size: 53px;
+    font-size: 40px;
     font-weight: 500;
     line-height: 67.84px;
     text-align: center;

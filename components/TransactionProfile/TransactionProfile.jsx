@@ -4,7 +4,7 @@ import styles from './TransactionProfile.module.css';
 const TransactionProfile = ({ data }) => {
   return (
     <div className={styles.transactionProfile}>
-      <h2>Our Services</h2>
+      <h2 className={styles.transactionProfileTitle}>Our Services</h2>
       <div className={styles.gridContainer}>
         {data.map((item, index) => (
           <div

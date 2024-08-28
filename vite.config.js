@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  base: "/MGIP_Web",
+  base: "/",
   plugins: [react()],
   build: {
     outDir: 'build',  // Change this from 'build' to 'dist'
