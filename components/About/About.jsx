@@ -1,91 +1,84 @@
-import React, { useState, useEffect } from 'react';
-
-import alexandria from '../../pictures/alexandria.jpg';
-import uspto from '../../pictures/uspto.jpg';
-import dc from '../../pictures/dc.jpg';
+import React from 'react';
 import './About.css';
-import InfoSection from '../InfoSection/InfoSection';
-import Awards from '../Awards/Awards';
+import MyHeroSlider from '../MyHeroSlider/MyHeroSlider';
+import ButtonCard from '../ButtonCard/ButtonCard';
+import SixCardColors from '../SixCardColors/SixCardColors';
+import ThreeCardSection from '../ThreeCardSection/ThreeCardSection';
+import { FaGlobe, FaMapMarkerAlt, FaGavel, FaShieldAlt, FaBriefcase, FaLanguage, FaFileSignature, FaTrademark, FaCopyright } from 'react-icons/fa';
 
 export const About = () => {
-  const [backgroundCount, setBackGroundCount] = useState(0);
-  const [isUserInteracted, setIsUserInteracted] = useState(false);
-  const presentData = [
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: dc },
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img:  alexandria},
-    { text1: "Innovative. Integrated.", text2: "World-class regulatory, litigation and transactional solutions for your most complex challenges.", img: uspto }
+  const transactionData = [
+    {
+      description: "Serve major corporations and mid-sized enterprises domestically and internationally.",
+      icon: FaGlobe,
+    },
+    {
+      description: "Situated in the DC metro area just a few minutes away from the USPTO.",
+      icon: FaMapMarkerAlt,
+    },
+    {
+      description: "Attorneys with science or technical backgrounds and prior experience as USPTO patent examiners.",
+      icon: FaGavel,
+    },
+    {
+      description: "Deliver superior quality work efficiently and cost-effectively.",
+      icon: FaBriefcase,
+    },
+    {
+      description: "Secure intellectual property protection efficiently and cost-effectively.",
+      icon: FaShieldAlt,
+    },
+    {
+      description: "Proficient in several languages to meet your global business needs.",
+      icon: FaLanguage,
+    },
   ];
 
-  const resetProgressBars = () => {
-    document.querySelectorAll('.hero-bar').forEach(bar => {
-      bar.style.width = '0%';
-      bar.style.transition = 'none';
-    });
-  };
+  const serviceCards = [
+    {
+      title: "Patent",
+      description: "We offer comprehensive patent services, including application filing, prosecution, and portfolio management. Our team ensures your innovations are protected and your intellectual property rights are enforced globally.",
+      icon: FaFileSignature,
+      linkText: "Learn More",
+    },
+    {
+      title: "Trademark",
+      description: "A trademark is a distinctive sign or symbol used to identify and distinguish the goods or services of one seller or provider from those of others. Trademarks can take various forms, including words, names, logos, slogans, symbols, designs, colors, or even sounds and smells. Essentially, a trademark serves as a brand identifier, helping consumers recognize and associate certain products or services with a particular source or origin.",
+      icon: FaTrademark,
+      linkText: "Learn More",
+    },
+    {
+      title: "Copyright",
+      description: "Copyright is a form of intellectual property law that grants exclusive rights to the creators of original works, allowing them to control the use and distribution of their creations. It protects a wide range of creative works, including literary, artistic, musical, and dramatic works, as well as software code, architectural designs, and other original expressions.",
+      icon: FaCopyright,
+      linkText: "Learn More",
+    },
+  ];
 
-  const startProgressBar = (index) => {
-    resetProgressBars();
-    const bar = document.querySelector(`.hero-bar[data-index="${index}"]`);
-    if (bar) {
-      // This forces the browser to repaint which ensures the transition will start from 0% width
-      bar.offsetWidth;
-      bar.style.transition = 'width 4.5s linear';
-      bar.style.width = '100%';
-    }
-  };
-
-  useEffect(() => {
-    if (!isUserInteracted) {
-      const intervalId = setInterval(() => {
-        setBackGroundCount((prevCount) => (prevCount + 1) % presentData.length);
-      }, 4500);
-
-      // Start the progress bar for the initial image
-      startProgressBar(backgroundCount);
-
-      return () => clearInterval(intervalId);
-    }
-  }, [backgroundCount, isUserInteracted, presentData.length]);
-
-  const handleBarClick = (index) => {
-    if (!isUserInteracted || backgroundCount !== index) {
-      setBackGroundCount(index);
-      setIsUserInteracted(true);
-      // Start the progress bar for the clicked index
-      startProgressBar(index);
-    }
-  };
+  const serviceColors = ["#D8E8E6", "#D9E3E8", "#E5EAF0"];
+  const iconBackgroundColor = ["#5B9A93", "#577C8E", "#2F4157"];
 
   return (
     <div className='about'>
-      {presentData.map((item, index) => (
-        <div key={index} className={`background ${backgroundCount === index ? 'visible' : ''}`} style={{ backgroundImage: `url(${item.img})` }}>
-          <div className={`hero-text ${backgroundCount === index ? 'visible' : ''}`}>
-            <div className='hero-header'>
-              <p>{item.text1}</p>
-            </div>
-            <div className='hero-content'>
-              <p>{item.text2}</p>
-            </div>
-          </div>
+      <MyHeroSlider/>
+      <div className='infoSectionWrapper'>
+        <div className="background-image2"></div>
+        <div className='buttonCard'>
+          <ButtonCard
+            backgroundColor="transparent"
+            title="Client Counseling for IP law"
+            content="Muncy, Geissler, Olds & Lowe PC is an intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively."
+            buttonText=""
+            borderRadius=""
+            textColor="#2F4157"
+          />
         </div>
-      ))}
-
-      <div className='hero-bar-play'>
-        {presentData.map((_, index) => (
-          <div key={index} className="hero-bar-container" onClick={() => handleBarClick(index)}>
-            <div className={`hero-bar`} data-index={index} style={{ width: backgroundCount === index ? '100%' : '0%' }}></div>
-          </div>
-        ))}
+        <ThreeCardSection cards={serviceCards} colors={serviceColors} iconBackgroundColor={iconBackgroundColor} />
+        <SixCardColors
+          data={transactionData}
+          colors={["#5B9A93", "#577C8E", "#2F4157", "#577C8E", "#2F4157", "#5B9A93"]}
+        />
       </div>
-
-      <div className='infoSection'>
-        <InfoSection />
-      </div>
-      <div className='awards'> 
-        <Awards></Awards>
-      </div>
-      
     </div>
   );
 };

@@ -1,184 +1,23 @@
-    .about {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; /* Aligns children to the start of the flex container */
-        width: auto;
-        /* If you want a minimum height for the .about section, you can uncomment the following line */
-        /* min-height: 100vh; */
-    }
-    
-    .background {
-        height: 70%;
-        width: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        z-index: -1;
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        flex-direction: column;
-        background-size: cover;
-        background-position: center;
-    }
-    .awards{
-        /* Background image configuration */
+.about {
+    position: relative; /* Ensure .about section is positioned relative to contain absolute elements */
+}
 
-    }
+.background-image2 {
+    position: absolute;
+    top: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url('../../pictures/blank_map.jpg');
+    background-repeat: no-repeat;
+    background-size:80%; /* or 'contain' based on your desired effect */
+    padding-top: 50px;
+    background-position: center 0px;
+    z-index: -1; /* Ensure it's behind the content */
+    opacity: 0.14;
+}
 
-    .background.visible {
-        opacity: 1;
-    }
-    
-    .hero-text {
-        color: white;
-        margin: 0.5em 0;
-        text-align: center;
-        opacity: 0;
-        transition: opacity 2s ease-in-out;
-        max-width: 500px;
-        position: absolute;
-        top: 30%; /* Adjust this value to move the text up or down */
-        left: 20%;
-        transform: translateX(-50%);
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        font-size: 16px;
-        font-weight: 600;
-        line-height: 24px;
-    }
-    .hero-header p {
-        font-size: 35px;
-        font-weight: 450;
-        color: white;
-        text-align: center;
-        transition: opacity 2s ease-in-out;
-        opacity: 0; /* Initially hidden, will become visible with .visible class */
-      }
-      
-    .hero-content p {
-        font-size: 20px;
-        font-weight: 350;
-        color: white;
-        text-align: center;
-        transition: opacity 2s ease-in-out;
-        opacity: 0; /* Initially hidden, will become visible with .visible class */
-    }
-    .hero-text.visible .hero-header p,
-    .hero-text.visible .hero-content p {
-        opacity: 1;
-    }
-    .hero-text.visible {
-        opacity: 1;
-    }
-
-    .hero-bar-play {
-        position: absolute;
-        bottom: 32%; /* Adjust this as needed */
-        left: 52%;
-        transform: translateX(-50%);
-        display: flex;
-        justify-content: center;
-        width: 12%; /* Control the overall width of the progress bar container */
-      }
-      
-      .hero-bar-container {
-        flex: 1;
-        margin: 0 4px;
-        background: rgba(255, 255, 255, 0.5); /* Light background for the inactive bar */
-        height: 11px;
-        cursor: pointer;
-        position: relative; /* Needed to position the .hero-bar absolutely inside it */
-      }
-      
-      .hero-bar {
-        background: #839ebd; /* Full white for the active bar */
-        width: 0%; /* Start with no width */
-        height: 100%;
-        position: absolute;
-        left: 0;
-        transition: width 4.5s linear; /* This should be the same as your interval duration */
-      }
-      
-      /* When a bar's container is clicked, reset and start the animation */
-      .hero-bar-container.active .hero-bar {
-        width: 100%; /* Full width */
-      }
-    .infoSection{
-        margin-top: 70vh;
-    }
-    @media (max-width: 768px) {
-        .hero-bar-play {
-            width: 30%; /* Increase the width for smaller screens */
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 12px; /* Make the bars thinner */
-          }
-          .hero-text {
-            left: 33%; /* Even smaller font size for mobile devices */
-            max-width: 800px;
-            }
-          .infoSection{
-            margin-top: 55vh;
-        }
-    }
-
-    @media (min-width: 768px)and (max-width: 850px) {
-        .hero-bar-play {
-            width: 30%; /* Increase the width for smaller screens */
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 8px; /* Make the bars thinner */
-          }
-        .hero-text {
-        font-size: 20px; /* Even smaller font size for mobile devices */
-        }
-        .background {
-            background-position: 50% 50%; /* Adjust this percentage to maintain the focus area on smaller screens */
-        }
-        .infoSection{
-            margin-top: 55vh;
-        }
-    }
-    @media (min-width: 850px)  and (max-width: 1024px) {
-        .hero-bar-play {
-            width: 20%; /* Increase the width for smaller screens */
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 8px; /* Make the bars thinner */
-          }
-        .hero-text {
-            font-size: 25px; /* Slightly smaller font size for tablets/small desktops */
-            left: 30%;
-        }
-        .infoSection{
-            margin-top: 60vh;
-        }
-    }
-  
-    @media (min-width:1024px)  and (max-width: 1250px) {
-        .hero-bar-play {
-            width: 15%; /* Increase the width for smaller screens */
-          }
-          
-          .hero-bar-container {
-            margin: 0 4px; /* Reduce the gap between the bars */
-            height: 12px; /* Make the bars thinner */
-          }
-        .background {
-            background-position: 50% 50%; /* Center the image on larger screens */
-        }
-        .infoSection{
-            margin-top: 70vh;
-        }
-    }
+.infoSectionWrapper {
+    position: relative; /* Make sure this is positioned relative so it's above the background */
+    z-index: 2; /* Ensure content appears above the background image */
+}

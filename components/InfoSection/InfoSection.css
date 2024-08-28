@@ -1,145 +1,85 @@
 .info-section {
-    
-    font-family: 'Urbanist', sans-serif;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 50px 0; /* Consistent padding for top and bottom */
-  }
-  
-  .services-section {
+    padding: 50px 0;
     width: 100%;
-    max-width: 1600px;
-    margin: auto;
-    padding-top: 100px; /* Default padding for larger screens */
-    opacity: 0;
-    transform: translateX(-50%);
-    transition: transform 1s ease-out, opacity 1s ease-out;
-  }
-  .services-section.visible {
-    opacity: 1;
-    transform: translateX(0);
 }
-  .services-header {
+
+.services-title {
+    font-size: 40px;
+    color: #2F4157;
+    font-family: 'Playfair Display';
+    line-height: 70.65px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+.service-points {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.service-box {
+    width: 440px;
+    height: 699px;
+    background-color: #D8E8E6;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    margin-bottom: 20px;
-    position: relative; /* To position the pseudo-element */
-  }
-  
-  .services-header h2 {
-    margin: 0;
-    padding-bottom: 10px;
-  }
-  .services-header h2::after {
-    content: '';
-    display: block;
-    width: 100%; /* Line width */
-    height: 2px; /* Line thickness */
-    background-color: #839ebd; /* Line color */
-    position: absolute;
-    left: 0;
-    bottom: 0; /* Position the line at the bottom of the header */
-  }
-  .all-services {
-    text-decoration: none;
-    color: #839ebd;
-    align-self: flex-end; /* Ensures the link aligns to the bottom of the parent */
-    padding-bottom: 12px;
-  }
-  
-  .service-points {
-    display: flex;
-    justify-content:space-between;
-    flex-wrap: wrap;
-    padding-top: 10px; /* Space above service points */
-  }
-  
-  .service-point {
-    flex-basis: calc(25% - 20px); /* Adjust width based on spacing */
-    margin: 10px;
-    text-align: left;
-  }
-  
-  .service-point h3 {
-    margin-top: 0;
-    color: #333;
-  }
-  
-
-  
-  .service-point a:hover,
-  .service-point a:focus {
-    color: #0056b3;
-  }
-  .content-box-wrapper {
-    margin: 20px; /* Adjust this value based on your design needs */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
-  /* Media query for larger screens where the gap needs to be smaller */
-  @media  (min-width: 1335.1px){
-    .services-section {
-        padding-top: 0; /* Smaller padding-top for larger screens */
-      }
-  }
-  @media (min-width: 1325.5px) and (max-width: 1335px) {
-    .services-section {
-      padding-top: 0; /* Smaller padding-top for larger screens */
-      padding-left:250px;
-    }
-    
-  }
-  @media (min-width: 1024px) and (max-width: 1325.5px){
+
+.service-icon {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+.service-box h3 {
+    font-size: 1.5rem;
+    color: #36454F;
+    margin-bottom: 20px;
+}
+
+.service-content {
+    font-size: 30px;
+    color: #36454F;
+    font-family: 'Source Sans 3', sans-serif;
+    font-weight: 400;
+    line-height: 37.71px;
+    margin-bottom: 30px;
+    text-align: left;
+    width: 100%;
+}
+
+.learn-more {
+    font-size: 1rem;
+    color: #036;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: auto;
+    align-self: flex-start;
+    padding-left: 20px;
+}
+
+.learn-more:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) {
     .service-points {
         flex-direction: column;
         align-items: center;
     }
-        .services-section {
-      padding-top: 0; /* Smaller padding-top for larger screens */
-    }
 
-  }
-  /* Media query for tablets and smaller desktop screens */
-  @media (max-width: 1024px) {
-    .service-points {
-        flex-direction: column;
-        align-items: center;
+    .service-box {
+        margin-bottom: 30px;
     }
-  
-    .service-point {
-      flex-basis: calc(50% - 20px); /* Adjust for tablet view */
-    }
-  }
-  
-  /* Media query for mobile screens */
-  @media (max-width: 768px) {
-    .services-header {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .services-header h2,
-    .all-services {
-      margin-top: 10px;
-      margin-right:10px;
-    }
-  
-    .service-points {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    .service-point {
-      width: 100%; /* Full width on mobile */
-    }
-
-    .content-box-wrapper {
-        width: 100%;  
-    }
-    .services-section {
-        transform: translateX(0);  
-        opacity: 1;  
-    }
-  }
-  
+}

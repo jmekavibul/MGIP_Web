@@ -1,0 +1,77 @@
+/* Keyframes for slideInFromBottom animation */
+@keyframes slideInFromBottom2 {
+    from {
+        transform: translateY(20%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Hero container setup */
+.heroContainer2 {
+    position: relative;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 5%;
+}
+
+/* Main hero text styling */
+.heroText2 {
+    font-family: "Lora", serif;
+    font-weight: 400;
+    font-size: 2.5rem;
+    text-align: center;
+    max-width: 50%;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: slideInFromBottom2 0.8s ease-out forwards;
+}
+
+/* Subtext styling */
+.subText2 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    max-width: 66%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: slideInFromBottom2 0.8s ease-out forwards;
+}
+
+/* Hero button styling */
+.hero-button2 {
+    padding-top: 50px;
+    opacity: 0;
+    animation: slideInFromBottom2 0.8s ease-out forwards;
+}
+
+.hero-button2 button {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 300;
+    padding: 15px 20px;
+    background-color: #2F394D;
+    font-size: 16px;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.hero-button2 button:hover {
+    background-color: #6C8EAD;
+}
+
+@media (max-width: 768px) {
+    .heroText2, .subText2 {
+        max-width: 75%;
+    }
+}

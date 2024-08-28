@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 #root,
 .App {
   display: flex;
   flex-direction: column;
   min-height: 100vh; /* viewport height */
+  
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 main {

@@ -1,0 +1,10 @@
+.Container {
+    margin: 0 auto;
+    padding: 0;
+    text-transform: uppercase;
+    padding-top: 5%;
+    width: 90%;
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Playfair Display';
+  }

@@ -1,5 +1,3 @@
-
-  
 @keyframes slideInFromLeft {
     0% {
       transform: translateX(-100%);
@@ -24,65 +22,35 @@
   
   .card-container {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    align-items: flex-start;
     padding-top: 50px;
+    gap: 100px;
+    padding-bottom: 150px;
+    width: 100%;
   }
   
   .text-section {
     flex: 1;
-    padding-right: 50px;
-    opacity: 0; /* Start invisible */
+    max-width: 500px;
+    opacity: 0;
   }
   
-  .image-section {
-    flex: 1;
-    max-width: 40%;
-    opacity: 0; /* Start invisible */
-  }
-  
-  .image-section img {
-    width: 100%;
-    height: 300px;
-    opacity: 0.8;
-  }
-  
-  /* Added classes for the slide-in effect */
-  .text-section.slide-in {
-    animation: 1s ease-out slideInFromLeft forwards; /* 'forwards' will maintain the final animation state */
-  }
-  
-  .image-section.slide-in {
-    animation: 1s ease-out slideInFromBottom forwards;
-  }
-  
-  .text-section.slide-in {
-  animation: 1s ease-out slideInFromLeft forwards; /* 'forwards' will maintain the final animation state */
-}
-
-.image-section.slide-in {
-  animation: 1s ease-out slideInFromBottom forwards;
-}
   .text-section h2 {
-    font-family: "Urbanist", sans-serif;
     font-size: 2.5em;
     color: #003366;
     margin-bottom: 10px;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
   
   .text-section p {
-    font-family: "Arapey", serif;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
     color: #2c353e;
     font-size: 22px;
     line-height: 1.5;
-    max-width: 500px;
-    animation: 0.5s ease-out 0s 1 slideInFromLeft;
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
   }
   
   .text-section button {
-    font-family: "Urbanist", sans-serif;
     padding: 15px 20px;
     background-color: #0066cc;
     color: white;
@@ -95,14 +63,81 @@
   .text-section button:hover {
     background-color: #0052a3;
   }
-
-  @media (max-width: 500px) {
-   .card-container{
-        display: grid;
-        justify-content: center;
-        padding-left: 50px;
+  
+  .grid-section {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding-top: 4%;
+    opacity: 0;
+  }
+  
+  .grid-item {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+    border: 1px solid #e1e1e1;
+    border-radius: 2px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .grid-item:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .grid-item p {
+    font-size: 18px;
+  }
+  
+  .checkmark {
+    margin-right: 10px;
+  }
+  
+  .text-section.slide-in,
+  .grid-section.slide-in {
+    animation: 1s ease-out 0s 1 slideInFromLeft forwards;
+  }
+  
+  .grid-section.slide-in {
+    animation: 1s ease-out 0s 1 slideInFromBottom forwards;
+  }
+  
+  @media (max-width: 1100px) {
+    .card-container {
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 20px;
     }
-    .image-section{
-        display: none;
+  
+    .text-section, 
+    .grid-section {
+      width: 70%;
+      margin:0;
+    }
+  
+    .grid-section {
+      padding-top: 20px;
     }
   }
+  
+  @media (max-width: 500px) {
+    .card-container {
+        padding-top: 0;
+    }
+    .text-section, 
+    .grid-section {
+      padding: 0;
+      width: 90%;
+    }
+  
+    .grid-section {
+      grid-template-columns: 1fr;
+    }
+  
+    .grid-item {
+      justify-content: center;
+    }
+  }
+  

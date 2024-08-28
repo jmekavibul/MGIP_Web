@@ -1,86 +1,65 @@
-import React, { useState, useEffect, useRef  } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './InfoSection.css';
 import { PopUp } from '../PopUp/PopUp';
 import { ContentBox } from '../ContentBox/ContentBox';
+import Awards from '../Awards/Awards';
+import ImgMediaCard from '../ImgMediaCard/ImgMediaCard';
+import patent from '../../pictures/patent.webp';
+import trademark from '../../pictures/trademark.webp';
+import copyright from '../../pictures/copyright.webp';
 
 const InfoSection = () => {
-    const [popupOpen, setPopupOpen] = useState(false);
-    const [popupContent, setPopupContent] = useState('');
     const sectionRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
+
     useEffect(() => {
-        // Correctly declare and instantiate the IntersectionObserver
         const observer = new IntersectionObserver(
             (entries) => {
-                // entries: array of observed elements
-                const entry = entries[0];  // assuming you're observing one element
+                const entry = entries[0];
                 if (entry.isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect();  // Disconnect observer after it's visible
+                    observer.disconnect();
                 }
             },
             {
-                threshold: 0.25  // Trigger when 25% of the target is visible
+                threshold: 0.25,
             }
         );
 
-        // Make sure the element exists and then observe it
         if (sectionRef.current) {
             observer.observe(sectionRef.current);
         }
 
-        // Clean up the observer on component unmount
         return () => {
             if (observer) {
                 observer.disconnect();
             }
         };
     }, []);
-    
-    const handleOpenPopup = (content) => () => {
-        setPopupContent(content);
-        setPopupOpen(true);
-    };
-
-    const handleClosePopup = () => {
-        setPopupOpen(false);
-    };
 
     return (
         <div className="info-section">
-            <div ref={sectionRef} className={`services-section ${isVisible ? 'visible' : ''}`}>
-                <div className="services-header">
-                    <h2>Services</h2>
-                    <a href="/MGIP_Web/services" className="all-services">See all services</a>
+            <div className="service-section">
+
+                <div className="services-header2">
+                    <svg className="line-animation" width="100%" height="2">
+                        <rect x="50%" width="0" height="100%" fill="#839ebd"></rect>
+                    </svg>
+                    <h2 className="services-title">Our Service</h2>
                 </div>
-                <div className="service-points">
-                <div className="content-box-wrapper">
-                        <ContentBox content={<div className="service-point">
-                            <h1>Patent</h1>
-                            <p>Protect industrial innovations - secure your innovations and creativity for the long term with patents</p>
-                        </div>} onClick={handleOpenPopup('Detail about Patent Service')}/>
-                    </div>
-                <div className="content-box-wrapper">
-                        <ContentBox content={<div className="service-point">
-                            <h1>Trademark</h1>
-                            <p>A strong trade mark – as reliable as your good name
-Trade mark protection as a guarantee for your success on the market.</p>
-                        </div>} onClick={handleOpenPopup('Detail about Trade Mark Service')}/>
-                    </div>
-
-
+                <div ref={sectionRef} className={`service-points ${isVisible ? 'visible' : ''}`}>
                     <div className="content-box-wrapper">
-                        <ContentBox content={<div className="service-point">
-                            <h1>Copyright</h1>
-                            <p>Protect unique designs in international competitions, secure intellectual property rights</p>
-                        </div>} onClick={handleOpenPopup('Detail about Design Service')}/>
+                        <ImgMediaCard Title="Patent" Content="We offer comprehensive patent services, including application filing, prosecution, and portfolio management. Our team ensures your innovations are protected and your intellectual property rights are enforced globally." imgSrc={patent}/>
+                        
                     </div>
-                    {/* Add more service points as needed */}
+                    <div className="content-box-wrapper">
+                        <ImgMediaCard Title="Trademark" Content="Our trademark services cover registration, monitoring, and enforcement. We help you establish and protect your brand identity, ensuring your trademarks are secure and recognized in the marketplace." imgSrc={trademark}/>
+                    </div>
+                    <div className="content-box-wrapper">
+                        <ImgMediaCard Title="Copyright" Content="We provide full copyright services, from registration to enforcement. Our experts safeguard your creative works, ensuring your intellectual property rights are upheld and protected against infringement." imgSrc={copyright}/>
+                    </div>
                 </div>
             </div>
-            {popupOpen && (
-                <PopUp content={popupContent} onClose={handleClosePopup} />
-            )}
         </div>
     );
 };

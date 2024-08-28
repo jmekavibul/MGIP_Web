@@ -1,0 +1,148 @@
+.bioFullPage {
+    
+  padding: 150px 15px;
+  width: 70%; /* Set the width to 75% of the screen */
+  /* max-width: 1200px; Optional: Set a maximum width to prevent it from getting too large on very wide screens */
+  margin: 0 auto; /* Center the content */
+}
+
+.bioContainer {
+  display: flex;
+  align-items: flex-start; /* Align content at the top */
+}
+
+.photoContainer {
+  margin-right: 20px; /* Adds spacing between the photo and the content */
+}
+
+.memberPhoto {
+  width: 250px; /* Set the photo size */
+  height: auto; /* Maintain aspect ratio */
+  object-fit: cover;
+  border-radius: 5%; /* Remove circular border */
+  margin: 0 30px 0 30px;
+}
+
+
+.contentContainer {
+  flex-grow: 1; /* Allow the content to take up remaining space */
+}
+
+.bioName {
+  font-family: 'Playfair Display';
+  font-size: 48px;
+  font-weight: 600;
+  line-height: 64px;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.bioTitle {
+  font-family: 'Source Sans 3';
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.header {
+  margin-bottom: 15px;
+}
+
+.bioCardTitle {
+  margin: 0 0 15px 0;
+  font-weight: normal;
+  color: #2F4157;
+  font-family: 'Source Sans 3';
+  font-size: 32px;
+  font-weight: 600;
+  line-height: 50px;
+}
+
+.headerContact {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 15px;
+  gap: 60px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  font-size: 28px;
+  font-weight: 400;
+  color: #6C757D;
+  font-family: 'Source Sans 3';
+}
+
+.icon {
+  font-size: 1rem;
+  margin-right: 6px;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.cardContent {
+  font-family: 'Source Sans 3';
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 15px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+p {
+  margin-bottom: 10px;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.35;
+}
+
+.membershipContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Adjust the spacing between buttons */
+}
+
+.membershipButton {
+  background-color: #577C8E; /* Adjust color as per your preference */
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Noto Sans';
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 2px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .bioContainer {
+    flex-direction: column; /* Stacks the photo and content vertically on small screens */
+  }
+
+  .photoContainer {
+    margin-bottom: 20px; /* Adds spacing between the photo and content when stacked */
+  }
+
+  .memberPhoto {
+    margin: 0 auto; /* Center the photo */
+  }
+  .bioFullPage {
+    width: 90%;
+  }
+}

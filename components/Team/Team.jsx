@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import './Team.css';
 import teamphoto from '../../pictures/aiteam.jpg'
 import Select from 'react-select'
-
+import { Link } from 'react-router-dom';
+import { IoMdMail } from "react-icons/io";
+import { BsTelephoneFill } from "react-icons/bs";
+import { MdOutlineSearch } from "react-icons/md";
+import Hero2 from '../Hero2/Hero2';
+import { FaEnvelope, FaPhone } from 'react-icons/fa';
 export const Team = ({ members }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [activeLetter, setActiveLetter] = useState('');
@@ -36,8 +41,6 @@ export const Team = ({ members }) => {
     { value: 'Copyright', label: 'Copyright'},
     { value: 'Trademark', label: 'Trademark'},
     { value: 'Bio', label: 'Bio'},
-
-
   ];
 
   const handleFieldChange = selectedOption => {
@@ -64,92 +67,95 @@ export const Team = ({ members }) => {
 
     const filteredMembers = members.filter(member =>
     member.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-    (!selectedField || selectedField.value === 'All' || member.education.includes(selectedField.value))
+    (!selectedField || selectedField.value === 'All' || member?.experience?.join().includes(selectedField.value))
     &&
         (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value)
     );
 
   return (
     <div className="team-container">
-        
-        <div className='team-background' style={{ backgroundImage: `url(${teamphoto})` }} />
-        <h1 style={{color: 'white'}}>Our Team</h1>
+            <Hero2
+                backgroundImage={teamphoto}
+                text="Our Team"
+                height="50vh"  // Set appropriate height as needed
+                subText=""  // Optional: add a subtitle if needed
+            />
 
-      <div className="search-container">
-          <div className='search-items'>
-              <input
-                className="the-search-bar"
-                type="text"
-                placeholder="Search by Name"
-                value={searchQuery}
-                onChange={handleSearchChange}
-              />
-              <div className="search-icon">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
-              </div>
-            <div className='filterContainer'>
-                <div className="filters">
-                        <Select
-                            value={selectedField} // The value is now controlled by state
-                            options={options}
-                            onChange={handleFieldChange}
-                            className="select-filter"
-                            isClearable={true}
-                            placeholder="Specialised field" // Placeholder is now purely visual
-                            isSearchable={false}
-                        />
-                </div>
-                <div className='filters'>
-                    <Select
-                        value={selectedTitle}
-                        onChange={handleTitleChange}
-                        options={titleOptions}
-                        className="select-filter"
-                        isClearable={true}
-                        placeholder="Filter by Title"
-                        isSearchable={false}
+        <div className='teamBesidesHero'>
+            <div className="search-container">
+                <div className='search-items'>
+                    <input
+                        className="the-search-bar"
+                        type="text"
+                        placeholder="Search by Name"
+                        value={searchQuery}
+                        onChange={handleSearchChange}
                     />
+                    <div className='search-icon'>
+                        <MdOutlineSearch/>
+                    </div>
+                    <div className='filterContainer'>
+                        <div className="filters">
+                                <Select
+                                    value={selectedField} // The value is now controlled by state
+                                    options={options}
+                                    onChange={handleFieldChange}
+                                    className="select-filter"
+                                    isClearable={true}
+                                    placeholder="Specialised field" // Placeholder is now purely visual
+                                    isSearchable={false}
+                                />
+                        </div>
+                        <div className='filters'>
+                            <Select
+                                value={selectedTitle}
+                                onChange={handleTitleChange}
+                                options={titleOptions}
+                                className="select-filter"
+                                isClearable={true}
+                                placeholder="Filter by Title"
+                                isSearchable={false}
+                            />
+                        </div>
+                    </div>
+
                 </div>
+
+
+                <div className="alphabet">
+                {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
+                    <a
+                    key={letter}
+                    href={`#${letter}`}
+                    className={activeLetter === letter ? 'active' : ''}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        handleLetterClick(letter);
+                    }}
+                    >
+                    {letter}
+                    </a>
+                ))}
+                </div>
+
+                
+
             </div>
+        </div>
+        <div className="team-grid">
+                {filteredMembers.sort((a, b) => a.name.localeCompare(b.name)).map((member, index) => (
+                <Link to={`/${member.id}`} key={index} className="team-member">
+                    <img src={member.photo} alt={member.name} />
+                    <div className="member-info">
+                    <h3>{member.name}</h3>
+                    <p>{member.title}</p>
 
-          </div>
+                    </div>
 
-
-          <div className="alphabet">
-          {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
-              <a
-              key={letter}
-              href={`#${letter}`}
-              className={activeLetter === letter ? 'active' : ''}
-              onClick={(e) => {
-                  e.preventDefault();
-                  handleLetterClick(letter);
-              }}
-              >
-              {letter}
-              </a>
-          ))}
-          </div>
-
-          
-
-      </div>
-      <div className="team-grid">
-        {filteredMembers.map((member, index) => (
-          <div className="team-member" key={index}>
-            <img src={member.photo} alt={member.name} />
-            <div className="member-info">
-              <h3>{member.name}</h3>
-              <div className="additional-info">
-
-                <p>{member.title}</p>
-                <p>{member.email}</p>
-                <p>{member.memberships}</p>
-              </div>
+                </Link>
+                
+                ))}
             </div>
-          </div>
-        ))}
-      </div>
     </div>
   );
 };
