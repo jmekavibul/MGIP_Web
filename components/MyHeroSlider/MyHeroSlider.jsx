@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import HeroSlider, { Slide, Nav, Overlay } from 'hero-slider';
+import HeroSlider, { Slide, Nav, Overlay, ButtonsNav } from 'hero-slider';
 import dc from '../../pictures/dc.webp';
 import alexandria from '../../pictures/monument.jpg';
 import uspto from '../../pictures/uspto.webp';
@@ -7,7 +7,7 @@ import 'hero-slider/dist/index.css';
 import Title from '../Title/Title';
 import Subtitle from '../Subtitle/Subtitle';
 import Wrapper from '../Wrapper/Wrapper';
-
+import washingtonWhite from '../../pictures/washington_white.jpg';
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
@@ -61,29 +61,33 @@ const MyHeroSlider = () => {
       <Slide
         label="Washington, D.C."
         background={{
+            
+            
           backgroundImageSrc: dc,
           backgroundAnimation: 'zoom',
         }}
       >
         <Overlay>
           <Wrapper>
-            <Title>Experienced</Title>
-            <Subtitle>Trusted Advisors for Over 50 Years            </Subtitle>
+            <Title></Title>
+            <Subtitle>Washington Monument, Washington D.C.</Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
 
       <Slide
         label="Alexandria"
+        shouldRenderMask={false}
         background={{
-          backgroundImageSrc: alexandria,
+          maskBackgroundBlendMode: 'unset',
+          backgroundImageSrc: washingtonWhite,
           backgroundAnimation: 'zoom',
         }}
       >
         <Overlay>
           <Wrapper>
-            <Title>Experienced</Title>
-            <Subtitle>Trusted Advisors for Over 50 Years</Subtitle>
+            <Title></Title>
+            <Subtitle>Thomas Jefferson</Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
@@ -97,13 +101,13 @@ const MyHeroSlider = () => {
       >
         <Overlay>
           <Wrapper>
-            <Title>Global Reach</Title>
-            <Subtitle>International Patent Services</Subtitle>
+            <Title></Title>
+            <Subtitle>USPTO Office</Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
 
-      <Nav />
+      <ButtonsNav />
     </HeroSlider>
   );
 };
