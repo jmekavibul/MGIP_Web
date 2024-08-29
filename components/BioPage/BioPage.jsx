@@ -1,7 +1,21 @@
+import React, { useState, useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaGlobe } from 'react-icons/fa'; // Import icons from react-icons
 import styles from './BioPage.module.css'; // Importing the CSS module
 
-const BioPage = ({ member }) => {
+const BioPage = ({ member, membershipsData }) => {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1400);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth > 1400);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
   const capitalizeTitle = (title) => {
     return title
       .toLowerCase()
@@ -16,20 +30,26 @@ const BioPage = ({ member }) => {
     return (
       <div className={styles.membershipContainer}>
         {memberships.map((membership, idx) => (
-          <div key={idx} className={styles.membershipButton}>
+          <div key={idx} className={styles.membershipButton} style={{ position: 'relative' }}>
             {membership}
+            {membershipsData[membership] && isLargeScreen && (
+              <div className={styles.tooltip}>
+                <strong>{membershipsData[membership].name}</strong>
+                <p>{membershipsData[membership].description}</p>
+              </div>
+            )}
           </div>
         ))}
       </div>
     );
   };
-  
+
   const renderSection = (title, data) => {
     if (!data || data.length === 0) return null;
-  
+
     const backgroundColor = index % 2 === 0 ? '#C7D9E5' : '#FFFFFF'; // Alternate colors
     index++; // Increment index only if the section is rendered
-  
+
     return (
       <div className={styles.card} key={title} style={{ backgroundColor }}>
         <h3 className={styles.bioCardTitle}>{capitalizeTitle(title)}</h3>
@@ -53,7 +73,7 @@ const BioPage = ({ member }) => {
       </div>
     );
   };
-  
+
   const renderAdditionalSections = () => {
     const prioritizedKeys = ['bar', 'education', 'memberships'];
     return Object.keys(member)

@@ -129,6 +129,49 @@ p {
   letter-spacing: 2px;
 }
 
+.membershipButton {
+  background-color: #577C8E; /* Button background color */
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  font-size: 22px;
+  font-family: 'Noto Sans';
+  font-weight: 600;
+  line-height: 24px;
+  letter-spacing: 2px;
+  position: relative; /* Ensure the tooltip aligns correctly */
+}
+
+.membershipButton:hover .tooltip {
+  display: block;
+}
+
+.tooltip {
+  display: none;
+  left: 0;
+  position: absolute;
+  bottom: 100%; /* Position above the button */
+  background-color: #577C8E; /* Same background color as the button */
+  color: white; /* Ensure text color is white */
+  padding: 16px; /* Match padding for consistent look */
+  border-radius: 8px; /* Match border-radius for consistent look */
+  white-space: normal;
+  z-index: 10;
+  width: 400px; /* Adjust width if needed */
+  text-align: left;
+  word-wrap: break-word;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+  margin-bottom: 10px; /* Add padding between the button and the tooltip */
+}
+
+@media (max-width: 1400px) {
+  .tooltip {
+    display: none;
+  }
+}
+
 /* Responsive Styling */
 @media (max-width: 768px) {
   .bioContainer {

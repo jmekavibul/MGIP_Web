@@ -10,6 +10,7 @@ import './App.css'
 import Contact from './components/Contact/Contact';
 import { teamMembers } from './teamMembers';
 import { Careers } from './components/Careers/Careers';
+import membershipsData from './membershipMasterList'
 function App() {
 
     return(
@@ -23,7 +24,7 @@ function App() {
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/careers" element={<Careers/>}/>
                         {teamMembers.map(member => (
-                            <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} />}/>
+                            <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} membershipsData={membershipsData}  />}/>
                         ))}
                     </Routes>
                 </main>
