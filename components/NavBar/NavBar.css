@@ -119,7 +119,6 @@
     .navbar-links {
         display: none; /* Hide the links initially */
         position: fixed;
-        height: 100%; /* Full height for better dropdown effect */
         top: 0;
         left: 0;
         right: 0;
