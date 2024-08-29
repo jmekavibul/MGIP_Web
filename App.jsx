@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 import './App.css'
 import Contact from './components/Contact/Contact';
-import { teamMembers } from './teamMembers';
+import { teamMembers } from './teamMembers_updated';
 import { Careers } from './components/Careers/Careers';
 import membershipsData from './membershipMasterList'
 function App() {

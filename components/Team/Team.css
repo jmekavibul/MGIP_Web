@@ -225,7 +225,7 @@ body, html {
   .member-info {
     /* Adjust member info styling if needed */
     font-size: 0.9em; /* Slightly larger text than in mobile */
-    padding: 10px; /* Adjust padding */
+    padding: 0px; /* Adjust padding */
     /* Adjust the visible height of the member info */
     transform: translateY(calc(100% - 50px));
   }
