@@ -189,7 +189,7 @@ body, html {
 .member-info h3 {
   font-family: "Playfair Display";
   font-weight: 600;
-  font-size: 28px;
+  font-size: 25px;
   line-height: 39.99px;
 }
 
@@ -203,12 +203,8 @@ body, html {
   transform: translateY(10px);
 }
 
-@media (max-width: 1024px) {
-  .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller min width */
-  }
-}
-@media (min-width: 769px) and (max-width: 1023px) {
+
+@media (min-width: 769px) and (max-width: 1168px) {
   .team-grid {
     /* Try using repeat(3, 1fr) to fit three items per row, or adjust as needed */
     grid-template-columns: repeat(3, 1fr);
@@ -221,16 +217,13 @@ body, html {
   }
 
   .team-member img {
-    /* Optional: Adjust image sizes if necessary */
     max-width: 100%;
     height: auto;
   }
 
   .member-info {
-    /* Adjust member info styling if needed */
-    font-size: 0.9em; /* Slightly larger text than in mobile */
-    padding: 0px; /* Adjust padding */
-    /* Adjust the visible height of the member info */
+    font-size: 0.9em; 
+    padding: 0px;
     transform: translateY(calc(100% - 50px));
   }
 }
