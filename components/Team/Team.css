@@ -203,6 +203,38 @@ body, html {
   transform: translateY(10px);
 }
 
+@media (max-width: 1024px) {
+  .team-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller min width */
+  }
+}
+@media (min-width: 769px) and (max-width: 1023px) {
+  .team-grid {
+    /* Try using repeat(3, 1fr) to fit three items per row, or adjust as needed */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem; /* Maintain a gap between items */
+  }
+
+  .team-member {
+    /* Adjust the team member's box if necessary, ensure it doesn't overflow */
+    margin: 0; /* Reset any margins that might push the content out of bounds */
+  }
+
+  .team-member img {
+    /* Optional: Adjust image sizes if necessary */
+    max-width: 100%;
+    height: auto;
+  }
+
+  .member-info {
+    /* Adjust member info styling if needed */
+    font-size: 0.9em; /* Slightly larger text than in mobile */
+    padding: 0px; /* Adjust padding */
+    /* Adjust the visible height of the member info */
+    transform: translateY(calc(100% - 50px));
+  }
+}
+
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .search-container {
@@ -221,7 +253,15 @@ body, html {
   }
 
   .team-grid {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Smaller min width */
+    grid-template-columns: repeat(2, 1fr); /* 2 columns for mobile */
+    gap: 0.5rem; /* Reduced gap for mobile */
+  }
+
+  .member-info {
+    /* Adjust text size and padding as needed for mobile */
+    font-size: 1.0em; /* Smaller text */
+    padding: 8px; /* Sufficient padding */
+    transform: translateY(calc(100% - 68px)); /* Adjust visible portion of member info */
   }
 }
 

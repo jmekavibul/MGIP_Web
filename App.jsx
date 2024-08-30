@@ -1,8 +1,9 @@
 import { useState } from 'react'
-import {About} from './components/About/About'
-import {Team} from './components/Team/Team'
-import {NavBar} from './components/NavBar/NavBar'
+import { About } from './components/About/About'
+import { Team } from './components/Team/Team'
+import { NavBar } from './components/NavBar/NavBar'
 import BioPage from './components/BioPage/BioPage';
+import ScrollToTop from './components/ScrollToTop/ScrollToTop'; // Import the new component
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
@@ -12,10 +13,11 @@ import { teamMembers } from './teamMembers_updated';
 import { Careers } from './components/Careers/Careers';
 import membershipsData from './membershipMasterList'
 import { Disclaimer } from './components/Disclaimer/Disclaimer';
-function App() {
 
+function App() {
     return(
         <Router>
+            <ScrollToTop />
             <div className='App'>
                 <NavBar/>
                 <main>
