@@ -87,6 +87,7 @@ body, html {
   border-radius: 15px;
   gap: 20px;
   flex-wrap: nowrap; /* Prevent wrapping */
+  padding-bottom: 10px;
 }
 
 .search-bar-container {

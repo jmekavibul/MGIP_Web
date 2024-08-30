@@ -125,14 +125,24 @@ export const Team = ({ members }) => {
             setSearchQuery(letter);
         }
     };
+    const getInitials = (member) => {
+        const initials = [member.firstName, member.middleName, member.lastName]
+            .filter(Boolean)
+            .map(name => name.charAt(0).toUpperCase())
+            .join('');
+        return initials;
+    };
+    const filteredMembers = members.filter(member => {
+        const initials = getInitials(member);
+        const matchesInitials = initials.includes(activeLetter);
+        const matchesSearch = member.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    const filteredMembers = members.filter(member =>
-        member.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
-        (!selectedField || selectedField.value === 'All' || member?.experience?.join().includes(selectedField.value)) &&
-        (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value) &&
-        (!selectedMembership || selectedMembership.value === 'All' || member?.memberships?.includes(selectedMembership.value))
-    );
-
+        return matchesInitials &&
+            matchesSearch &&
+            (!selectedField || selectedField.value === 'All' || member?.experience?.join().includes(selectedField.value)) &&
+            (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value) &&
+            (!selectedMembership || selectedMembership.value === 'All' || member?.memberships?.includes(selectedMembership.value));
+    });
     return (
         <div className="team-container">
             <Hero2
