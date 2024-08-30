@@ -3,11 +3,13 @@
   }
   
   .description {
-    font-family: 'Source Sans 3';
-    font-size: 26px; /* Adjusted font size for better readability on smaller screens */
+    font-family: 'Source Sans 3', sans-serif;
+    color: #36454F;
+    font-size: 24px; /* Adjusted font size for better readability on smaller screens */
     font-weight: 400;
     text-align: left;
     padding-bottom: 20px; /* Reduced padding for smaller screens */
+    
   }
   
   .cardButton {
@@ -27,13 +29,13 @@
   .buttonTitle {
     font-family: 'Playfair Display';
     color: #2F4157;
-    font-size: 42px; /* Adjusted font size for smaller screens */
+    font-size: 40px; /* Adjusted font size for smaller screens */
     font-weight: 600;
-    line-height: 48px; /* Adjusted line height for smaller screens */
+    line-height: 70.65px;/* Adjusted line height for smaller screens */
     text-align: left;
     padding-bottom: 20px; /* Reduced padding for smaller screens */
   }
-  
+ 
   .cardButton:hover {
     background-color: #5a7182;
   }
@@ -45,7 +47,6 @@
     .buttonCard {
       padding: 170px 300px; /* Original padding for larger screens */
     }
-    
     .description {
       font-size: 30px; /* Original font size for larger screens */
       padding-bottom: 30px;

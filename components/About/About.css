@@ -8,13 +8,13 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../pictures/blank_map.jpg');
+    background-image: url('../../pictures/svgmap2.png');
     background-repeat: no-repeat;
     background-size:80%; /* or 'contain' based on your desired effect */
     padding-top: 50px;
     background-position: center 0px;
     z-index: -1; /* Ensure it's behind the content */
-    opacity: 0.14;
+    opacity: 0.09;
 }
 
 .infoSectionWrapper {

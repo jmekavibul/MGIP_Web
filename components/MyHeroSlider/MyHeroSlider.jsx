@@ -77,7 +77,7 @@ const MyHeroSlider = () => {
 
       <Slide
         label="Alexandria"
-        shouldRenderMask={false}
+
         background={{
           maskBackgroundBlendMode: 'unset',
           backgroundImageSrc: washingtonWhite,
@@ -87,7 +87,7 @@ const MyHeroSlider = () => {
         <Overlay>
           <Wrapper>
             <Title></Title>
-            <Subtitle>Thomas Jefferson</Subtitle>
+            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
@@ -102,12 +102,12 @@ const MyHeroSlider = () => {
         <Overlay>
           <Wrapper>
             <Title></Title>
-            <Subtitle>USPTO Office</Subtitle>
+            <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
           </Wrapper>
         </Overlay>
       </Slide>
 
-      <ButtonsNav />
+      <Nav />
     </HeroSlider>
   );
 };

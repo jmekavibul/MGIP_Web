@@ -91,6 +91,7 @@ export const About = () => {
             buttonText=""
             borderRadius=""
             textColor="#2F4157"
+            center= {true}
           />
         </div>
         <ThreeCardSection cards={serviceCards} colors={serviceColors} iconBackgroundColor={iconBackgroundColor} />

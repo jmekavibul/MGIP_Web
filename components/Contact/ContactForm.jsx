@@ -55,14 +55,14 @@ const ContactForm = () => {
         </div>
 
         <div className="form-group">
-          <label htmlFor="lastname" className="form-label">Last Name (Optional)</label>
+          <label htmlFor="lastname" className="form-label">Last Name</label>
           <input
             id="lastname"
             name="lastname"
             placeholder="Enter your last name"
             type="text"
             className={`form-control ${errors.lastname ? 'is-invalid' : ''}`}
-            {...register('lastname')}
+            {...register('lastname', { required: 'Last name is required.' })}
           />
           {errors.lastname && <p className="error-message">{errors.lastname.message}</p>}
         </div>

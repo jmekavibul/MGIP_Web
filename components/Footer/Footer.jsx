@@ -38,7 +38,7 @@ const Footer = ({ credits }) => {
                     <a href="https://www.linkedin.com" className="icon-button">
                       <FaLinkedin size={20} color="white" />
                     </a>
-                    <a href="mailto:info@tvdcp.com" className="icon-button">
+                    <a href="/contact" className="icon-button">
                       <IoMdMail size={20} color="white" />
                     </a>
                   </div>

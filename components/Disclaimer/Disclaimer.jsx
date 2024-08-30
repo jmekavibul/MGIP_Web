@@ -15,6 +15,7 @@ This website may contain links to third-party websites. Muncy, Geisler, Olds & L
                 borderRadius=""
                 textColor="#2F4157"
                 url=""
+                center={false}
             />
         </div>
 
