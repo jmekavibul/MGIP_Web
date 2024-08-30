@@ -39,7 +39,7 @@ export const Team = ({ members }) => {
     ];
 
     const options = [
-        { value: 'All', label: 'Specialised field' },
+        { value: 'All', label: 'Fields' },
         { value: 'Electrical Engineering', label: 'Electrical Engineering' },
         { value: 'Industrial Engineering', label: 'Industrial Engineering' },
         { value: 'Telecommunications', label: 'Telecommunications' },

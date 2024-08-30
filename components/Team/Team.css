@@ -85,7 +85,28 @@ body, html {
   width: 100%;
   border-radius: 15px;
   gap: 20px;
-  flex-wrap: wrap; /* Allows wrapping on smaller screens */
+  flex-wrap: nowrap; /* Prevent wrapping */
+}
+
+.search-bar-container {
+  flex-grow: 1; /* Allows the search bar to take up available space */
+  max-width: 70%; /* Search bar takes up most of the space */
+  position: relative;
+}
+
+.filters-container {
+  display: flex;
+  gap: 10px;
+  max-width: 80%; /* Ensure dropdowns fit on the remaining space */
+  flex-shrink: 0; /* Prevent the filters from shrinking too much */
+}
+
+.filters select {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 200px; /* Limit the width of the dropdowns */
 }
 
 .search-bar-container {
@@ -131,23 +152,6 @@ body, html {
   pointer-events: none;
 }
 
-/* Filters */
-.filters-container {
-  display: flex;
-  justify-content: flex-end;
-  gap: 10px;
-  flex-wrap: wrap;
-  width: 100%;
-  max-width: 50%; /* 50% width for larger screens */
-}
-
-.filters select {
-  padding: 0.5rem 1rem;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  width: 100%;
-  max-width: 200px; /* Limit the width of the dropdowns */
-}
 
 .team-grid {
   display: grid;
