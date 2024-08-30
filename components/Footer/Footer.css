@@ -89,7 +89,7 @@
   .footer-title {
     font-size: 32px;
     font-weight:normal;
-    font-size: 'Source Sans Pro';
+    font-size: 'Source Sans 3';
   }
   @media (max-width: 768px) {
     .footer-content {

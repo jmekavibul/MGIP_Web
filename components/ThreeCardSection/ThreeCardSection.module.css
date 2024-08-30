@@ -1,7 +1,8 @@
 .threeCardSection {
-  max-width: 75%;
+  max-width: 70%;
   margin: 0 auto;
   padding: 20px 0 100px 0;
+  position: relative;
 }
 
 .sectionTitle {
@@ -91,78 +92,43 @@
   color: #0056b3;
 }
 
-@media screen and (max-width: 1200px) {
-  .cardContainer {
-    flex-wrap: wrap;
-  }
-
-  .card {
-    flex-basis: calc(50% - 20px);
-    margin-bottom: 64px;
-  }
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-@media screen and (max-width: 768px) {
-  .threeCardSection {
-    max-width: 90%;
-  }
-
-  .sectionTitle {
-    font-size: 42px;
-    margin-bottom: 60px;
-    line-height: 56px;
-  }
-
-  .cardContainer {
-    gap: 20px;
-  }
-
-  .card {
-    flex-basis: 100%;
-    padding: 48px; /* Doubled from 24px */
-  }
-
-  .cardTitle {
-    font-size: 28.8px;
-    line-height: 36px;
-  }
-
-  .cardDescription,
-  .learnMore {
-    font-size: 19.2px;
-    line-height: 24px;
-  }
+.overlayCard {
+  background-color: white;
+  padding: 48px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 80%;
+  max-width: 800px;
+  position: relative;
 }
 
-@media screen and (max-width: 480px) {
-  .threeCardSection {
-    max-width: 95%;
-  }
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 48px;
+  cursor: pointer;
+}
 
-  .sectionTitle {
-    font-size: 28.8px;
-    margin-bottom: 64px;
-    line-height: 38.4px;
-  }
-
-  .card {
-    padding: 32px;
-  }
-
-  .cardTitle {
-    font-size: 24px;
-    line-height: 30.4px;
-  }
-
-  .cardDescription,
-  .learnMore {
-    font-size: 16px;
-    line-height: 20.8px;
-  }
-
-  .iconWrapper {
-    width: 60px;
-    height: 60px;
-    padding: 30px; /* Doubled from 15px */
-  }
+.cardDescription p  {
+  margin-top: 20px;
+  color: #36454F;
+  font-family: 'Source Sans 3', sans-serif;
+  font-size: 24px;
+  line-height: 28px;
 }
