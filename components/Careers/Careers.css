@@ -1,8 +1,11 @@
-.centered-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 98vh; /* Make sure the container takes up the full height of the viewport */
-    box-sizing: border-box;
 
+@media (min-width: 450px){
+    .centered-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 98vh; /* Make sure the container takes up the full height of the viewport */
+        box-sizing: border-box;
+    
+    }
 }

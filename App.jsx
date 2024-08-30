@@ -11,6 +11,7 @@ import Contact from './components/Contact/Contact';
 import { teamMembers } from './teamMembers_updated';
 import { Careers } from './components/Careers/Careers';
 import membershipsData from './membershipMasterList'
+import { Disclaimer } from './components/Disclaimer/Disclaimer';
 function App() {
 
     return(
@@ -26,6 +27,7 @@ function App() {
                         {teamMembers.map(member => (
                             <Route key={member.id} path={`/${member.id}`} element={<BioPage member={member} membershipsData={membershipsData}  />}/>
                         ))}
+                        <Route path="/disclaimer" element={<Disclaimer/>}/>
                     </Routes>
                 </main>
                 <Footer/>

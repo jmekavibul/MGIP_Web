@@ -23,6 +23,7 @@ const Footer = ({ credits }) => {
                   <li><a href="/careers">Careers</a></li>
                   <li><a href="/team">Team</a></li>
                   <li><a href="/contact">Contact us</a></li>
+                  <li><a href="/disclaimer">Disclaimer</a></li>
                 </ul>
               </div>
               <div className="footer-section contact-info">

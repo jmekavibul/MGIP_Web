@@ -138,7 +138,7 @@ body, html {
 
 .search-icon {
   position: absolute;
-  right: 15px;
+  left: 100%;
   top: 50%;
   transform: translateY(-50%);
   font-size: 24px;
@@ -247,5 +247,8 @@ body, html {
 
   .team-grid {
     grid-template-columns: 1fr; /* Single column layout for small screens */
+  }
+  .alphabet {
+    display: none;
   }
 }
