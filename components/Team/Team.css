@@ -109,12 +109,6 @@ body, html {
   max-width: 200px; /* Limit the width of the dropdowns */
 }
 
-.search-bar-container {
-  position: relative;
-  width: 100%;
-  max-width: 100%; /* 50% width for larger screens */
-}
-
 .search-bar {
   border-radius: 10px;
   height: 60px;
