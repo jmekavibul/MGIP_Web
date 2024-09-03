@@ -36,9 +36,7 @@ export const NavBar = () => {
       <>
         <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
           <div className="navbar-logo">
-            <Link to='/'>
-              <img src={mgipLogo} alt="Logo" />
-            </Link>
+            <h3 className="navbar-title">MUNCY, GEISSLER, <br /> OLDS & LOWE, P.C.</h3>
           </div>
   
           <button

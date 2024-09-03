@@ -1,5 +1,3 @@
-.hero-slider__background--zoom, 
-.hero-slider__slide__background {
-  animation-duration: 1s !important; /* Speed up the zoom effect */
-  transition: transform 1s !important; /* Ensure the transform transition is also adjusted */
+.hero-slider-overlay {
+    background-color: transparent !important;
 }

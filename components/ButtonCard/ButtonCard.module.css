@@ -27,7 +27,7 @@
   }
   
   .buttonTitle {
-    font-family: 'Playfair Display';
+    font-family: "Source Sans 3", sans-serif;
     color: #2F4157;
     font-size: 40px; /* Adjusted font size for smaller screens */
     font-weight: 600;

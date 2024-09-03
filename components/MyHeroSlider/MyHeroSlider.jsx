@@ -8,6 +8,8 @@ import Title from '../Title/Title';
 import Subtitle from '../Subtitle/Subtitle';
 import Wrapper from '../Wrapper/Wrapper';
 import washingtonWhite from '../../pictures/washington_white.jpg';
+import './MyHeroSlider.css'; 
+
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
@@ -35,12 +37,12 @@ const MyHeroSlider = () => {
       height="100vh"
       
       autoplay={{
-        autoplayDuration: 8000,
+        autoplayDuration: 10000,
         autoplayDebounce: 4000,
       }}
       controller={{
         initialSlide: 1,
-        slidingDuration: 300, // Faster sliding duration
+        slidingDuration: 1000, // Faster sliding duration
         slidingDelay: 100,
         onSliding: (nextSlide) =>
           console.debug("onSliding(nextSlide): ", nextSlide),
@@ -58,6 +60,21 @@ const MyHeroSlider = () => {
         slidingAnimation: 'fade',
       }}
     >
+        <Slide
+        label="Alexandria"
+        shouldRenderMask={false}
+        background={{
+          backgroundImageSrc: washingtonWhite,
+          backgroundAnimation: 'zoom',
+        }}
+      >
+        <Overlay>
+          <Wrapper>
+            <Title></Title>
+            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
+          </Wrapper>
+        </Overlay>
+      </Slide>
       <Slide
         label="Washington, D.C."
         background={{
@@ -75,22 +92,7 @@ const MyHeroSlider = () => {
         </Overlay>
       </Slide>
 
-      <Slide
-        label="Alexandria"
 
-        background={{
-          maskBackgroundBlendMode: 'unset',
-          backgroundImageSrc: washingtonWhite,
-          backgroundAnimation: 'zoom',
-        }}
-      >
-        <Overlay>
-          <Wrapper>
-            <Title></Title>
-            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
-          </Wrapper>
-        </Overlay>
-      </Slide>
 
       <Slide
         label="USPTO"
