@@ -37,6 +37,7 @@ import sherri from "./pictures/Sherri_340x464.jpg";
 import christopher from "./pictures/ChrisE_340x464.jpg";
 import soon from "./pictures/SooC_340x464.jpg";
 import sally from "./pictures/Sally_Mueller_340x464.jpg";
+import anonymous from "./pictures/anonymous.jpg";
 
 export const teamMembers = [
       {
@@ -534,5 +535,16 @@ export const teamMembers = [
         education: "",
         memberships: "",
       },
+      {
+        id: "Howard",
+        name: "Howard Seo",
+        photo: anonymous,
+        email: "hhs@mg-ip.com",
+        phone: "(703)621-7140 x 162",
+        title: ""
+      },
+      {
+        
+      }
     // ...more members
   ];

@@ -1,5 +1,5 @@
 
-@media (min-width: 450px){
+@media (min-width: 560px){
     .centered-container {
         display: flex;
         justify-content: center;

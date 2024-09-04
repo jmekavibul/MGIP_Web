@@ -215,15 +215,23 @@ export const Team = ({ members }) => {
             </div>
 
             <div className="team-grid">
-                {filteredMembers.sort((a, b) => (a.lastName || '').localeCompare(b.lastName || '')).map((member, index) => (
-                    <Link to={`/${member.id}`} key={index} className="team-member">
-                        <img src={member.photo} alt={member.name} />
-                        <div className="member-info">
-                            <h3>{member.name}</h3>
-                            <p>{member.title}</p>
-                        </div>
-                    </Link>
-                ))}
+                {filteredMembers
+                    .sort((a, b) => {
+                        const lastNameComparison = (a.lastName || '').localeCompare(b.lastName || '');
+                        if (lastNameComparison !== 0) {
+                            return lastNameComparison;
+                        }
+                        return (a.firstName || '').localeCompare(b.firstName || '');
+                    })
+                    .map((member, index) => (
+                        <Link to={`/${member.id}`} key={index} className="team-member">
+                            <img src={member.photo} alt={member.name} />
+                            <div className="member-info">
+                                <h3>{member.name}</h3>
+                                <p>{member.title}</p>
+                            </div>
+                        </Link>
+                    ))}
             </div>
         </div>
     );

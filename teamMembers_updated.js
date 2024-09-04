@@ -37,7 +37,7 @@ import sherri from "./pictures/Sherri_340x464.jpg";
 import christopher from "./pictures/ChrisE_340x464.jpg";
 import soon from "./pictures/SooC_340x464.jpg";
 import sally from "./pictures/Sally_Mueller_340x464.jpg";
-
+import anonymous from "./pictures/anonymous.jpg";
 export const teamMembers = [
       { id: "Ken", name: "Joe M. (Ken) Muncy", firstName: "Joe", middleName: "M. (Ken)", lastName: "Muncy", 
         firstName: "Joe",
@@ -414,7 +414,51 @@ export const teamMembers = [
             "Supporting attorneys in all aspects of PCT with US receiving office prosecution of patent applications",
             "Supporting attorneys in all aspects of USPTO maintenance fees of letters patent"],
         memberships: "", },
-
+        {
+            id: "Howard",
+            name: "Howard Seo",
+            firstName: "Howard", middleName: "", lastName: "Seo",
+            photo: anonymous,
+            email: "hhs@mg-ip.com",
+            phone: "(703)621-7140 x 162",
+            title: ""
+          },
+          {
+            id: "Linda",
+            name: "Linda Gunderson",
+            firstName: "Linda", middleName: "", lastName: "Gunderson",
+            photo: anonymous,
+            email: "lgg@mg-ip.com",
+            phone: "(703)621-7140 x 173",
+            title: ""
+          },
+            {
+            id: "Lee",
+            name: "Lee Hsu",
+            firstName: "Lee", middleName: "", lastName: "Hsu",
+            photo: anonymous,
+            email: "lh@mg-ip.com",
+            phone: "(703)621-7140 x 135",
+            title: ""
+          },
+          {
+            id: "Carol",
+            name: "Carol Guy",
+            firstName: "Carol", middleName: "", lastName: "Guy",
+            photo: anonymous,
+            email: "cag@mg-ip.com",
+            phone: "(703)621-7140 x 217",
+            title: "Accounting Manager"
+          },
+          {
+            id: "Adesh",
+            name: "Adesh Bhargava",
+            firstName: "Adesh", middleName: "", lastName: "Bhargava",
+            photo: anonymous,
+            email: "",
+            phone: "(703)621-7140",
+            title: ""
+          },
       { id: "Christopher", name: "Christopher Emond", firstName: "Christopher", middleName: "", lastName: "Emond", 
         title: "INTELLECTUAL PROPERTY ADVISOR",
         email: "cemond@mg-ip.com",
