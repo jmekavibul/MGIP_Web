@@ -29,8 +29,8 @@
   .buttonTitle {
     font-family: "Source Sans 3", sans-serif;
     color: #2F4157;
-    font-size: 40px; /* Adjusted font size for smaller screens */
-    font-weight: 600;
+    font-size: 45px; /* Adjusted font size for smaller screens */
+    font-weight: 550;
     line-height: 70.65px;/* Adjusted line height for smaller screens */
     text-align: left;
     padding-bottom: 20px; /* Reduced padding for smaller screens */

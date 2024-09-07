@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import HeroSlider, { Slide, Nav, Overlay, ButtonsNav } from 'hero-slider';
+import HeroSlider, { Slide, Nav, Overlay } from 'hero-slider';
 import dc from '../../pictures/dc.webp';
 import alexandria from '../../pictures/monument.jpg';
 import uspto from '../../pictures/uspto.webp';
@@ -14,103 +14,96 @@ const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
 
-  const handleBeforeSliding = (previousSlide, nextSlide) => {
-    const totalSlides = 3;
-    if (nextSlide >= totalSlides) {
-      setTimeout(() => {
-        if (goToNextSlideRef.current) {
-          goToNextSlideRef.current(0);
-        }
-      }, 100);
-    } else if (nextSlide < 0) {
-      setTimeout(() => {
-        if (goToPreviousSlideRef.current) {
-          goToPreviousSlideRef.current(totalSlides - 1);
-        }
-      }, 100);
+  // Scroll down using document.querySelector to manipulate the scroll position
+  const handleScrollDown = () => {
+
+    // Select the body or specific scrollable container
+    const scrollElement = document.querySelector('body'); // You can change this selector if needed
+    
+    if (scrollElement) {
+      const currentScrollY = scrollElement.scrollTop; // Get the current scroll position
+      const targetScrollPosition = currentScrollY + window.innerHeight * 1; // Set target scroll position
+      scrollElement.scrollTo({
+        top: targetScrollPosition,
+        behavior: 'smooth',
+      });
+    } else {
+      console.error('Scroll element not found'); // Error log if the element is not found
     }
   };
 
   return (
-    <HeroSlider
-      className="hero-slider"
-      height="100vh"
-      
-      autoplay={{
-        autoplayDuration: 10000,
-        autoplayDebounce: 4000,
-      }}
-      controller={{
-        initialSlide: 1,
-        slidingDuration: 1000, // Faster sliding duration
-        slidingDelay: 100,
-        onSliding: (nextSlide) =>
-          console.debug("onSliding(nextSlide): ", nextSlide),
-        onBeforeSliding: handleBeforeSliding,
-        onAfterSliding: (nextSlide) =>
-          console.debug("onAfterSliding(nextSlide): ", nextSlide),
-        goToNextSlidePointer: goToNextSlideRef,
-        goToPreviousSlidePointer: goToPreviousSlideRef,
-      }}
-      accessibility={{
-        orientation: 'horizontal',
-        shouldDisplayButtons: false,
-      }}
-      animations={{
-        slidingAnimation: 'fade',
-      }}
-    >
+    <div className="hero-slider-container">
+      <HeroSlider
+        className="hero-slider"
+        height="100vh"
+        autoplay={{
+          autoplayDuration: 10000,
+          autoplayDebounce: 4000,
+        }}
+        controller={{
+          initialSlide: 1,
+          slidingDuration: 1000,
+          slidingDelay: 100,
+          goToNextSlidePointer: goToNextSlideRef,
+          goToPreviousSlidePointer: goToPreviousSlideRef,
+        }}
+        accessibility={{
+          orientation: 'horizontal',
+          shouldDisplayButtons: false,
+        }}
+        animations={{
+          slidingAnimation: 'fade',
+        }}
+      >
         <Slide
-        label="Alexandria"
-        shouldRenderMask={false}
-        background={{
-          backgroundImageSrc: washingtonWhite,
-          backgroundAnimation: 'zoom',
-        }}
-      >
-        <Overlay>
-          <Wrapper>
-            <Title></Title>
-            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
-          </Wrapper>
-        </Overlay>
-      </Slide>
-      <Slide
-        label="Washington, D.C."
-        background={{
-            
-            
-          backgroundImageSrc: dc,
-          backgroundAnimation: 'zoom',
-        }}
-      >
-        <Overlay>
-          <Wrapper>
-            <Title></Title>
-            <Subtitle>Washington Monument, Washington D.C.</Subtitle>
-          </Wrapper>
-        </Overlay>
-      </Slide>
-
-
-
-      <Slide
-        label="USPTO"
-        background={{
-          backgroundImageSrc: uspto,
-          backgroundAnimation: 'zoom',
-        }}
-      >
-        <Overlay>
-          <Wrapper>
-            <Title></Title>
-            <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
-          </Wrapper>
-        </Overlay>
-      </Slide>
-
-      <Nav />
-    </HeroSlider>
+          label="Alexandria"
+          shouldRenderMask={false}
+          background={{
+            backgroundImageSrc: washingtonWhite,
+            backgroundAnimation: 'zoom',
+          }}
+        >
+          <Overlay>
+            <Wrapper>
+              <Title></Title>
+              <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
+            </Wrapper>
+          </Overlay>
+        </Slide>
+        <Slide
+          label="Washington, D.C."
+          background={{
+            backgroundImageSrc: dc,
+            backgroundAnimation: 'zoom',
+          }}
+        >
+          <Overlay>
+            <Wrapper>
+              <Title></Title>
+              <Subtitle>Washington Monument, Washington D.C.</Subtitle>
+            </Wrapper>
+          </Overlay>
+        </Slide>
+        <Slide
+          label="USPTO"
+          background={{
+            backgroundImageSrc: uspto,
+            backgroundAnimation: 'zoom',
+          }}
+        >
+          <Overlay>
+            <Wrapper>
+              <Title></Title>
+              <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
+            </Wrapper>
+          </Overlay>
+        </Slide>
+        <Nav />
+      </HeroSlider>
+      {/* Circle Scroll Button */}
+      <button className="scroll-button" onClick={handleScrollDown}></button>
+    </div>
   );
 };
 

@@ -148,7 +148,7 @@ export const Team = ({ members }) => {
             <Hero2
                 backgroundImage={teamphoto}
                 text="Our Team"
-                height="50vh"
+                height="40vh"
                 subText=""
             />
 
@@ -217,6 +217,15 @@ export const Team = ({ members }) => {
             <div className="team-grid">
                 {filteredMembers
                     .sort((a, b) => {
+                        // Check if either member has the title "Mascot" and sort them last
+                        if (a.title === "Mascot" && b.title !== "Mascot") {
+                            return 1; // "Mascot" goes after any other title
+                        }
+                        if (b.title === "Mascot" && a.title !== "Mascot") {
+                            return -1; // "Mascot" goes after any other title
+                        }
+
+                        // Sort by last name first, then first name
                         const lastNameComparison = (a.lastName || '').localeCompare(b.lastName || '');
                         if (lastNameComparison !== 0) {
                             return lastNameComparison;

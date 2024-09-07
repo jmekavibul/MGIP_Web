@@ -38,6 +38,7 @@ import christopher from "./pictures/ChrisE_340x464.jpg";
 import soon from "./pictures/SooC_340x464.jpg";
 import sally from "./pictures/Sally_Mueller_340x464.jpg";
 import anonymous from "./pictures/anonymous.jpg";
+import doggo from "./pictures/doggo.jpg";
 export const teamMembers = [
       { id: "Ken", name: "Joe M. (Ken) Muncy", firstName: "Joe", middleName: "M. (Ken)", lastName: "Muncy", 
         firstName: "Joe",
@@ -450,6 +451,15 @@ export const teamMembers = [
             phone: "(703)621-7140 x 217",
             title: "Accounting Manager"
           },
+          {            
+            id: "Mascot",
+            name: "Talulah",
+            firstName: "", middleName: "", lastName: "",
+            photo: doggo,
+            email: "",
+            phone: "",
+            title: "Mascot"
+        },
           {
             id: "Adesh",
             name: "Adesh Bhargava",

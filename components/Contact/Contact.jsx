@@ -11,9 +11,11 @@ export default function Contact() {
             height="40vh"  // Set appropriate height as needed
             subText=""  // Optional: add a subtitle if needed
         />
+        
             <div className="contact-banner">
             </div>
             <div className="contact-form-section">
+            <a href="/disclaimer">Disclaimer</a>
                 <ContactForm />
             </div>
         </div>

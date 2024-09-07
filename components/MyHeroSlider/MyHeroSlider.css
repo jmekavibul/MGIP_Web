@@ -1,3 +1,41 @@
-.hero-slider-overlay {
-    background-color: transparent !important;
-}
+.hero-slider-container {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .scroll-button {
+    position: absolute;
+    bottom: 30px; /* Adjust as needed */
+    right: 5%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent; /* Initial color */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10; /* Bring the button to the front */
+    border: 2px solid rgb(255, 255, 255);
+    
+  }
+  
+  .scroll-button:before {
+    content: '↓'; /* Arrow icon */
+    font-size: 24px;
+    color: white;
+    font-weight: 1200;
+    font-family: "Source Sans3";
+  }
+  
+  .scroll-button:hover {
+    background-color: #7fabd2; /* Color on hover */
+  }
+  
+  .scroll-button:active {
+    background-color: #6998d0; /* Color on click */
+  }
+  
