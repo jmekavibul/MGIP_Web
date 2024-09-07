@@ -64,12 +64,10 @@ const MyHeroSlider = () => {
             backgroundAnimation: 'zoom',
           }}
         >
-          <Overlay>
-            <Wrapper>
-              <Title></Title>
-              <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
-            </Wrapper>
-          </Overlay>
+          <Wrapper>
+            <Title></Title>
+            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
+          </Wrapper>
         </Slide>
         <Slide
           label="Washington, D.C."
@@ -78,12 +76,10 @@ const MyHeroSlider = () => {
             backgroundAnimation: 'zoom',
           }}
         >
-          <Overlay>
-            <Wrapper>
-              <Title></Title>
-              <Subtitle>Washington Monument, Washington D.C.</Subtitle>
-            </Wrapper>
-          </Overlay>
+          <Wrapper>
+            <Title></Title>
+            <Subtitle>Washington Monument, Washington D.C.</Subtitle>
+          </Wrapper>
         </Slide>
         <Slide
           label="USPTO"
@@ -92,12 +88,10 @@ const MyHeroSlider = () => {
             backgroundAnimation: 'zoom',
           }}
         >
-          <Overlay>
-            <Wrapper>
-              <Title></Title>
-              <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
-            </Wrapper>
-          </Overlay>
+          <Wrapper>
+            <Title></Title>
+            <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
+          </Wrapper>
         </Slide>
         <Nav />
       </HeroSlider>
