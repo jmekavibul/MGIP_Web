@@ -90,12 +90,6 @@ body, html {
   padding-bottom: 10px;
 }
 
-.search-bar-container {
-  flex-grow: 1; /* Allows the search bar to take up available space */
-  max-width: 70%; /* Search bar takes up most of the space */
-  position: relative;
-}
-
 .filters-container {
   display: flex;
   gap: 10px;
@@ -111,19 +105,36 @@ body, html {
   max-width: 200px; /* Limit the width of the dropdowns */
 }
 
+.search-bar-container {
+  flex-grow: 1; /* Allows the search bar to take up available space */
+  max-width: 80%; /* Ensure the search bar does not overflow */
+  position: relative;
+  display: flex; /* Use flexbox to keep the input and icon aligned */
+}
+
 .search-bar {
+  flex-grow: 1; /* Allow the search bar input to fill available space */
+  padding: 0 50px 0 20px; /* Add padding for the icon (right) and the text (left) */
   border-radius: 10px;
   height: 60px;
-  padding: 0 20px;
   font-family: 'Source Sans 3', sans-serif;
   font-size: 22px;
   font-weight: 400;
-  line-height: '30.28px';
   text-align: left;
   outline: none;
-  border: 1px solid #cccccc; 
+  border: 1px solid #cccccc;
   box-shadow: none;
-  width: 100%;
+  width: 100%; /* Ensure the input takes the full width available */
+}
+
+.search-icon {
+  position: absolute;
+  right: 20px; /* Position the icon 20px from the right */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  color: #888;
+  pointer-events: none;
 }
 
 .search-bar::placeholder {
@@ -137,17 +148,6 @@ body, html {
 .search-bar:focus {
   border: 2px solid #007bff;
 }
-
-.search-icon {
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 24px;
-  color: #888;
-  pointer-events: none;
-}
-
 
 .team-grid {
   display: grid;
@@ -241,6 +241,13 @@ body, html {
     max-width: 100%; /* Full width on small screens */
   }
 
+  .filters-container {
+    display: flex;
+    justify-content: space-between; /* Evenly space filter items */
+    flex-wrap: wrap; /* Allow filters to wrap if there are too many for the row */
+    gap: 10px; /* Optional: Adds a gap between the items */
+  }
+
   .filters select {
     max-width: 100%; /* Full width for dropdowns */
   }
@@ -258,18 +265,14 @@ body, html {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 580px) {
   .search-bar-container {
     text-align: left; /* Align the search bar to the left */
   }
 
   .search-bar {
     width: 100%; /* Full width search bar */
-    padding-right: 20px; /* Adjust padding to remove space for icon */
-  }
-
-  .search-icon {
-    display: none; /* Remove the icon */
+    padding: 0 50px 0 20px; /* Add padding for the icon (right) and the text (left) */
   }
 
   .filters select {
@@ -277,7 +280,13 @@ body, html {
   }
 
   .filters-container {
+    flex-direction: column; /* Stack filters vertically */
     justify-content: flex-start;
+    gap: 15px; /* Add space between the filters */
+  }
+
+  .filters-container .filter-item {
+    width: 100%; /* Make each filter item span the full width */
   }
 
   .team-grid {
