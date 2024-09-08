@@ -21,7 +21,6 @@ const Awards = () => {
 
   useEffect(() => {
     if (!wrapperRef.current) {
-      console.log('Wrapper ref is not attached correctly.');
       return;
     }
 

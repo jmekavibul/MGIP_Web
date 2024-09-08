@@ -26,7 +26,7 @@
     color: #2F4157;  /* Dark text */
     font-size: 30px; /* Adjusted to match Figma */
     line-height: 32px; /* Adjusted to match Figma */
-    font-family: "Playfair Display";  /* Font as per Figma */
+    font-family: "Source Sans3" sans-serif;  /* Font as per Figma */
     padding-left: 2px; /* Slight padding for better alignment */
 }
 
