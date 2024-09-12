@@ -49,7 +49,7 @@ const Footer = ({ credits }) => {
           <div className="footer-credits">
             <span>© {currentYear} MG-IP Law. All Rights Reserved</span>
             {credits && (<span><a href="https://www.flaticon.com/free-icons/project" style={{ color: 'white', textDecoration: 'none' }} title="project icons">Project icons created by surang - Flaticon</a></span>)}
-            <span>Website by Minty Web Designs</span>
+            <span>Website by JSP Webs LLC</span>
           </div>
         </footer>
       </div>
