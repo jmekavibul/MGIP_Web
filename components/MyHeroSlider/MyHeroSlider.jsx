@@ -1,48 +1,44 @@
-import React, { useRef } from 'react';
-import HeroSlider, { Slide, Nav, Overlay } from 'hero-slider';
+import React, { useRef, useState } from 'react';
+import HeroSlider, { Slide, Nav } from 'hero-slider';
 import dc from '../../pictures/dc.webp';
-import alexandria from '../../pictures/monument.jpg';
 import uspto from '../../pictures/uspto.webp';
+import washingtonWhite from '../../pictures/washington_white.jpg';
 import 'hero-slider/dist/index.css';
 import Title from '../Title/Title';
 import Subtitle from '../Subtitle/Subtitle';
 import Wrapper from '../Wrapper/Wrapper';
-import washingtonWhite from '../../pictures/washington_white.jpg';
-import './MyHeroSlider.css'; 
+import RotatingText from '../RotatingText/RotatingText';
+import ProgressBar from '../ProgressBar/ProgressBar'; // Import the ProgressBar component
+import './MyHeroSlider.css';
 
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
-
-  // Scroll down using document.querySelector to manipulate the scroll position
+  const slideDuration = 10000; // Duration of each slide in milliseconds
   const handleScrollDown = () => {
-
-    // Select the body or specific scrollable container
-    const scrollElement = document.querySelector('body'); // You can change this selector if needed
-    
+    const scrollElement = document.querySelector('body');
     if (scrollElement) {
-      const currentScrollY = scrollElement.scrollTop; // Get the current scroll position
-      const targetScrollPosition = currentScrollY + window.innerHeight * 1; // Set target scroll position
+      const currentScrollY = scrollElement.scrollTop;
+      const targetScrollPosition = currentScrollY + window.innerHeight * 1;
       scrollElement.scrollTo({
         top: targetScrollPosition,
         behavior: 'smooth',
       });
     } else {
-      console.error('Scroll element not found'); // Error log if the element is not found
+      console.error('Scroll element not found');
     }
   };
-
   return (
     <div className="hero-slider-container">
       <HeroSlider
         className="hero-slider"
         height="100vh"
         autoplay={{
-          autoplayDuration: 10000,
-          autoplayDebounce: 4000,
+          autoplayDuration: slideDuration,
+          autoplayDebounce: 3500,
         }}
         controller={{
-          initialSlide: 1,
+          initialSlide: 0, // Start with the first slide
           slidingDuration: 1000,
           slidingDelay: 100,
           goToNextSlidePointer: goToNextSlideRef,
@@ -65,8 +61,9 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title>18 years of experience in Intellectual Property</Title>
-            <Subtitle>Experienced attorneys in different fields</Subtitle>
+            <Title>Intellectual Property Law</Title>
+            <ProgressBar duration={slideDuration} />
+            <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
         </Slide>
         <Slide
@@ -77,8 +74,9 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title>diversity and equality are important values to us</Title>
-            <Subtitle>More than 30% staffs are woman and minorities</Subtitle>
+            <Title>Intellectual Property Law</Title>
+            <ProgressBar duration={slideDuration} />
+            <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
         </Slide>
         <Slide
@@ -89,13 +87,13 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
-            <Subtitle></Subtitle>
+            <Title>Intellectual Property Law</Title>
+            <ProgressBar duration={slideDuration}  />
+            <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
         </Slide>
         <Nav />
       </HeroSlider>
-      {/* Circle Scroll Button */}
       <button className="scroll-button" onClick={handleScrollDown}></button>
     </div>
   );
