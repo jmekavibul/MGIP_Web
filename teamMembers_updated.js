@@ -14,6 +14,7 @@ import allison from "./pictures/Allison-Tulino.jpg";
 import leo from "./pictures/Leo_340x464.jpg";
 import mary from "./pictures/MG-IP_MaryFran_340x464.jpg";
 import rebeccah from "./pictures/MG-IP_RGan_340x464.jpg";
+import adesh from "./pictures/adesh.jpg";
 import floyd from "./pictures/Floyd-Canfield.jpg";
 import david from "./pictures/MG-IP_DavidStar_340x464.jpg";
 import robert from "./pictures/Robert-Gnuse.jpg";
@@ -22,6 +23,7 @@ import hyung from "./pictures/Hyung_340x464.jpg";
 import marcus from "./pictures/Marcus_Luepke_340x464.jpg";
 import jayK from "./pictures/JayKlinck_339x461.jpg";
 import robertP from "./pictures/MG-IP_BobPolit_340x464.jpg";
+import philip from "./pictures/Philip.jpg";
 import jeffreyS from "./pictures/JeffS_340x464.jpg";
 import simone from "./pictures/Simone2_340x464.jpg";
 import roman from "./pictures/RomanC_340x464.jpg";
@@ -460,11 +462,22 @@ export const teamMembers = [
             phone: "",
             title: "Mascot"
         },
+        {
+            id:"Philip",
+            name: "Philip R. Smith",
+            firstName: "Philip", middleName: "Robert", lastName: "Smith",
+            email: "prs@mg-ip.com",
+            phone: "(703)621-7140 x 139",
+            photo: philip,
+            education:["George Mason University (J.D.)", "Pennsylvania State University (B.S., Electrical Engineering)"],
+            bar:["Virginia", "The U.S. Patent & Trademark Office"],
+            experience:["Mr. Smith has over twenty years of experience in the area of patent law. He began his career at the United States Patent & Trademark Office, where he examined patent applications in the field of electronic surgical endoscopes. While fulfilling his duties as a Primary Examiner, he earned a juris doctor from George Mason University with a concentration in legal & economic theory. After graduating law school in 2013, he joined MG-IP, drafting and prosecuting patent applications relating to wireless communication systems, satellite positioning, and optical data transmission devices. Before returning to MG-IP in 2024, he worked for five years at a wireless communication research & development laboratory, rising to the roles of Standard Essential Patent Portfolio Manager, and Chief Intellectual Property Officer."]
+        },
           {
             id: "Adesh",
             name: "Adesh Bhargava",
             firstName: "Adesh", middleName: "", lastName: "Bhargava",
-            photo: anonymous,
+            photo: adesh,
             email: "",
             phone: "(703)621-7140",
             title: ""

@@ -65,8 +65,8 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
-            <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
+            <Title>18 years of experience in Intellectual Property</Title>
+            <Subtitle>Experienced attorneys in different fields</Subtitle>
           </Wrapper>
         </Slide>
         <Slide
@@ -77,8 +77,8 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
-            <Subtitle>Washington Monument, Washington D.C.</Subtitle>
+            <Title>diversity and equality are important values to us</Title>
+            <Subtitle>More than 30% staffs are woman and minorities</Subtitle>
           </Wrapper>
         </Slide>
         <Slide
@@ -90,7 +90,7 @@ const MyHeroSlider = () => {
         >
           <Wrapper>
             <Title></Title>
-            <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
+            <Subtitle></Subtitle>
           </Wrapper>
         </Slide>
         <Nav />
