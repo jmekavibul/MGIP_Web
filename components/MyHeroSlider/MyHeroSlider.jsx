@@ -8,27 +8,23 @@ import Title from '../Title/Title';
 import Subtitle from '../Subtitle/Subtitle';
 import Wrapper from '../Wrapper/Wrapper';
 import washingtonWhite from '../../pictures/washington_white.jpg';
-import './MyHeroSlider.css'; 
-
+import './MyHeroSlider.css';
+import RotatingText from '../RotatingText/RotatingText';
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
 
-  // Scroll down using document.querySelector to manipulate the scroll position
   const handleScrollDown = () => {
-
-    // Select the body or specific scrollable container
-    const scrollElement = document.querySelector('body'); // You can change this selector if needed
-    
+    const scrollElement = document.querySelector('body');
     if (scrollElement) {
-      const currentScrollY = scrollElement.scrollTop; // Get the current scroll position
-      const targetScrollPosition = currentScrollY + window.innerHeight * 1; // Set target scroll position
+      const currentScrollY = scrollElement.scrollTop;
+      const targetScrollPosition = currentScrollY + window.innerHeight * 1;
       scrollElement.scrollTo({
         top: targetScrollPosition,
         behavior: 'smooth',
       });
     } else {
-      console.error('Scroll element not found'); // Error log if the element is not found
+      console.error('Scroll element not found');
     }
   };
 
@@ -65,7 +61,8 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
+            <Title>Intellectual Property Law</Title>
+            <Title>Specializes in <RotatingText /></Title>
             <Subtitle>Jefferson Memorial, Washington D.C.</Subtitle>
           </Wrapper>
         </Slide>
@@ -77,7 +74,8 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
+            <Title>Intellectual Property Law</Title>
+            <Title>Specializes in <RotatingText /></Title>
             <Subtitle>Washington Monument, Washington D.C.</Subtitle>
           </Wrapper>
         </Slide>
@@ -89,13 +87,13 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title></Title>
+            <Title>Intellectual Property Law</Title>
+            <Title>Specializes in <RotatingText /></Title>
             <Subtitle>USPTO Office, Alexandria Virginia</Subtitle>
           </Wrapper>
         </Slide>
         <Nav />
       </HeroSlider>
-      {/* Circle Scroll Button */}
       <button className="scroll-button" onClick={handleScrollDown}></button>
     </div>
   );
