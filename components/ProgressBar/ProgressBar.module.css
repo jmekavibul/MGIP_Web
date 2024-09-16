@@ -14,7 +14,7 @@
     height: 100%;
     background-color: #ffffff; /* Color of the progress bar */
     transform-origin: center; /* Start animation from the center */
-    animation: stretch 3.2s ease-in-out forwards; /* Animation that only stretches */
+    animation: stretch 4s ease-in-out forwards; /* Animation that only stretches */
   }
   
   /* Keyframes for stretching from the center without retracting */
@@ -24,6 +24,20 @@
     }
     100% {
       width: 100%; /* Fully expand and stop */
+    }
+  }
+
+  @media (max-width: 500px) {
+    .ProgressBarContainer {
+        position: relative;
+        width: 50%;
+        bottom: 1%;
+        height: 2px; /* Adjust height as needed */
+        background-color: rgb(185, 185, 185);
+        overflow: hidden;
+        border-radius: 4px;
+        display: flex;
+        justify-content: flex-start; /* Align content to start */
     }
   }
   
