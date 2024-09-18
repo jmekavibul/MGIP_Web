@@ -5,7 +5,7 @@ const RotatingText = () => {
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopIndex, setLoopIndex] = useState(0);
-  const [typingSpeed, setTypingSpeed] = useState(150); // Typing speed
+  const [typingSpeed, setTypingSpeed] = useState(75); // Typing speed
 
   useEffect(() => {
     const handleTyping = () => {

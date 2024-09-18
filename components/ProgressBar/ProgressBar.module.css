@@ -14,7 +14,7 @@
     height: 100%;
     background-color: #ffffff; /* Color of the progress bar */
     transform-origin: center; /* Start animation from the center */
-    animation: stretch 4s ease-in-out forwards; /* Animation that only stretches */
+    animation: stretch 7s ease-in-out forwards; /* Animation that only stretches */
   }
   
   /* Keyframes for stretching from the center without retracting */

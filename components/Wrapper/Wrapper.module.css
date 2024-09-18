@@ -1,6 +1,6 @@
 .Container {
-        display: flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
     align-items: center;
     flex-flow: column;
     width: 100%;
@@ -10,3 +10,13 @@
     pointer-events: none;
     background-color: rgba(0, 0, 0, 0.1)
   }
+
+
+.Container p{
+    font-family: "Sofia Sans", sans-serif;
+    font-weight: 600;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    color: white;
+    font-size: 2rem;
+}
+

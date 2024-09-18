@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom'; // Import Link here
 import './NavBar.css';
 import { RxHamburgerMenu } from "react-icons/rx";
-import mgipLogo from '../../public/mgip-logo.png';
+import { useNavigate } from 'react-router-dom';
 // Adjust the NavBar component
 export const NavBar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -31,12 +31,18 @@ export const NavBar = () => {
         }
       };
     }, []);
-  
+    
+    const navigate = useNavigate();
+    const routeChange = (event) => {
+        event.stopPropagation();
+        let path = "/";
+        navigate(path);
+    };
     return (
       <>
         <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
           <div className="navbar-logo">
-            <h3 className="navbar-title">MUNCY, GEISSLER, <br /> OLDS & LOWE, P.C.</h3>
+            <h3 className="navbar-title" onClick={routeChange}>MUNCY, GEISSLER, <br /> OLDS & LOWE, P.C.</h3>
           </div>
   
           <button

@@ -2,7 +2,6 @@ import React from 'react';
 import './Footer.css'; // Ensure CSS is linked
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import NewLogo from '../../pictures/Untitled-1_logo_in_white.svg'; // Update this line
 const Footer = ({ credits }) => {
   const currentYear = new Date().getFullYear(); // Gets the current year
 
@@ -35,7 +34,7 @@ const Footer = ({ credits }) => {
                         <a>+1(703)621-7140</a>
                     </div>
                     <div className="social-icons" style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
-                    <a href="https://www.linkedin.com" className="icon-button">
+                    <a href="https://www.linkedin.com/company/muncy-geissler-olds-&-lowe/" className="icon-button">
                       <FaLinkedin size={20} color="white" />
                     </a>
                     <a href="/contact" className="icon-button">

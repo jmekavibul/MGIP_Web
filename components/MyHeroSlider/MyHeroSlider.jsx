@@ -39,7 +39,7 @@ const MyHeroSlider = () => {
         }}
         controller={{
           initialSlide: 0, // Start with the first slide
-          slidingDuration: 1000,
+          slidingDuration: 800,
           slidingDelay: 100,
           goToNextSlidePointer: goToNextSlideRef,
           goToPreviousSlidePointer: goToPreviousSlideRef,
@@ -61,8 +61,11 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title>Intellectual Property Law</Title>
+            <Title>MUNCY, GEISSLER OLDS & LOWE, P.C. 
+            <p>Intellectual Property Law</p></Title>
+            
             <ProgressBar duration={slideDuration} />
+            
             <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
         </Slide>
