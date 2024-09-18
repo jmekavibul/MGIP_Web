@@ -19,5 +19,4 @@
 
 .infoSectionWrapper {
     position: relative; /* Make sure this is positioned relative so it's above the background */
-    z-index: 2; /* Ensure content appears above the background image */
 }
