@@ -12,7 +12,7 @@ const RotatingText = () => {
       const currentDiscipline = disciplines[loopIndex % disciplines.length];
 
       if (isDeleting) {
-        setCurrentText((prev) => prev.substring(0, prev.length - 1));
+        setCurrentText((prev) => prev.substring(0, 0));
         setTypingSpeed(75); // Faster when deleting
       } else {
         // Add characters
