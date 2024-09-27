@@ -30,8 +30,9 @@ const Footer = ({ credits }) => {
                 <div style={{ marginTop: '10px', display: 'inline', lineHeight:'25px', alignItems: 'center'}}>
                     <a>125 S Royal St</a><br />
                     <a>Alexandria, VA 22314</a><br />
-                    <div style={{paddingTop:'10px'}}>
+                    <div style={{paddingTop:'10px', display: 'grid'}}>
                         <a>+1(703)621-7140</a>
+                        <a>mailroom@mg-ip.com</a>
                     </div>
                     <div className="social-icons" style={{ display: 'flex', gap: '10px', marginTop: '15px' }}>
                     <a href="https://www.linkedin.com/company/muncy-geissler-olds-&-lowe/" className="icon-button">

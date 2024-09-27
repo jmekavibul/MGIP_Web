@@ -61,7 +61,7 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title>MUNCY, GEISSLER OLDS & LOWE, P.C. 
+            <Title>MUNCY, GEISSLER, OLDS & LOWE, P.C. 
             <p>Intellectual Property Law</p></Title>
             
             <ProgressBar duration={slideDuration} />
@@ -77,8 +77,11 @@ const MyHeroSlider = () => {
           }}
         >
           <Wrapper>
-            <Title>Intellectual Property Law</Title>
+            <Title>MUNCY, GEISSLER, OLDS & LOWE, P.C. 
+            <p>Intellectual Property Law</p></Title>
+            
             <ProgressBar duration={slideDuration} />
+            
             <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
         </Slide>
