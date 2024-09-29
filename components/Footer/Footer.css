@@ -85,7 +85,12 @@
     font-family: 'Noto Sans', sans-serif;
     font-size: 0.875rem;
   }
-  
+  .footer-map {
+    width: 300px;
+    height: auto;
+    border-radius: 20px;
+    cursor: pointer;
+  }
   .footer-title {
     font-size: 32px;
     font-weight:normal;

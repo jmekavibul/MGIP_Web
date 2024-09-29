@@ -455,12 +455,12 @@ export const teamMembers = [
           },
           {            
             id: "Mascot",
-            name: "Talulah",
+            name: "Mascot",
             firstName: "", middleName: "", lastName: "",
             photo: doggo,
             email: "",
             phone: "",
-            title: "Mascot"
+            title: "Talulah"
         },
         {
             id:"Philip",

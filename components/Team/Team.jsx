@@ -218,10 +218,10 @@ export const Team = ({ members }) => {
                 {filteredMembers
                     .sort((a, b) => {
                         // Check if either member has the title "Mascot" and sort them last
-                        if (a.title === "Mascot" && b.title !== "Mascot") {
+                        if (a.name === "Mascot" && b.name !== "Mascot") {
                             return 1; // "Mascot" goes after any other title
                         }
-                        if (b.title === "Mascot" && a.title !== "Mascot") {
+                        if (b.name === "Mascot" && a.name !== "Mascot") {
                             return -1; // "Mascot" goes after any other title
                         }
 

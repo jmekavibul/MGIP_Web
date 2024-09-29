@@ -2,9 +2,16 @@ import React from 'react';
 import './Footer.css'; // Ensure CSS is linked
 import { FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
+import map from "../../pictures/mgipMap.jpg";
+import { useNavigate } from 'react-router-dom';
+
 const Footer = ({ credits }) => {
   const currentYear = new Date().getFullYear(); // Gets the current year
-
+  const routeChange = (event) => {
+    event.preventDefault();
+    // Directly navigate to the external Google Maps link
+    window.location.href = "https://www.google.com/maps/place/Muncy,+Geissler,+Olds+%26+Lowe,+P.C./@38.8026719,-77.0503829,15z/data=!4m6!3m5!1s0x89b64f449e66970f:0x112d2d84c8d832f5!8m2!3d38.803901!4d-77.0440046!16s%2Fg%2F11bbx01Iw8?entry=ttu";
+  };
   return (
     <>
       <div style={{ width: '100%', height: '20px', backgroundColor: "#6C8EAD" }} />
@@ -13,6 +20,7 @@ const Footer = ({ credits }) => {
           <div className="footer-content">
             <div className="footer-section company-info">
             <h3 className="footer-title">MUNCY, GEISSLER, <br /> OLDS & LOWE, P.C.</h3>
+            <img src={map} onClick={routeChange} className="footer-map"/>
             </div>
             <div className='link-parent'>
               <div className="footer-section quick-links">
