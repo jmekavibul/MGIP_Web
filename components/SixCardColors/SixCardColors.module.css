@@ -24,6 +24,7 @@
     background-color: #f7f9fc; /* Default background color */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative; /* Ensure the tooltip aligns relative to the grid item */
   }
   
   .gridItem:hover {
@@ -54,17 +55,33 @@
     margin-bottom: 25px; /* Increased space between icon and title */
   }
   
-  .sixCardTitle h2 {
-    color: #2F4157;
-    font-family: 'Playfair Display', serif;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 55px;
-    text-align: center;
-    margin-bottom: 90px;
-    margin-top: 90px;
+  /* Tooltip Styles */
+  .tooltip {
+    display: block;
+    position:absolute;
+    bottom:100%;
+    background-color: #577C8E; 
+    color: white; /* Ensure text color is white */
+    padding: 16px;
+    border-radius: 8px;
+    white-space: normal;
+    z-index: 10;
+    width: 300px; /* Adjust width if needed */
+    font-size: 20px;
+    text-align: left;
+    word-wrap: break-word;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .tooltip ul li {
+    font-size: 18px; 
+    margin-bottom: 10px;
+    line-height: 1.5;
+    font-family: 'Source Sans 3', sans-serif;
+    color: white;
   }
   
+  /* Responsive Styles */
   @media screen and (max-width: 1200px) {
     .gridContainer {
       grid-template-columns: repeat(2, 1fr);

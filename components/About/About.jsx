@@ -98,6 +98,7 @@ export const About = () => {
         <SixCardColors
           data={transactionData}
           colors={["#5B9A93", "#577C8E", "#2F4157", "#577C8E", "#2F4157", "#5B9A93"]}
+          languages={["English, español, 中文, 日本語, 한국인"]}
         />
       </div>
     </div>
