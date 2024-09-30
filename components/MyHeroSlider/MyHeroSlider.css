@@ -1,42 +1,54 @@
 .hero-slider-container {
-    position: relative;
-    overflow: hidden;
-  }
-  
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-button {
+  position: absolute;
+  bottom: 100px; /* Adjust the vertical position */
+  left: 50%; /* Center horizontally */
+  transform: translateX(-50%);
+  width: 75px;
+  height: 65px;
+  border: none;
+  background-color: transparent; /* No background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: stroke 0.3s, fill 0.3s; /* Smooth transition for arrow color */
+  z-index: 10; /* Bring the button to the front */
+}
+
+.scroll-button:hover svg path {
+  stroke: #7fabd2; /* Change arrow color on hover */
+}
+
+.scroll-button:active svg path {
+  stroke: #6998d0; /* Change arrow color on click */
+}
+
+.scroll-button svg {
+  width: 100%;
+  height: 100%;
+}
+
+.scroll-button svg path {
+  stroke: white; /* Initial arrow color */
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Hide scroll button when the viewport width is below 768px */
+@media (max-width: 768px) {
   .scroll-button {
-    position: absolute;
-    bottom: 100px; /* Adjust the vertical position */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%);
-    width: 75px;
-    height: 65px;
-    border: none;
-    background-color: transparent; /* No background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: stroke 0.3s, fill 0.3s; /* Smooth transition for arrow color */
-    z-index: 10; /* Bring the button to the front */
+      display: none;
   }
-  
-  .scroll-button:hover svg path {
-    stroke: #7fabd2; /* Change arrow color on hover */
+}
+
+@media (max-height: 600px) {
+  .scroll-button {
+    display: none;
   }
-  
-  .scroll-button:active svg path {
-    stroke: #6998d0; /* Change arrow color on click */
-  }
-  
-  .scroll-button svg {
-    width: 100%;
-    height: 100%;
-  }
-  
-  .scroll-button svg path {
-    stroke: white; /* Initial arrow color */
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
-  }
-  
+} 
