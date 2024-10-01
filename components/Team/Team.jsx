@@ -143,6 +143,7 @@ export const Team = ({ members }) => {
             (!selectedTitle || selectedTitle.value === 'All' || member.title === selectedTitle.value) &&
             (!selectedMembership || selectedMembership.value === 'All' || member?.memberships?.includes(selectedMembership.value));
     });
+
     return (
         <div className="team-container">
             <Hero2
@@ -235,7 +236,7 @@ export const Team = ({ members }) => {
                     .map((member, index) => (
                         <Link to={`/${member.id}`} key={index} className="team-member">
                             <img src={member.photo} alt={member.name} />
-                            <div className="member-info">
+                            <div className={`member-info ${member.name.length > 18 ? 'long-name' : ''}`}>
                                 <h3>{member.name}</h3>
                                 <p>{member.title}</p>
                             </div>

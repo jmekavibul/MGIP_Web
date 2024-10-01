@@ -14,7 +14,7 @@
     height: 100%;
     background-color: #ffffff;
     transform-origin: center;
-    animation: stretch 10.8s ease-in-out forwards; 
+    animation: stretch 10.7s ease-in-out forwards; 
 }
 
 @keyframes stretch {
