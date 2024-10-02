@@ -1,8 +1,32 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './ThreeCardSection.module.css';
 
 const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
   const [activeCard, setActiveCard] = useState(null);
+  const cardRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add(styles.visible);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) observer.observe(card);
+    });
+
+    return () => {
+      cardRefs.current.forEach((card) => {
+        if (card) observer.unobserve(card);
+      });
+    };
+  }, []);
 
   const handleShowMoreClick = (index) => {
     setActiveCard({
@@ -22,13 +46,16 @@ const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
         {cards.map((card, index) => (
           <div
             key={index}
-            className={styles.card}
+            className={`${styles.card} ${styles.hidden}`}
+            ref={(el) => (cardRefs.current[index] = el)}
             style={{ backgroundColor: colors[index % colors.length] }}
           >
             {card.icon && (
               <div
                 className={styles.iconWrapper}
-                style={{ backgroundColor: iconBackgroundColor[index % iconBackgroundColor.length] }}
+                style={{
+                  backgroundColor: iconBackgroundColor[index % iconBackgroundColor.length],
+                }}
               >
                 {React.createElement(card.icon, { size: 50, color: '#ffffff' })}
               </div>
