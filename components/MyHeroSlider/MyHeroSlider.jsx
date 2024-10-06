@@ -11,7 +11,6 @@ import RotatingText from '../RotatingText/RotatingText';
 import ProgressBar from '../ProgressBar/ProgressBar'; 
 import './MyHeroSlider.css';
 import Timeline from '../Timeline/Timeline'; // Import the Timeline component
-
 const MyHeroSlider = () => {
   const goToNextSlideRef = useRef(null);
   const goToPreviousSlideRef = useRef(null);
@@ -136,7 +135,7 @@ const MyHeroSlider = () => {
             
             <Subtitle>Specializes in <RotatingText /></Subtitle>
           </Wrapper>
-        </Slide>
+                  </Slide>
         <Slide
           label="USPTO"
           background={{
@@ -146,13 +145,14 @@ const MyHeroSlider = () => {
         >
           <Wrapper>
             <Title>MUNCY, GEISSLER, OLDS & LOWE, P.C. 
-            <p>Intellectual Property Law</p></Title>
+            <p>MG-IP Timeline</p></Title>
             
             <ProgressBar duration={slideDuration} />
             <Timeline data={timelineData} />
+            
           </Wrapper>
         </Slide>
-        <Slide
+        {/* <Slide
           label="USPTO"
           background={{
             backgroundImageSrc: uspto,
@@ -165,7 +165,7 @@ const MyHeroSlider = () => {
             <ProgressBar duration={slideDuration} />
             <Subtitle>Located 10 minutes from USPTO</Subtitle>
           </Wrapper>
-        </Slide>
+        </Slide> */}
         <Nav />
       </HeroSlider>
       <button className="scroll-button" onClick={handleScrollDown}>

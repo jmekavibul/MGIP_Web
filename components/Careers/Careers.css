@@ -1,4 +1,6 @@
-
+.centered-container {
+    background-color: #fdfeff;
+}
 @media (min-width: 560px){
     .centered-container {
         display: flex;

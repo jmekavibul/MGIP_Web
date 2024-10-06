@@ -14,7 +14,7 @@
     height: 100%;
     background-color: #ffffff;
     transform-origin: center;
-    animation: stretch 10.7s ease-in-out forwards; 
+    animation: stretch 12s ease-in-out forwards; 
 }
 
 @keyframes stretch {
@@ -25,9 +25,28 @@
         width: 100%;
     }
 }
-
-@media (max-width: 500px) {
+@media (max-width: 1640px) {
+    .ProgressBarContainer {
+        width: 30%;
+    }
+}
+@media (max-width: 1060px) {
+    .ProgressBarContainer {
+        width: 45%;
+    }
+}
+@media (max-width: 1040px) {
     .ProgressBarContainer {
         width: 50%;
+    }
+}
+@media (max-width: 500px) {
+    .ProgressBarContainer {
+        width: 60%;
+    }
+    @media (max-width: 430px) {
+        .ProgressBarContainer {
+            width: 70%;
+        }
     }
 }

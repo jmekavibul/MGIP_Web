@@ -90,6 +90,11 @@
     height: auto;
     border-radius: 20px;
     cursor: pointer;
+    transition: transform 0.5s ease-in-out; 
+
+  }
+  .footer-map:hover{
+    transform: scale(1.05);
   }
   .footer-title {
     font-size: 32px;

@@ -4,15 +4,15 @@
 
 .background-image2 {
     position: absolute;
-    top: 100px;
+    top: 0px;
     left: 0;
     right: 0;
     bottom: 0;
     background-image: url('../../pictures/svgmap2.png');
     background-repeat: no-repeat;
     background-size:80%; /* or 'contain' based on your desired effect */
-    padding-top: 50px;
-    background-position: center 0px;
+    padding-top: 800px;
+    background-attachment: fixed;
     z-index: -1; /* Ensure it's behind the content */
     opacity: 0.09;
 }

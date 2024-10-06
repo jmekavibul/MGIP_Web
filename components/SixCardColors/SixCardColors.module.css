@@ -1,6 +1,6 @@
 .sixCardColors {
     text-align: center;
-    padding: 0 5% 80px;
+    padding-bottom: 80px;
     width: 70%;
     background-color: white;
     margin: auto;
@@ -21,10 +21,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #f7f9fc; /* Default background color */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+    background-color: #f7f9fc; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    position: relative; /* Ensure the tooltip aligns relative to the grid item */
+    position: relative; 
   }
   
   .gridItem:hover {
