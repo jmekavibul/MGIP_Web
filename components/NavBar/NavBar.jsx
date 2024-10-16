@@ -22,7 +22,7 @@ function DesktopNav() {
           <PlusGridItem key={href} className="relative flex">
             <Link
               href={href}
-              className="flex items-center px-4 py-3 text-base font-medium text-gray-950 bg-blend-multiply hover:bg-white/10"
+              className="flex items-center px-4 py-3 text-lg font-normal text-gray-950 bg-blend-multiply hover:bg-white/10"
             >
               {label}
             </Link>
