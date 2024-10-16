@@ -13,13 +13,12 @@ import { teamMembers } from './teamMembers_updated';
 import { Careers } from './components/Careers/Careers';
 import membershipsData from './membershipMasterList'
 import { Disclaimer } from './components/Disclaimer/Disclaimer';
-
+import './index.css';
 function App() {
     return(
         <Router>
             <ScrollToTop />
             <div className='App'>
-                <NavBar/>
                 <main>
                     <Routes>
                         <Route path="/" element={<About />}/>

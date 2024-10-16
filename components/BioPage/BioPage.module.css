@@ -1,7 +1,7 @@
 .bioFullPage {
     
-  padding: 150px 15px;
-  width: 70%; /* Set the width to 75% of the screen */
+  padding: 50px 15px;
+  width: 60%; /* Set the width to 75% of the screen */
   /* max-width: 1200px; Optional: Set a maximum width to prevent it from getting too large on very wide screens */
   margin: 0 auto; /* Center the content */
 }
@@ -12,15 +12,15 @@
 }
 
 .photoContainer {
-  margin-right: 20px; /* Adds spacing between the photo and the content */
+  margin-right: 50px; /* Adds spacing between the photo and the content */
 }
 
 .memberPhoto {
-  width: 250px; /* Set the photo size */
+  width: 450px; /* Set the photo size */
   height: auto; /* Maintain aspect ratio */
   object-fit: cover;
   border-radius: 5%; /* Remove circular border */
-  margin: 0 30px 0 30px;
+  margin: 0 30px 0px 0px;
 }
 
 

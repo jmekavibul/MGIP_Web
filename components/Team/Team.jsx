@@ -5,6 +5,9 @@ import Select from 'react-select';
 import { Link } from 'react-router-dom';
 import { MdOutlineSearch } from "react-icons/md";
 import Hero2 from '../Hero2/Hero2';
+import { GradientBackground } from '../Gradient/Gradient';
+import { NavBar } from '../NavBar/NavBar';
+import { Container } from '../Container/Container';
 
 export const Team = ({ members }) => {
     const [searchQuery, setSearchQuery] = useState('');
@@ -145,105 +148,106 @@ export const Team = ({ members }) => {
     });
 
     return (
-        <div className="team-container">
-            <Hero2
-                backgroundImage={teamphoto}
-                text="Our Team"
-                height="40vh"
-                subText=""
-            />
+        <div>
+            <GradientBackground />
+            <Container>
+                <NavBar />
+            </Container>
+            <div className="team-container">
 
-            <div className='teamBesidesHero'>
-                <div className="search-container">
-                    <div className='search-input'>
-                        <div className='search-bar-container'>
-                            <input
-                                className="search-bar"
-                                type="text"
-                                placeholder="Search by Name"
-                                value={searchQuery}
-                                onChange={handleSearchChange}
+                <div className='teamBesidesHero'>
+                    <div className="search-container">
+                        <div className='search-input'>
+                            <div className='search-bar-container'>
+                                <input
+                                    className="search-bar"
+                                    type="text"
+                                    placeholder="Search by Name"
+                                    value={searchQuery}
+                                    onChange={handleSearchChange}
+                                />
+                                <MdOutlineSearch className='search-icon' />
+                            </div>
+                        </div>
+                        <div className="filters-container">
+                            <Select
+                                value={selectedMembership}
+                                onChange={handleMembershipChange}
+                                options={membershipOptions}
+                                styles={customStyles}
+                                isClearable={true}
+                                placeholder="By Membership"
+                                isSearchable={false}
                             />
-                            <MdOutlineSearch className='search-icon' />
+                            <Select
+                                value={selectedField}
+                                options={options}
+                                onChange={handleFieldChange}
+                                styles={customStyles}
+                                isClearable={true}
+                                placeholder="By Field"
+                                isSearchable={false}
+                            />
+                            <Select
+                                value={selectedTitle}
+                                onChange={handleTitleChange}
+                                options={titleOptions}
+                                styles={customStyles}
+                                isClearable={true}
+                                placeholder="By Title"
+                                isSearchable={false}
+                            />
                         </div>
                     </div>
-                    <div className="filters-container">
-                        <Select
-                            value={selectedMembership}
-                            onChange={handleMembershipChange}
-                            options={membershipOptions}
-                            styles={customStyles}
-                            isClearable={true}
-                            placeholder="By Membership"
-                            isSearchable={false}
-                        />
-                        <Select
-                            value={selectedField}
-                            options={options}
-                            onChange={handleFieldChange}
-                            styles={customStyles}
-                            isClearable={true}
-                            placeholder="By Field"
-                            isSearchable={false}
-                        />
-                        <Select
-                            value={selectedTitle}
-                            onChange={handleTitleChange}
-                            options={titleOptions}
-                            styles={customStyles}
-                            isClearable={true}
-                            placeholder="By Title"
-                            isSearchable={false}
-                        />
+
+                    <div className="alphabet">
+                        {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
+                            <a
+                                key={letter}
+                                href={`#${letter}`}
+                                className={activeLetter === letter ? 'active' : ''}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleLetterClick(letter);
+                                }}
+                            >
+                                {letter}
+                            </a>
+                        ))}
                     </div>
                 </div>
 
-                <div className="alphabet">
-                    {'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('').map((letter) => (
-                        <a
-                            key={letter}
-                            href={`#${letter}`}
-                            className={activeLetter === letter ? 'active' : ''}
-                            onClick={(e) => {
-                                e.preventDefault();
-                                handleLetterClick(letter);
-                            }}
-                        >
-                            {letter}
-                        </a>
-                    ))}
+                <div className="team-grid">
+                    {filteredMembers
+                        .sort((a, b) => {
+                            // Check if either member has the title "Mascot" and sort them last
+                            if (a.name === "Mascot" && b.name !== "Mascot") {
+                                return 1; // "Mascot" goes after any other title
+                            }
+                            if (b.name === "Mascot" && a.name !== "Mascot") {
+                                return -1; // "Mascot" goes after any other title
+                            }
+
+                            // Sort by last name first, then first name
+                            const lastNameComparison = (a.lastName || '').localeCompare(b.lastName || '');
+                            if (lastNameComparison !== 0) {
+                                return lastNameComparison;
+                            }
+                            return (a.firstName || '').localeCompare(b.firstName || '');
+                        })
+                        .map((member, index) => (
+                            <Link to={`/${member.id}`} key={index} className="team-member">
+                                <img src={member.photo} alt={member.name} />
+                                <div className={`member-info ${member.name.length > 18 ? 'long-name' : ''}`}>
+                                    <h3>{member.name}</h3>
+                                    <p>{member.title}</p>
+                                </div>
+                            </Link>
+                        ))}
                 </div>
             </div>
-
-            <div className="team-grid">
-                {filteredMembers
-                    .sort((a, b) => {
-                        // Check if either member has the title "Mascot" and sort them last
-                        if (a.name === "Mascot" && b.name !== "Mascot") {
-                            return 1; // "Mascot" goes after any other title
-                        }
-                        if (b.name === "Mascot" && a.name !== "Mascot") {
-                            return -1; // "Mascot" goes after any other title
-                        }
-
-                        // Sort by last name first, then first name
-                        const lastNameComparison = (a.lastName || '').localeCompare(b.lastName || '');
-                        if (lastNameComparison !== 0) {
-                            return lastNameComparison;
-                        }
-                        return (a.firstName || '').localeCompare(b.firstName || '');
-                    })
-                    .map((member, index) => (
-                        <Link to={`/${member.id}`} key={index} className="team-member">
-                            <img src={member.photo} alt={member.name} />
-                            <div className={`member-info ${member.name.length > 18 ? 'long-name' : ''}`}>
-                                <h3>{member.name}</h3>
-                                <p>{member.title}</p>
-                            </div>
-                        </Link>
-                    ))}
-            </div>
         </div>
+
     );
 };
 
