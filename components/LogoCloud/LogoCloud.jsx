@@ -13,16 +13,17 @@ export function LogoCloud({ className }) {
         src="../../pictures/patent.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       ></img>
+            <img
+        alt="TradeMark"
+        src="../../pictures/TradeMark.svg"
+        className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
+      />
               <img
         alt="Copyright"
         src="../../pictures/copyright.svg"
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
-      <img
-        alt="TradeMark"
-        src="../../pictures/TradeMark.svg"
-        className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-      />
+
     </div>
   )
 }

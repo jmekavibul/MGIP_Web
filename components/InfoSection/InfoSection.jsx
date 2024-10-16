@@ -92,7 +92,7 @@ const InfoSection = () => {
       
     return (
                 <div id="feature-section" className="overflow-hidden">
-                    <div className=" bg-gradient-to-b from-white from-50% bg-slate-50 pb-36">
+                    <div className=" bg-gradient-to-b from-white from-50% bg-slate-100 pb-36">
                     <Container className="mt-5 mb-24 ">
                         <LogoCloud />
                     </Container>

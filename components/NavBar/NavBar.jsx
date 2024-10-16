@@ -1,107 +1,69 @@
 
-import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
-} from '@headlessui/react'
-import { Bars2Icon } from '@heroicons/react/24/solid'
-import { motion } from 'framer-motion'
-import { PlusGrid, PlusGridItem, PlusGridRow } from '../PlusGrid/PlusGrid'
-import { Link } from '../Link/Link';
-
-const links = [
-  { href: '/team', label: 'Team' },
-  { href: '/careers', label: 'Career' },
-  { href: '/contact', label: 'Contact Us' },
-]
-
-function DesktopNav() {
+import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom'; // Import Link here
+import './NavBar.css';
+import { RxHamburgerMenu } from "react-icons/rx";
+import { useNavigate } from 'react-router-dom';
+// Adjust the NavBar component
+export const NavBar = () => {
+    const [isScrolled, setIsScrolled] = useState(false);
+    const [isNavExpanded, setIsNavExpanded] = useState(false);
+    const sectionRef = useRef(null);
+  
+    useEffect(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          const entry = entries[0];
+          setIsScrolled(!entry.isIntersecting);
+        },
+        {
+          threshold: 0.25,
+        }
+      );
+  
+      if (sectionRef.current) {
+        observer.observe(sectionRef.current);
+      }
+  
+      return () => {
+        if (observer) {
+          observer.disconnect();
+        }
+      };
+    }, []);
+    
+    const navigate = useNavigate();
+    const routeChange = (event) => {
+        event.stopPropagation();
+        let path = "/";
+        navigate(path);
+    };
     return (
-      <nav className="relative hidden lg:flex">
-        {links.map(({ href, label }) => (
-          <PlusGridItem key={href} className="relative flex">
-            <Link
-              href={href}
-              className="flex items-center px-4 py-3 text-lg font-normal text-gray-950 bg-blend-multiply hover:bg-white/10"
-            >
-              {label}
-            </Link>
-          </PlusGridItem>
-        ))}
-      </nav>
-    )
-  }
-function MobileNavButton() {
-  return (
-    <DisclosureButton
-      className="flex size-12 items-center justify-center self-center rounded-lg data-[hover]:bg-black/5 lg:hidden"
-      aria-label="Open main menu"
-    >
-      <Bars2Icon className="size-6" />
-    </DisclosureButton>
-  )
-}
-
-function MobileNav() {
-  return (
-    <DisclosurePanel className="lg:hidden">
-      <div className="flex flex-col gap-6 py-4">
-        {links.map(({ href, label }, linkIndex) => (
-          <motion.div
-            initial={{ opacity: 0, rotateX: -90 }}
-            animate={{ opacity: 1, rotateX: 0 }}
-            transition={{
-              duration: 0.15,
-              ease: 'easeInOut',
-              rotateX: { duration: 0.3, delay: linkIndex * 0.1 },
-            }}
-            key={href}
-          >
-            <Link href={href} className="text-base font-medium text-gray-950">
-              {label}
-            </Link>
-          </motion.div>
-        ))}
-      </div>
-      <div className="absolute left-1/2 w-screen -translate-x-1/2">
-        <div className="absolute inset-x-0 top-0 border-t border-black/5" />
-        <div className="absolute inset-x-0 top-2 border-t border-black/5" />
-      </div>
-    </DisclosurePanel>
-  )
-}
-
-export function NavBar({ banner }) {
-  return (
-    <Disclosure as="header" className="pt-12 sm:pt-16">
-      <PlusGrid>
-        <PlusGridRow className="relative flex justify-between">
-          <div className="relative flex gap-6">
-            <PlusGridItem className="py-3">
-              <Link href="/" title="Home">
-              <div className="relative">
-                <motion.div
-                    initial={{ opacity: 1, scale: 1 }}
-                    whileHover={{ scale: 1.2 }}
-                    transition={{ duration: 0.3, ease: 'easeInOut' }}
-                    className="font-semibold text-2xl text-sky-700" 
-                >
-                    MG-IP
-                </motion.div>
-                </div>
-              </Link>
-            </PlusGridItem>
-            {banner && (
-              <div className="relative hidden items-center py-3 lg:flex">
-                {banner}
-              </div>
-            )}
+      <>
+        <nav className={`navbar ${isScrolled ? 'navbar-shrink' : ''}`}>
+          <div className="navbar-logo">
+            <h3 className="navbar-title" onClick={routeChange}>MUNCY, GEISSLER, <br /> OLDS & LOWE, P.C.</h3>
           </div>
-          <DesktopNav />
-          <MobileNavButton />
-        </PlusGridRow>
-      </PlusGrid>
-      <MobileNav />
-    </Disclosure>
-  )
-}
+  
+          <button
+            className={`hamburger ${isNavExpanded ? 'active' : ''}`}
+            onClick={() => setIsNavExpanded(!isNavExpanded)}
+            aria-label="Toggle navigation"
+          >
+            <RxHamburgerMenu />
+          </button>
+  
+          <ul className={`navbar-links ${isNavExpanded ? 'expanded' : ''}`}>
+            <li><Link to="/" onClick={() => setIsNavExpanded(false)}>About</Link></li>
+            <li><Link to="/team" onClick={() => setIsNavExpanded(false)}>Team</Link></li>
+            <li><Link to="/careers" onClick={() => setIsNavExpanded(false)}>Careers</Link></li>
+            <li><Link to="/contact" onClick={() => setIsNavExpanded(false)}>Contact Us</Link></li>
+          </ul>
+        </nav>
+  
+        {/* Use a smaller height or place this strategically */}
+        <div ref={sectionRef} style={{ height: '1px' }}></div> {/* Reduced height */}
+      </>
+    );
+  };
+  

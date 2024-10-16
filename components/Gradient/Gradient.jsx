@@ -1,21 +1,22 @@
 
 import { clsx } from 'clsx'
-
+import mgip from '../../pictures/washington_white.jpg'
 export function Gradient({ className, ...props }) {
-  return (
-    
-    <div>    
+    return (
+      <div>
         <div
-            {...props}
-            className={clsx(
+          {...props}
+          className={clsx(
             className,
-            'bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#589A93] from-[13%] via-[#577C8E] via-[50%] to-[#2F4157] sm:bg-[linear-gradient(145deg,var(--tw-gradient-stops))]',
-            )}
+            'bg-cover bg-center',
+          )}
+          style={{ backgroundImage: `url(${mgip})` }}
         />
-    </div>
+                <div className="absolute inset-0 bg-black opacity-20 ml-2 mr-2"></div>
 
-  )
-}
+      </div>
+    );
+  }
 
 export function GradientBackground() {
     return (
@@ -23,7 +24,7 @@ export function GradientBackground() {
         <div
           className={clsx(
             'absolute -right-60 -top-44 h-60 w-[36rem] transform-gpu md:right-0',
-            'bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#6EE7B7] from-[28%] via-[#3B82F6] via-[70%] to-[#1E3A8A]',
+            'bg-[linear-gradient(115deg,var(--tw-gradient-stops))] from-[#79dcf2] from-[28%] via-[#4085f6] via-[70%] to-[#1E3A8A]',
             'rotate-[-10deg] rounded-full blur-3xl',
           )}
         />

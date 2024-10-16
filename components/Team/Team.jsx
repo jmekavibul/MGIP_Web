@@ -151,7 +151,6 @@ export const Team = ({ members }) => {
         <div>
             <GradientBackground />
             <Container>
-                <NavBar />
             </Container>
             <div className="team-container">
 
