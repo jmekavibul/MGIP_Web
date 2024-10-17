@@ -9,10 +9,7 @@ import { Heading } from "../Heading/Heading";
 export default function Contact() {
     return (
         <div>
-                        <GradientBackground />
-            <Container>
-                <NavBar />
-            </Container>
+
             <div className="contact-page-container">
                 <Heading as="h2" className="max-w-full pt-16">
                         Contact Us

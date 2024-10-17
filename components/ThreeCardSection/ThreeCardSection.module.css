@@ -10,7 +10,6 @@
   margin-bottom: 80px;
   font-size: 45px;
   text-align: center;
-  font-family: "Source Sans 3", sans-serif;
   font-weight: 550;
   line-height: 70.65px;
   color: #2F4157;
@@ -78,7 +77,6 @@
   margin-bottom: 32px;
   margin-top: 0;
   color: #36454F;
-  font-family: 'Source Sans 3', sans-serif;
   font-size: 34px;
   font-weight: 700;
   line-height: 42.23px;
@@ -87,7 +85,6 @@
 
 .cardDescription {
   color: #36454F;
-  font-family: 'Source Sans 3', sans-serif;
   font-size: 24px;
   font-weight: 400;
   line-height: 30.17px;
@@ -102,7 +99,6 @@
   text-decoration: underline;
   font-weight: bold;
   transition: color 0.3s ease;
-  font-family: 'Source Sans 3';
   font-size: 24px;
   font-weight: 700;
   line-height: 30.17px;

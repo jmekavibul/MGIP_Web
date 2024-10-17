@@ -8,9 +8,7 @@ export function Careers() {
   return (
     <div>
     <GradientBackground />
-    <Container>
-        <NavBar />
-    </Container>
+
         <div className="centered-container">
 
             <ButtonCard

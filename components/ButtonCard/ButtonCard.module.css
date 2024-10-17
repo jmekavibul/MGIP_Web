@@ -20,7 +20,6 @@
     animation: fadeIn 1.5s ease-out;
   }
   .description {
-    font-family: 'Source Sans 3', sans-serif;
     color: #36454F;
     font-size: 24px;
     font-weight: 400;
@@ -36,7 +35,6 @@
     border-radius: 15px;
     color: white;
     cursor: pointer;
-    font-family: 'Noto Sans';
     font-size: 20px; /* Adjusted font size for smaller screens */
     font-weight: 600;
     line-height: 22px;
@@ -44,7 +42,6 @@
   }
   
   .buttonTitle {
-    font-family: "Source Sans 3", sans-serif;
     color: #2F4157;
     font-size: 45px; /* Adjusted font size for smaller screens */
     font-weight: 550;

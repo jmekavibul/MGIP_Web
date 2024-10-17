@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.9);
-    padding: 6px 60px; /* Adjusted padding for better spacing */
+    padding: 30px 60px; /* Adjusted padding for better spacing */
     top: 0; /* Aligns the navbar to the top */
     width: 100%; /* Ensures the navbar spans the full width of the viewport */
     z-index: 1000; /* Ensures the navbar stays above other content */
@@ -14,25 +14,22 @@
 
 /* Smaller navbar size after scrolling */
 .navbar-shrink {
-    padding: 1px 60px;
+    padding: 20px 60px;
     background-color: rgba(255, 255, 255);
     border-color:#333;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Slightly black line at the bottom */
 
 }
 .navbar-title{
-    font-family: "Source Sans 3", sans-serif;
     position: relative;
     text-decoration: none;
     color: #457891;
     transition: color 0.3s ease, transform 0.3s ease;
     font-size: 28px;
     overflow: hidden;
-    font-weight: 400;
     font-weight: 600;
     line-height: 25px;
     cursor: pointer;
-
 }
 
 
@@ -49,14 +46,12 @@
 }
 
 .navbar-links li a {
-    font-family: "Source Sans 3", sans-serif;
     position: relative;
     text-decoration: none;
     color: #457891;
     transition: color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects and color */
     font-size: 22px;
     overflow: hidden;
-    font-weight: 400;
     font-weight: 600;
     line-height: 40.22px;
 }

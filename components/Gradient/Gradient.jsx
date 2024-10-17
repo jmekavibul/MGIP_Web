@@ -12,7 +12,7 @@ export function Gradient({ className, ...props }) {
           )}
           style={{ backgroundImage: `url(${mgip})` }}
         />
-                <div className="absolute inset-0 bg-black opacity-20 ml-2 mr-2"></div>
+        <div className="absolute inset-0 bg-black opacity-20 mt-2 ml-2 mr-2 rounded-lg	"></div>
 
       </div>
     );

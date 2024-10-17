@@ -89,10 +89,7 @@ const BioPage = ({ member, membershipsData }) => {
 
   return (
     <div>
-                <GradientBackground />
-        <Container>
-            <NavBar />
-        </Container>
+
             <div className={styles.bioFullPage}>
       <div className={styles.bioContainer}>
         {/* Left Column - Photo */}
