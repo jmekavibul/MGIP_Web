@@ -1,28 +1,33 @@
 .bioFullPage {
-    
   padding: 50px 15px;
-  width: 60%; /* Set the width to 75% of the screen */
+  width: 70%; /* Set the width to 75% of the screen */
   /* max-width: 1200px; Optional: Set a maximum width to prevent it from getting too large on very wide screens */
   margin: 0 auto; /* Center the content */
+}
+
+.photoContainer {
+  flex: 0 0 350px; /* Ensure fixed size for the photo container */
+  max-width: 350px;
+  display: flex;
+  justify-content: center; /* Center the image within the container */
+  align-items: center;
+}
+
+.memberPhoto {
+  width: 250px; /* Fixed photo width */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Prevents overflow */
+  object-fit: cover; /* Keep photo within bounds */
+  border-radius: 5%; /* Rounded corners */
+  margin: 0; /* Reset margin */
 }
 
 .bioContainer {
   display: flex;
   align-items: flex-start; /* Align content at the top */
+  gap: 0px; /* Adjust gap between photo and content */
+  flex-wrap: nowrap; /* Prevent wrapping on larger screens */
 }
-
-.photoContainer {
-  margin-right: 50px; /* Adds spacing between the photo and the content */
-}
-
-.memberPhoto {
-  width: 450px; /* Set the photo size */
-  height: auto; /* Maintain aspect ratio */
-  object-fit: cover;
-  border-radius: 5%; /* Remove circular border */
-  margin: 0 30px 0px 0px;
-}
-
 
 .contentContainer {
   flex-grow: 1; /* Allow the content to take up remaining space */
@@ -113,20 +118,6 @@ p {
   display: flex;
   flex-wrap: wrap;
   gap: 10px; /* Adjust the spacing between buttons */
-}
-
-.membershipButton {
-  background-color: #577C8E; /* Adjust color as per your preference */
-  color: white;
-  padding: 16px 32px;
-  border-radius: 8px;
-  display: inline-block;
-  text-align: center;
-  font-size: 22px;
-  font-family: 'Noto Sans';
-  font-weight: 600;
-  line-height: 24px;
-  letter-spacing: 2px;
 }
 
 .membershipButton {

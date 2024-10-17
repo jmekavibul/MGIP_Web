@@ -173,7 +173,7 @@ body, html {
 .member-info {
   text-align: center;
   position: absolute;
-  bottom: 15px;
+  bottom: 10px;
   left: 0;
   right: 0;
   background-color: rgba(81, 85, 93, 0.5);
@@ -182,7 +182,13 @@ body, html {
   transition: transform 0.5s ease, background-color 0.5s ease;
   box-sizing: border-box;
   width: 100%; /* Ensures the info box width matches the .team-member width */
-  padding: 10px;
+  padding: 30px 0px 50px 0px;
+  display: grid;
+  place-items: center;
+}
+
+.member-name {
+  width: 80%;
 }
 
 .member-info h3 {
@@ -262,6 +268,7 @@ body, html {
     /* Adjust text size and padding as needed for mobile */
     font-size: 1.0em; /* Smaller text */
     padding: 8px; /* Sufficient padding */
+    padding-bottom: 20px;
     transform: translateY(calc(100% - 68px)); /* Adjust visible portion of member info */
   }
 }

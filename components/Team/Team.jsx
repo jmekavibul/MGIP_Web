@@ -239,7 +239,8 @@ export const Team = ({ members }) => {
                                 <img src={member.photo} alt={member.name} />
                                 <div className={`member-info ${member.name.length > 18 ? 'long-name' : ''}`}>
                                     <h3>{member.name}</h3>
-                                    <p>{member.title}</p>
+                                    <br/>
+                                    <p className="member-name">{member.title}</p>
                                 </div>
                             </Link>
                         ))}
