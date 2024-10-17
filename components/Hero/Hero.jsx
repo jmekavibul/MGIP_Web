@@ -3,7 +3,7 @@ import { Container } from '../Container/Container';
 import { Button } from '../Button/Button';
 export default function Hero() {
     return (
-      <div className="relative mt-28 pb-24 ml-4 mr-4">
+      <div className="relative mt-28 pb-20 ml-4 mr-4">
         <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset " />
         <Container className="relative">
 

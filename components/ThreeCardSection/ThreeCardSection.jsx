@@ -47,15 +47,15 @@ const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
       </Heading>
       <div className={styles.cardContainer}>
         {cards.map((card, index) => (
-            <div
-  key={index}
-  className={`${styles.card} ${styles.hidden}`}
-  ref={(el) => (cardRefs.current[index] = el)}
-  style={{
-    background: `linear-gradient(135deg, #D8E8E6, #D9E3E8, #E5EAF0)`,
-    transition: 'background 2s ease',
-  }}
->
+                        <div
+            key={index}
+            className={`${styles.card} ${styles.hidden}`}
+            ref={(el) => (cardRefs.current[index] = el)}
+            style={{
+                background: `linear-gradient(135deg, #D8E8E6, #D9E3E8, #E5EAF0)`,
+                transition: 'background 2s ease',
+            }}
+            >
             {card.icon && (
               <div
                 className={styles.iconWrapper}
