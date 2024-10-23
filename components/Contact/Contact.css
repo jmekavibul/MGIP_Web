@@ -4,7 +4,6 @@
     align-items: center;
     width: 100%;
     padding-bottom: 3rem; 
-    background-color: #F7F8FC;
 }
 
 .contact-banner {
@@ -44,7 +43,7 @@
 
 @media (max-width: 768px) {
     .contact-form-section {
-        width: 80%; /* Adjust width for mobile view */
+        width: 95%;
     }
     .contact-form-section a {
         font-size: 16px;  

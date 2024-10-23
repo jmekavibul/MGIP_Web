@@ -86,10 +86,7 @@ select.form-control {
 }
 
 /* Responsiveness */@media (max-width: 768px) {
-    .contact-form {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
+
     .form-label {
         font-size: 18px; /* Adjust font size for smaller screens */line-height: 24px;
     }

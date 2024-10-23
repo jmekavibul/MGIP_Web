@@ -1,13 +1,3 @@
 .centered-container {
     background-color: #fdfeff;
 }
-@media (min-width: 560px){
-    .centered-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 98vh; /* Make sure the container takes up the full height of the viewport */
-        box-sizing: border-box;
-    
-    }
-}

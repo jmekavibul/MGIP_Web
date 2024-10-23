@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styles from './SixCardColors.module.css';
+import { FadeIn } from '../FadeIn';
 
 const SixCardColors = ({ data, colors, languages }) => {
   const [showTooltip, setShowTooltip] = useState(false);
@@ -14,7 +15,8 @@ const SixCardColors = ({ data, colors, languages }) => {
 
   return (
     <div className={styles.sixCardColors}>
-      <div className={styles.gridContainer}>
+        <FadeIn>
+        <div className={styles.gridContainer}>
         {data.map((item, index) => (
           <div
             key={index}
@@ -47,6 +49,8 @@ const SixCardColors = ({ data, colors, languages }) => {
           </div>
         ))}
       </div>
+        </FadeIn>
+
     </div>
   );
 };

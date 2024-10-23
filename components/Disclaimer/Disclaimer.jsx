@@ -1,8 +1,10 @@
 import ButtonCard from "../ButtonCard/ButtonCard";
+import { GradientBackground } from "../Gradient/Gradient";
 
 export function Disclaimer() {
   return (
     <div className="centered-container">
+        <GradientBackground />
       <ButtonCard
         backgroundColor="transparent"
         title="Disclaimer"

@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { FaEnvelope, FaPhone, FaGlobe } from 'react-icons/fa'; // Import icons from react-icons
 import styles from './BioPage.module.css'; // Importing the CSS module
+import { GradientBackground } from '../Gradient/Gradient';
+import { NavBar } from '../NavBar/NavBar';
+import { Container } from '../Container/Container';
 
 const BioPage = ({ member, membershipsData }) => {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth > 1400);
@@ -85,7 +88,10 @@ const BioPage = ({ member, membershipsData }) => {
   };
 
   return (
-    <div className={styles.bioFullPage}>
+    <div>
+
+    <GradientBackground />
+            <div className={styles.bioFullPage}>
       <div className={styles.bioContainer}>
         {/* Left Column - Photo */}
         <div className={styles.photoContainer}>
@@ -126,6 +132,8 @@ const BioPage = ({ member, membershipsData }) => {
         </div>
       </div>
     </div>
+    </div>
+
   );
 };
 

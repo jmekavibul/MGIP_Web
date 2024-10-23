@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './ThreeCardSection.module.css';
+import { Heading } from '../Heading/Heading';
 
 const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
   const [activeCard, setActiveCard] = useState(null);
@@ -41,15 +42,20 @@ const ThreeCardSection = ({ cards, colors, iconBackgroundColor }) => {
 
   return (
     <div className={styles.threeCardSection}>
-      <h2 className={styles.sectionTitle}>Services</h2>
+      <Heading as="h2" className="max-w-full text-center pb-20 pt-10">
+        Services
+      </Heading>
       <div className={styles.cardContainer}>
         {cards.map((card, index) => (
-          <div
+                        <div
             key={index}
             className={`${styles.card} ${styles.hidden}`}
             ref={(el) => (cardRefs.current[index] = el)}
-            style={{ backgroundColor: colors[index % colors.length] }}
-          >
+            style={{
+                background: `linear-gradient(135deg, #D8E8E6, #D9E3E8, #E5EAF0)`,
+                transition: 'background 2s ease',
+            }}
+            >
             {card.icon && (
               <div
                 className={styles.iconWrapper}

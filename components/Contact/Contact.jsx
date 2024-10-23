@@ -1,23 +1,28 @@
 import ContactForm from "./ContactForm";
 import './Contact.css';  // Ensure this CSS file has the required styles
-import Hero2 from '../Hero2/Hero2';
-import teamphoto from '../../pictures/monument.jpg'
+import { GradientBackground } from "../Gradient/Gradient";
+import { Heading } from "../Heading/Heading";
+import { FadeIn } from "../FadeIn";
 export default function Contact() {
     return (
-        <div className="contact-page-container">
-                    <Hero2
-            backgroundImage={teamphoto}
-            text="Contact Us"
-            height="40vh"  // Set appropriate height as needed
-            subText=""  // Optional: add a subtitle if needed
-        />
-        
-            <div className="contact-banner">
+        <div>
+            <GradientBackground />
+            <FadeIn>
+            <div className="contact-page-container">
+                <Heading as="h2" className="max-w-full pt-36">
+                        Contact Us
+                </Heading>
+                        
+                <div className="contact-banner">
+                </div>
+                <div className="contact-form-section">
+                <a href="/disclaimer">Disclaimer</a>
+                    <ContactForm />
+                </div>
             </div>
-            <div className="contact-form-section">
-            <a href="/disclaimer">Disclaimer</a>
-                <ContactForm />
-            </div>
+            </FadeIn>
+
         </div>
+
     );
 }
