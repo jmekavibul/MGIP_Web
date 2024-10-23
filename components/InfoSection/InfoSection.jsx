@@ -17,6 +17,7 @@ import { Container } from '../Container/Container';
 import { Heading } from '../Heading/Heading';
 import { LogoCloud } from '../LogoCloud/LogoCloud';
 import { FadeIn } from '../FadeIn';
+
 const InfoSection = () => {
     const transactionData = [
         {
@@ -93,7 +94,7 @@ const InfoSection = () => {
       
     return (
                 <div id="feature-section" className="overflow-hidden">
-                    <div className=" bg-gradient-to-b from-white from-50% bg-slate-100 pb-36">
+                    <div className=" bg-gradient-to-b from-white from-50% bg-slate-200 pb-36">
                     <Container className="mt-5 mb-24 ">
 
                         <LogoCloud />

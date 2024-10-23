@@ -1,12 +1,9 @@
 import React, { useState } from 'react';
 import './Team.css';
-import teamphoto from '../../pictures/aiteam.jpg';
 import Select from 'react-select';
 import { Link } from 'react-router-dom';
 import { MdOutlineSearch } from "react-icons/md";
-import Hero2 from '../Hero2/Hero2';
 import { GradientBackground } from '../Gradient/Gradient';
-import { NavBar } from '../NavBar/NavBar';
 import { Container } from '../Container/Container';
 
 export const Team = ({ members }) => {

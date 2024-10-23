@@ -1,19 +1,13 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-import Stack from '@mui/material/Stack';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
-import Box from '@mui/material/Box';
-import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
-import GavelIcon from '@mui/icons-material/Gavel';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import VideoLabelIcon from '@mui/icons-material/VideoLabel';
-import './StepperStyles.css';  // Import external CSS
+import React from "react";
+import { Stepper, Step, Button, Typography } from "@material-tailwind/react";
+import { UserIcon, CogIcon, BuildingLibraryIcon } from "@heroicons/react/24/outline";
 
-// Steps array
-const steps = ['2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016', '2017', '2018', '2019', '2-'];
+// Data arrays
+const steps = [
+  '2006', '2007', '2008', '2009', '2010', '2011', 
+  '2012', '2013', '2014', '2015', '2016', '2017', 
+  '2018', '2019', '2020'
+];
 
 const stepDescriptions = [
   ["Scott L. Lowe joined the firm.", "The firm moved the office to Main Street in Fairfax City.", "Martin R. Geissler and Mark E. Olds founded the firm."],
@@ -29,178 +23,103 @@ const stepDescriptions = [
   ["Number of employees: 58"],
 ];
 
-// Colorlib Connector and Icon
-const ColorlibConnector = styled(StepConnector)(({ theme }) => ({
-    [`&.${stepConnectorClasses.alternativeLabel}`]: {
-      top: 22,
-    },
-    [`&.${stepConnectorClasses.active}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundImage:
-          'linear-gradient( 95deg, rgb(33,150,243) 0%, rgb(3,169,244) 50%, rgb(0,188,212) 100%)',  // Blue gradient for active
-      },
-    },
-    [`&.${stepConnectorClasses.completed}`]: {
-      [`& .${stepConnectorClasses.line}`]: {
-        backgroundImage:
-          'linear-gradient( 95deg, rgb(33,150,243) 0%, rgb(3,169,244) 50%, rgb(0,188,212) 100%)',  // Blue gradient for completed
-      },
-    },
-    [`& .${stepConnectorClasses.line}`]: {
-      height: 3,
-      border: 0,
-      backgroundColor: '#eaeaf0',  // Gray for inactive
-      borderRadius: 1,
-    },
-  }));
-
-const ColorlibStepIconRoot = styled('div')(({ theme }) => ({
-  backgroundColor: '#ccc',
-  zIndex: 10,
-  color: '#fff',
-  width: 50,
-  height: 50,
-  display: 'flex',
-  borderRadius: '50%',
-  justifyContent: 'center',
-  alignItems: 'center',
-  cursor: 'pointer',  // Add pointer on hover
-  ...theme.applyStyles('dark', {
-    backgroundColor: theme.palette.grey[700],
-  }),
-  variants: [
-    {
-      props: ({ ownerState }) => ownerState.active,
-      style: {
-        backgroundImage:
-          'linear-gradient( 136deg, rgb(33,150,243) 0%, rgb(3,169,244) 50%, rgb(0,188,212) 100%)',  // Blue gradient for active
-        boxShadow: '0 4px 10px 0 rgba(0,0,0,.25)',
-      },
-    },
-    {
-      props: ({ ownerState }) => ownerState.completed,
-      style: {
-        backgroundImage:
-          'linear-gradient( 136deg, rgb(33,150,243) 0%, rgb(3,169,244) 50%, rgb(0,188,212) 100%)',  // Blue gradient for completed
-      },
-    },
-  ],
-}));
-
-function ColorlibStepIcon(props) {
-  const { active, completed, className } = props;
-
-  const icons = {
-    1: <GavelIcon />,
-    2: <GroupAddIcon />,
-    3: <VideoLabelIcon />,
-  };
-
-  return (
-    <ColorlibStepIconRoot ownerState={{ completed, active }} className={className}>
-      {icons[String(props.icon)]}
-    </ColorlibStepIconRoot>
-  );
-}
-
-ColorlibStepIcon.propTypes = {
-  active: PropTypes.bool,
-  completed: PropTypes.bool,
-  icon: PropTypes.node,
-};
-
-export default function CustomizedSteppers() {
-  const [activeStep, setActiveStep] = React.useState(null); // Start with no active step
+export default function StepperWithContent() {
+  const [activeStep, setActiveStep] = React.useState(0);
   const [visibleSteps, setVisibleSteps] = React.useState([0, 1, 2]); // Initially show the first 3 steps
-  const [completedSteps, setCompletedSteps] = React.useState(new Set()); // Store completed steps
-  
-  const handleStepClick = (index) => {
-    if (index === visibleSteps[0] && index > 0) {
-      // Shift left if the clicked node is the leftmost node
-      handleLeftShift(index);
-    } else if (index === visibleSteps[visibleSteps.length - 1] && index < steps.length - 1) {
-      // Shift right if the clicked node is the rightmost node
-      handleRightShift(index);
-    } else {
-      // Set the active step only if it is not the rightmost or leftmost node
-      setActiveStep(index);
-      setCompletedSteps(prev => new Set(prev).add(index)); // Mark step as completed
+
+  const handleNext = () => {
+    if (activeStep < steps.length - 1) {
+      const nextStep = activeStep + 1;
+      setActiveStep(nextStep);
+      shiftStepsRight(nextStep);
     }
   };
 
-  const handleRightShift = (clickedIndex) => {
-    const lastVisibleStep = visibleSteps[visibleSteps.length - 1];
-    if (lastVisibleStep < steps.length - 1) {
-      // Shift by 3 steps or show remaining steps
-      let newVisibleSteps = [clickedIndex, clickedIndex + 1, clickedIndex + 2].filter(step => step < steps.length);
-
-      // If the last step is clicked (e.g., 2015), show the last 3 steps
-      if (newVisibleSteps.length < 3) {
-        newVisibleSteps = [steps.length - 3, steps.length - 2, steps.length - 1];
-      }
-
-      setVisibleSteps(newVisibleSteps);
-      setActiveStep(clickedIndex); // Set only the clicked step as active
-      setCompletedSteps(prev => new Set(prev).add(clickedIndex)); // Mark step as completed
+  const handlePrev = () => {
+    if (activeStep > 0) {
+      const prevStep = activeStep - 1;
+      setActiveStep(prevStep);
+      shiftStepsLeft(prevStep);
     }
   };
 
-  const handleLeftShift = (clickedIndex) => {
-    const firstVisibleStep = visibleSteps[0];
-    if (firstVisibleStep > 0) {
-      // Shift left by 3 steps
-      let newVisibleSteps = [clickedIndex - 2, clickedIndex - 1, clickedIndex].filter(step => step >= 0);
+  // Shift visible steps to the right
+  const shiftStepsRight = (nextStep) => {
+    if (nextStep > visibleSteps[visibleSteps.length - 1] && nextStep < steps.length) {
+      setVisibleSteps([nextStep - 2, nextStep - 1, nextStep]);
+    }
+  };
 
-      // Ensure there are no negative steps and pad the start
-      if (newVisibleSteps.length < 3) {
-        newVisibleSteps = [0, 1, 2];
-      }
-
-      setVisibleSteps(newVisibleSteps);
-      setActiveStep(clickedIndex); // Set only the clicked step as active
-      setCompletedSteps(prev => new Set(prev).add(clickedIndex)); // Mark step as completed
+  // Shift visible steps to the left
+  const shiftStepsLeft = (prevStep) => {
+    if (prevStep < visibleSteps[0] && prevStep >= 0) {
+      setVisibleSteps([prevStep, prevStep + 1, prevStep + 2]);
     }
   };
 
   return (
-    <Stack className="stepper-container" spacing={4}>
-      <Stepper alternativeLabel activeStep={activeStep} connector={<ColorlibConnector />}>
-        {visibleSteps.map((stepIndex) => (
-          <Step key={steps[stepIndex]}>
-            <StepLabel
-              StepIconComponent={ColorlibStepIcon}
-              onClick={() => handleStepClick(stepIndex)}
-              sx={{
-                cursor: 'pointer',  // Make the label look clickable
-                zIndex: 10,
-                '& .MuiStepLabel-label': {
-                  color: 'white',
-                  fontFamily: '"Sans Source 3", sans-serif',
-                  fontSize: '1rem',
-                },
-                '& .Mui-active .MuiStepLabel-label': {
-                  color: 'white',
-                },
-                '& .Mui-completed .MuiStepLabel-label': {
-                  color: completedSteps.has(stepIndex) ? 'white' : 'inherit', // Keep the active/completed node white
-                },
-              }}
-            >
-              {steps[stepIndex]}
-            </StepLabel>
-          </Step>
-        ))}
-      </Stepper>
-
-      {activeStep !== null && activeStep < steps.length && (
-        <Box className="context-text">
-          {stepDescriptions[activeStep].map((description, index) => (
-            <p key={index} className="step-description">
-              {description}
-            </p>
+    <div className="w-10/12  py-4 ml-44">
+      {/* Custom Stepper Wrapper for animated progress bar */}
+      <div className="relative w-full">
+        {/* Base gray progress bar */}
+        <div className="absolute top-1/2 left-0 right-0 h-[2px] bg-gray-300 transform -translate-y-1/2" />
+        {/* Blue animated progress bar */}
+        <div
+          className="absolute top-1/2 left-0 h-[2px] bg-blue-600 transform -translate-y-1/2 transition-all duration-300"
+          style={{
+            // Calculate the width based on active step within the visible steps
+            width: `${((activeStep - visibleSteps[0]) / (visibleSteps.length - 1)) * 100}%`,
+            // Set the max width relative to total step count
+            maxWidth: `${((visibleSteps[visibleSteps.length - 1] + 1) / steps.length) * 100}%`,
+          }}
+        />
+        <Stepper activeStep={activeStep}>
+          {visibleSteps.map((stepIndex) => (
+            <Step key={steps[stepIndex]} onClick={() => setActiveStep(stepIndex)}>
+              {/* Icon based on step */}
+              {stepIndex % 3 === 0 ? (
+                <UserIcon className="h-5 w-5" />
+              ) : stepIndex % 3 === 1 ? (
+                <CogIcon className="h-5 w-5" />
+              ) : (
+                <BuildingLibraryIcon className="h-5 w-5" />
+              )}
+              {/* Step label */}
+              <div className="absolute -bottom-[4.5rem] w-max text-center">
+                <Typography
+                  variant="h6"
+                  color={activeStep === stepIndex ? "blue-gray" : "gray"}
+                >
+                  {steps[stepIndex]}
+                </Typography>
+              </div>
+            </Step>
           ))}
-        </Box>
+        </Stepper>
+      </div>
+
+      {/* Display step descriptions for the active step */}
+      {activeStep < stepDescriptions.length && (
+        <div className="mt-24 text-center">
+          <Typography variant="h5" className="text-blue-gray-800 mb-4">
+            {`Details for ${steps[activeStep]}`}
+          </Typography>
+          {stepDescriptions[activeStep].map((desc, idx) => (
+            <Typography key={idx} className="text-gray-600 mb-2">
+              {desc}
+            </Typography>
+          ))}
+        </div>
       )}
-    </Stack>
+
+      <div className="flex justify-between">
+        <Button onClick={handlePrev} disabled={activeStep === 0}>
+          Prev
+        </Button>
+        <Button onClick={handleNext} disabled={activeStep === steps.length - 1}>
+          Next
+        </Button>
+      </div>
+    </div>
   );
 }

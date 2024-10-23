@@ -3,6 +3,7 @@ import './About.css';
 
 import Hero from '../Hero/Hero';
 import InfoSection from '../InfoSection/InfoSection';
+import CustomizedSteppers from '../Stepper/Stepper';
 
 export const About = () => {
   // Create a reference for InfoSection
