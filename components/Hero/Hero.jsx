@@ -5,7 +5,7 @@ import { FadeIn } from '../FadeIn';
 
 export default function Hero({ onLearnMoreClick }) {
   return (
-    <div className="relative mt-32 pb-10 ml-8 mr-8">
+    <div className="relative mt-28 pb-10 md:mt-32 md:ml-6 md:mr-6 lg:mt-32 lg:ml-8 lg:mr-8">
       <Gradient className="absolute inset-2 bottom-0 rounded-4xl ring-1 ring-inset" />
       <Container className="relative">
         <div className="pb-24 pt-40 sm:pb-32 sm:pt-48 md:pb-36 md:pt-26">
