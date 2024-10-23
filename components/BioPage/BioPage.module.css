@@ -178,6 +178,6 @@ p {
     margin: 0 auto; /* Center the photo */
   }
   .bioFullPage {
-    width: 90%;
+    width: 100%;
   }
 }
