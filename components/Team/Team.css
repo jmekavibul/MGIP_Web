@@ -14,6 +14,7 @@ body, html {
   align-items: center;
   box-sizing: border-box;
   padding-bottom: 100px;
+  padding-top: 80px;
 }
 
 .team-background {
@@ -192,7 +193,6 @@ body, html {
 }
 
 .member-info h3 {
-  font-family: "Playfair Display";
   font-weight: 600;
   font-size: 25px;
   line-height: 39.99px;
@@ -201,7 +201,6 @@ body, html {
     font-size: 22px; /* Smaller font size for long names */
 }
 .member-info p {
-  font-family: "Source Sans 3";
   font-weight: 400;
   font-size: 20px;
 }

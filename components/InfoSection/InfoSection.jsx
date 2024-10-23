@@ -16,6 +16,7 @@ import {
 import { Container } from '../Container/Container';
 import { Heading } from '../Heading/Heading';
 import { LogoCloud } from '../LogoCloud/LogoCloud';
+import { FadeIn } from '../FadeIn';
 const InfoSection = () => {
     const transactionData = [
         {
@@ -31,7 +32,7 @@ const InfoSection = () => {
           icon: FaGavel,
         },
         {
-          description: 'Deliver superior quality work efficiently and cost-effectively.',
+          description: 'Deliver superior quality work efficiently and cost-effectively to provide the best work.',
           icon: FaBriefcase,
         },
         {
@@ -94,16 +95,19 @@ const InfoSection = () => {
                 <div id="feature-section" className="overflow-hidden">
                     <div className=" bg-gradient-to-b from-white from-50% bg-slate-100 pb-36">
                     <Container className="mt-5 mb-24 ">
+
                         <LogoCloud />
                     </Container>
                     <Container className=" pt-16">
-                        
-                        <Heading as="h2" className="max-w-full text-center">
-                        About Our Firm
-                        </Heading>
-                        <p className="mt-16 text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
-                        Muncy, Geissler, Olds & Lowe PC is an intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively.
-                        </p>
+                        <FadeIn>
+                            <Heading as="h2" className="max-w-full text-center">
+                            About Our Firm
+                            </Heading>
+                            <p className="mt-16 text-xl/7 font-medium text-gray-950/75 sm:text-2xl/8">
+                            Muncy, Geissler, Olds & Lowe PC is an intellectual property law firm in the Washington DC metropolitan area. Founded in 2006, the firm has become a top IP law firm, serving a diverse range of domestic and international clients. Our multilingual team, with expertise in science and technology, delivers superior quality work efficiently and cost-effectively.
+                            </p>
+                        </FadeIn>
+
                     </Container>
 
                     </div>

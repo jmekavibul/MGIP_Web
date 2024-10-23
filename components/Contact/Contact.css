@@ -43,7 +43,7 @@
 
 @media (max-width: 768px) {
     .contact-form-section {
-        width: 80%; /* Adjust width for mobile view */
+        width: 95%;
     }
     .contact-form-section a {
         font-size: 16px;  

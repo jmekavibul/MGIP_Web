@@ -79,7 +79,7 @@
   }
   
   /* Mobile view (max-width: 767px) */
-  @media (max-width: 800px) {
+  @media (max-width: 1079px) {
     .buttonCard {
       padding: 150px 30px 150px 30px; /* Some padding for mobile screens */
     }

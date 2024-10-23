@@ -1,17 +1,15 @@
 import ContactForm from "./ContactForm";
 import './Contact.css';  // Ensure this CSS file has the required styles
-import Hero2 from '../Hero2/Hero2';
-import teamphoto from '../../pictures/monument.jpg'
 import { GradientBackground } from "../Gradient/Gradient";
-import { Container } from "../Container/Container";
-import { NavBar } from "../NavBar/NavBar";
 import { Heading } from "../Heading/Heading";
+import { FadeIn } from "../FadeIn";
 export default function Contact() {
     return (
         <div>
-
+            <GradientBackground />
+            <FadeIn>
             <div className="contact-page-container">
-                <Heading as="h2" className="max-w-full pt-16">
+                <Heading as="h2" className="max-w-full pt-36">
                         Contact Us
                 </Heading>
                         
@@ -22,6 +20,8 @@ export default function Contact() {
                     <ContactForm />
                 </div>
             </div>
+            </FadeIn>
+
         </div>
 
     );

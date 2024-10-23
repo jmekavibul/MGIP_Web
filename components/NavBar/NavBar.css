@@ -16,11 +16,11 @@
 .navbar-shrink {
     padding: 20px 60px;
     background-color: rgba(255, 255, 255);
-    border-color:#333;
+    border-color: #333;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Slightly black line at the bottom */
-
 }
-.navbar-title{
+
+.navbar-title {
     position: relative;
     text-decoration: none;
     color: #457891;
@@ -32,7 +32,6 @@
     cursor: pointer;
 }
 
-
 .navbar-links {
     list-style: none;
     display: flex;
@@ -42,7 +41,6 @@
 
 .navbar-links li {
     padding: 0 50px; /* Increased padding between links */
-
 }
 
 .navbar-links li a {
@@ -99,7 +97,7 @@
     cursor: pointer;
     font-size: 24px; /* Adjust based on your preference */
     position: absolute;
-    right: 30px; /* Adjusted position to bring it slightly left */
+    right: 20px; /* Adjusted position to bring it slightly left */
     background: transparent;
     border: none;
     color: #457891; /* Change color to ensure visibility against your navbar background */
@@ -110,18 +108,22 @@
 @media (max-width: 895px) {
     .hamburger {
         display: block; /* Show hamburger icon on smaller screens */
-        right: 100px; /* Adjusted for smaller screens */
+        right:10%; /* Adjusted for smaller screens */
     }
 
     .navbar {
         padding: 20px 30px; /* Adjust padding for mobile screens */
     }
-    
+
     .navbar-shrink {
         padding: 10px 30px;
         background-color: rgba(255, 255, 255, 0.95);
     }
-    
+
+    .navbar-title {
+        font-size: 20px; /* Make logo font smaller when hamburger is visible */
+    }
+
     .navbar-links {
         display: none; /* Hide the links initially */
         position: fixed;
@@ -153,6 +155,29 @@
         font-size: 18px; /* Adjust font size for mobile */
     }
 }
+@media (min-width: 897px) and (max-width: 1101px) {
+    .navbar {
+        padding: 20px 30px; /* Reduce padding to create more space */
+    }
+
+    .navbar-title {
+        font-size: 24px; /* Slightly reduce the font size of the logo */
+    }
+
+    .navbar-links {
+        margin-right: 2%; /* Reduce the margin to provide more space */
+    }
+
+    .navbar-links li {
+        padding: 0 30px; /* Reduce padding between links */
+    }
+
+    .navbar-links li a {
+        font-size: 20px; /* Adjust font size of links */
+    }
+}
+
+/* Additional responsive styles for better alignment */
 
 @media (min-width: 769px) and (max-width: 1024px) {
     /* Adjustments for tablets or smaller desktop screens */
