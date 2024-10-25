@@ -1,4 +1,7 @@
-import { clsx } from 'clsx'
+import { clsx } from 'clsx';
+import patentSvg from '../../pictures/patent.svg';
+import trademarkSvg from '../../pictures/trademark.svg';
+import copyrightSvg from '../../pictures/copyright.svg';
 
 export function LogoCloud({ className }) {
   return (
@@ -10,20 +13,19 @@ export function LogoCloud({ className }) {
     >
       <img
         alt="Patent"
-        src="../../pictures/patent.svg"
-        className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
-      ></img>
-            <img
-        alt="TradeMark"
-        src="../../pictures/TradeMark.svg"
+        src={patentSvg}
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
-              <img
+      <img
+        alt="Trademark"
+        src={trademarkSvg}
+        className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
+      />
+      <img
         alt="Copyright"
-        src="../../pictures/copyright.svg"
+        src={copyrightSvg}
         className="h-9 max-sm:mx-auto sm:h-8 lg:h-12"
       />
-
     </div>
-  )
+  );
 }
